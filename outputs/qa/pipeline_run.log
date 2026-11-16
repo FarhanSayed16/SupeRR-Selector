@@ -1,0 +1,113 @@
+2026-11-15 00:40:32 [INFO] [PressurePulse]: ==================================================
+2026-11-15 00:40:32 [INFO] [PressurePulse]:  Starting PressurePulse Pipeline (pressure_v1)
+2026-11-15 00:40:32 [INFO] [PressurePulse]: ==================================================
+2026-11-15 00:40:32 [INFO] [PressurePulse]: >>> Stage 1: Ingestion & Data Warehouse
+2026-11-15 00:40:33 [INFO] [PressurePulse]: Warehouse ready: 200999 deliveries loaded.
+2026-11-15 00:40:33 [INFO] [PressurePulse]: >>> Stage 2: Match State Reconstruction (Pending Phase 07)
+2026-11-15 00:40:33 [INFO] [PressurePulse]: >>> Stage 3: Pressure Definition Engine (Pending Phase 08)
+2026-11-15 00:40:33 [INFO] [PressurePulse]: >>> Stage 4: Player Role Classification (Pending Phase 09)
+2026-11-15 00:40:33 [INFO] [PressurePulse]: >>> Stage 5: Batting Metrics (Pending Phase 10)
+2026-11-15 00:40:33 [INFO] [PressurePulse]: >>> Stage 6: Bowling Metrics (Pending Phase 11)
+2026-11-15 00:40:33 [INFO] [PressurePulse]: >>> Stage 7: Scoring & Ranking (Pending Phase 12)
+2026-11-15 00:40:33 [INFO] [PressurePulse]: >>> Stage 8: Delivery & JSON/CSV Exports (Pending Phase 14)
+2026-11-15 00:40:34 [INFO] [PressurePulse]: Run manifest successfully written to D:\SupeRR Selector\outputs\qa\run_manifest.json
+2026-11-15 00:40:34 [INFO] [PressurePulse]: Pipeline completed successfully in 1.17s.
+2026-11-15 00:43:40 [INFO] [PressurePulse]: ==================================================
+2026-11-15 00:43:40 [INFO] [PressurePulse]:  Starting PressurePulse Pipeline (pressure_v1)
+2026-11-15 00:43:40 [INFO] [PressurePulse]: ==================================================
+2026-11-15 00:43:40 [INFO] [PressurePulse]: >>> Stage 1: Ingestion & Data Warehouse
+2026-11-15 00:43:41 [INFO] [PressurePulse]: Warehouse ready: 200999 deliveries loaded.
+2026-11-15 00:43:41 [INFO] [PressurePulse]: >>> Stage 2: Match State Reconstruction
+2026-11-15 00:43:42 [INFO] [PressurePulse]: State reconstruction ready: 200999 deliveries state-indexed.
+2026-11-15 00:43:42 [INFO] [PressurePulse]: >>> Stage 3: Pressure Definition Engine
+2026-11-15 00:43:42 [INFO] [PressurePulse]: Pressure engine ready: 39.26% balls marked pressure.
+2026-11-15 00:43:42 [INFO] [PressurePulse]: >>> Stage 4: Player Role Classification (Pending Phase 09)
+2026-11-15 00:43:42 [INFO] [PressurePulse]: >>> Stage 5: Batting Metrics (Pending Phase 10)
+2026-11-15 00:43:42 [INFO] [PressurePulse]: >>> Stage 6: Bowling Metrics (Pending Phase 11)
+2026-11-15 00:43:42 [INFO] [PressurePulse]: >>> Stage 7: Scoring & Ranking (Pending Phase 12)
+2026-11-15 00:43:42 [INFO] [PressurePulse]: >>> Stage 8: Delivery & JSON/CSV Exports (Pending Phase 14)
+2026-11-15 00:43:42 [INFO] [PressurePulse]: Run manifest successfully written to D:\SupeRR Selector\outputs\qa\run_manifest.json
+2026-11-15 00:43:42 [INFO] [PressurePulse]: Pipeline completed successfully in 2.48s.
+2026-11-15 01:13:51 [INFO] [PressurePulse]: ==================================================
+2026-11-15 01:13:51 [INFO] [PressurePulse]:  Starting PressurePulse Pipeline (pressure_v1)
+2026-11-15 01:13:51 [INFO] [PressurePulse]: ==================================================
+2026-11-15 01:13:51 [INFO] [PressurePulse]: >>> Stage 1: Ingestion & Data Warehouse
+2026-11-15 01:13:52 [INFO] [PressurePulse]: Warehouse ready: 200999 deliveries loaded.
+2026-11-15 01:13:52 [INFO] [PressurePulse]: >>> Stage 2: Match State Reconstruction
+2026-11-15 01:13:53 [INFO] [PressurePulse]: State reconstruction ready: 200999 deliveries state-indexed.
+2026-11-15 01:13:53 [INFO] [PressurePulse]: >>> Stage 3: Pressure Definition Engine
+2026-11-15 01:13:54 [INFO] [PressurePulse]: Pressure engine ready: 39.26% balls marked pressure.
+2026-11-15 01:13:54 [INFO] [PressurePulse]: >>> Stage 4: Player Role Classification
+2026-11-15 01:13:54 [INFO] [PressurePulse]: Role classification ready: 379 batters and 320 bowlers eligible.
+2026-11-15 01:13:54 [INFO] [PressurePulse]: >>> Stage 5: Batting Metrics
+2026-11-15 01:13:54 [INFO] [PressurePulse]: Batting metrics ready: 379 batters evaluated.
+2026-11-15 01:13:54 [INFO] [PressurePulse]: >>> Stage 6: Bowling Metrics
+2026-11-15 01:13:55 [INFO] [PressurePulse]: Bowling metrics ready: 320 bowlers evaluated.
+2026-11-15 01:13:55 [INFO] [PressurePulse]: >>> Stage 7: Scoring & Top 10 Ranking
+2026-11-15 01:13:55 [INFO] [PressurePulse]: Top 10 frozen with SHA256: 5cdd7b74... #1 Batter = Rohit Sharma, #1 Bowler = Sunil Narine
+2026-11-15 01:13:55 [INFO] [PressurePulse]: >>> Stage 8: Delivery & JSON/CSV Exports (Pending Phase 14)
+2026-11-15 01:13:55 [INFO] [PressurePulse]: Run manifest successfully written to D:\SupeRR Selector\outputs\qa\run_manifest.json
+2026-11-15 01:13:55 [INFO] [PressurePulse]: Pipeline completed successfully in 3.65s.
+2026-11-15 01:15:15 [INFO] [PressurePulse]: ==================================================
+2026-11-15 01:15:15 [INFO] [PressurePulse]:  Starting PressurePulse Pipeline (pressure_v1)
+2026-11-15 01:15:15 [INFO] [PressurePulse]: ==================================================
+2026-11-15 01:15:15 [INFO] [PressurePulse]: >>> Stage 1: Ingestion & Data Warehouse
+2026-11-15 01:15:16 [INFO] [PressurePulse]: Warehouse ready: 200999 deliveries loaded.
+2026-11-15 01:15:16 [INFO] [PressurePulse]: >>> Stage 2: Match State Reconstruction
+2026-11-15 01:15:17 [INFO] [PressurePulse]: State reconstruction ready: 200999 deliveries state-indexed.
+2026-11-15 01:15:17 [INFO] [PressurePulse]: >>> Stage 3: Pressure Definition Engine
+2026-11-15 01:15:17 [INFO] [PressurePulse]: Pressure engine ready: 39.26% balls marked pressure.
+2026-11-15 01:15:17 [INFO] [PressurePulse]: >>> Stage 4: Player Role Classification
+2026-11-15 01:15:18 [INFO] [PressurePulse]: Role classification ready: 379 batters and 320 bowlers eligible.
+2026-11-15 01:15:18 [INFO] [PressurePulse]: >>> Stage 5: Batting Metrics
+2026-11-15 01:15:18 [INFO] [PressurePulse]: Batting metrics ready: 379 batters evaluated.
+2026-11-15 01:15:18 [INFO] [PressurePulse]: >>> Stage 6: Bowling Metrics
+2026-11-15 01:15:19 [INFO] [PressurePulse]: Bowling metrics ready: 320 bowlers evaluated.
+2026-11-15 01:15:19 [INFO] [PressurePulse]: >>> Stage 7: Scoring & Top 10 Ranking
+2026-11-15 01:15:19 [INFO] [PressurePulse]: Top 10 frozen with SHA256: 5cdd7b74... #1 Batter = Rohit Sharma, #1 Bowler = Sunil Narine
+2026-11-15 01:15:19 [INFO] [PressurePulse]: >>> Stage 8: Delivery & JSON/CSV Exports
+2026-11-15 01:15:19 [INFO] [PressurePulse]: Delivery packages synchronized: 7 JSON files in dashboard/public/data/
+2026-11-15 01:15:20 [INFO] [PressurePulse]: Run manifest successfully written to D:\SupeRR Selector\outputs\qa\run_manifest.json
+2026-11-15 01:15:20 [INFO] [PressurePulse]: Pipeline completed successfully in 4.55s.
+2026-11-15 01:24:53 [INFO] [PressurePulse]: ==================================================
+2026-11-15 01:24:53 [INFO] [PressurePulse]:  Starting PressurePulse Pipeline (pressure_v1)
+2026-11-15 01:24:53 [INFO] [PressurePulse]: ==================================================
+2026-11-15 01:24:53 [INFO] [PressurePulse]: >>> Stage 1: Ingestion & Data Warehouse
+2026-11-15 01:24:55 [INFO] [PressurePulse]: Warehouse ready: 200999 deliveries loaded.
+2026-11-15 01:24:55 [INFO] [PressurePulse]: >>> Stage 2: Match State Reconstruction
+2026-11-15 01:24:55 [INFO] [PressurePulse]: State reconstruction ready: 200999 deliveries state-indexed.
+2026-11-15 01:24:55 [INFO] [PressurePulse]: >>> Stage 3: Pressure Definition Engine
+2026-11-15 01:24:56 [INFO] [PressurePulse]: Pressure engine ready: 39.26% balls marked pressure.
+2026-11-15 01:24:56 [INFO] [PressurePulse]: >>> Stage 4: Player Role Classification
+2026-11-15 01:24:56 [INFO] [PressurePulse]: Role classification ready: 379 batters and 320 bowlers eligible.
+2026-11-15 01:24:56 [INFO] [PressurePulse]: >>> Stage 5: Batting Metrics
+2026-11-15 01:24:57 [INFO] [PressurePulse]: Batting metrics ready: 379 batters evaluated.
+2026-11-15 01:24:57 [INFO] [PressurePulse]: >>> Stage 6: Bowling Metrics
+2026-11-15 01:24:58 [INFO] [PressurePulse]: Bowling metrics ready: 320 bowlers evaluated.
+2026-11-15 01:24:58 [INFO] [PressurePulse]: >>> Stage 7: Scoring & Top 10 Ranking
+2026-11-15 01:24:58 [INFO] [PressurePulse]: Top 10 frozen with SHA256: 5cdd7b74... #1 Batter = Rohit Sharma, #1 Bowler = Sunil Narine
+2026-11-15 01:24:58 [INFO] [PressurePulse]: >>> Stage 8: Delivery & JSON/CSV Exports
+2026-11-15 01:24:58 [INFO] [PressurePulse]: Delivery packages synchronized: 7 JSON files in dashboard/public/data/
+2026-11-15 01:24:58 [INFO] [PressurePulse]: Run manifest successfully written to D:\SupeRR Selector\outputs\qa\run_manifest.json
+2026-11-15 01:24:58 [INFO] [PressurePulse]: Pipeline completed successfully in 5.09s.
+2026-11-15 01:41:46 [INFO] [PressurePulse]: ==================================================
+2026-11-15 01:41:46 [INFO] [PressurePulse]:  Starting PressurePulse Pipeline (pressure_v1)
+2026-11-15 01:41:46 [INFO] [PressurePulse]: ==================================================
+2026-11-15 01:41:46 [INFO] [PressurePulse]: >>> Stage 1: Ingestion & Data Warehouse
+2026-11-15 01:41:47 [INFO] [PressurePulse]: Warehouse ready: 200999 deliveries loaded.
+2026-11-15 01:41:47 [INFO] [PressurePulse]: >>> Stage 2: Match State Reconstruction
+2026-11-15 01:41:47 [INFO] [PressurePulse]: State reconstruction ready: 200999 deliveries state-indexed.
+2026-11-15 01:41:47 [INFO] [PressurePulse]: >>> Stage 3: Pressure Definition Engine
+2026-11-15 01:41:48 [INFO] [PressurePulse]: Pressure engine ready: 39.26% balls marked pressure.
+2026-11-15 01:41:48 [INFO] [PressurePulse]: >>> Stage 4: Player Role Classification
+2026-11-15 01:41:48 [INFO] [PressurePulse]: Role classification ready: 379 batters and 320 bowlers eligible.
+2026-11-15 01:41:48 [INFO] [PressurePulse]: >>> Stage 5: Batting Metrics
+2026-11-15 01:41:49 [INFO] [PressurePulse]: Batting metrics ready: 379 batters evaluated.
+2026-11-15 01:41:49 [INFO] [PressurePulse]: >>> Stage 6: Bowling Metrics
+2026-11-15 01:41:50 [INFO] [PressurePulse]: Bowling metrics ready: 320 bowlers evaluated.
+2026-11-15 01:41:50 [INFO] [PressurePulse]: >>> Stage 7: Scoring & Top 10 Ranking
+2026-11-15 01:41:50 [INFO] [PressurePulse]: Top 10 frozen with SHA256: 5cdd7b74... #1 Batter = Rohit Sharma, #1 Bowler = Sunil Narine
+2026-11-15 01:41:50 [INFO] [PressurePulse]: >>> Stage 8: Delivery & JSON/CSV Exports
+2026-11-15 01:41:50 [INFO] [PressurePulse]: Delivery packages synchronized: 7 JSON files in dashboard/public/data/
+2026-11-15 01:41:50 [INFO] [PressurePulse]: Run manifest successfully written to D:\SupeRR Selector\outputs\qa\run_manifest.json
+2026-11-15 01:41:50 [INFO] [PressurePulse]: Pipeline completed successfully in 4.72s.
