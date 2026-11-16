@@ -1,0 +1,27 @@
+{
+  "pressure_version": "pressure_v1",
+  "definition_sentence": "A delivery is defined as high-pressure when match context demands immediate high-leverage execution: specifically during steep chases (RRR >= 9.5), death-over contests, severe batting collapses (<=3 wickets in hand), or critical playoff knockout stages.",
+  "total_deliveries": 200999,
+  "pressure_deliveries": 78906,
+  "baseline_deliveries": 122093,
+  "pressure_percentage": 39.26,
+  "ipl_pressure_percentage": 41.02,
+  "t20i_pressure_percentage": 37.61,
+  "phase_distribution_count": {
+    "death": 44454,
+    "middle": 26402,
+    "powerplay": 8050
+  },
+  "phase_distribution_percentage": {
+    "death": 56.3,
+    "middle": 33.5,
+    "powerplay": 10.2
+  },
+  "signal_activation_counts": {
+    "chase_tightness": 40620,
+    "collapse_defense": 18315,
+    "death_contest": 43430,
+    "knockout_leverage": 5289,
+    "super_overs": 38
+  }
+}
