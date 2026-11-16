@@ -1,0 +1,43 @@
+{
+  "freeze_sha256": "5cdd7b7451b5a6672dbfadccc3c36a9777ec5bafaec589339e22ba307202d272",
+  "status": "FROZEN_OFFICIAL",
+  "pressure_version": "pressure_v1",
+  "top10_batters_ordered": [
+    "Rohit Sharma",
+    "Shashank Singh",
+    "Naman Dhir",
+    "Ashutosh Sharma",
+    "Dinesh Karthik",
+    "Rishabh Pant",
+    "Sai Sudharsan",
+    "Vijay Shankar",
+    "Suryakumar Yadav",
+    "Rinku Singh"
+  ],
+  "top10_bowlers_ordered": [
+    "Sunil Narine",
+    "Mohammad Nawaz",
+    "Sufiyan Muqeem",
+    "Abrar Ahmed",
+    "Kuldeep Yadav",
+    "Jasprit Bumrah",
+    "Rasikh Salam",
+    "Rashid Khan",
+    "Mitchell Santner",
+    "Varun Chakravarthy"
+  ],
+  "audit_checks": {
+    "leakage_count": 0,
+    "min_batter_pressure_balls": 208,
+    "min_bowler_pressure_balls": 281,
+    "cross_list_duplicates": 0,
+    "within_list_duplicates": 0
+  },
+  "sensitivity": {
+    "rrr_nominal": 9.5,
+    "batter_top10_stability_pct": 90.0,
+    "bowler_top10_stability_pct": 90.0,
+    "ipl_overlap_batters": 8,
+    "ipl_overlap_bowlers": 8
+  }
+}
