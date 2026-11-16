@@ -1,0 +1,12 @@
+DATA USAGE & CONFIDENTIALITY NOTICE
+
+This repository contains materials developed for "SupeRR Selector Season 2: Help Shape Rajasthan Royals' IPL 2027 Auction Strategy" organized by Rajasthan Royals and Unstop.
+
+1. PROPRIETARY DATA:
+The dataset provided by Rajasthan Royals (including delivery-level ball-by-ball records, matches, competitions, player mappings, and playing elevens) is confidential proprietary data intended solely for evaluation within this competition.
+
+2. DISTRIBUTION RESTRICTIONS:
+Raw data files, processed delivery-level datasets, and full proprietary dumps must NOT be published, redistributed, or committed to public version control repositories.
+
+3. AGGREGATES ONLY:
+Public-facing artifacts, web dashboards, and summary reports must only expose high-level derived statistical aggregates, rankings, and anonymized/aggregated chart vectors.

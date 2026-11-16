@@ -1,0 +1,70 @@
+# Competition Data Protection (STRICT)
+# Do NOT commit proprietary Rajasthan Royals data
+data/raw/
+data/processed/
+data/external/
+docs/dataset/
+*.csv
+*.parquet
+*.feather
+*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Node / Frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dashboard/dist/
+dashboard/build/
+.next/
+out/
+
+# Environment and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Operating System & IDE junk
+.DS_Store
+Thumbs.db
+._*
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Large output dumps (keep lightweight summaries only)
+outputs/dashboard_export/
