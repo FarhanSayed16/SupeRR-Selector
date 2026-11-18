@@ -143,6 +143,11 @@ export const Methodology: React.FC<MethodologyProps> = ({ meta }) => {
         {pack?.board_policy && (
           <p className="text-[11px] text-slate-500 leading-relaxed">{pack.board_policy}</p>
         )}
+        <div className="p-3 bg-rr-pink-soft/40 border border-rr-pink-border rounded-lg text-[11px] text-slate-700 leading-relaxed">
+          <strong>P.R.I.M.E. role vs pressure:</strong>{' '}
+          {pack?.prime_note ||
+            'Innings phase (powerplay / middle / death) describes the job; match-state signals define pressure. Phase, pace/spin, collapse, and reliability panels are evidence-only and do not change PressureScore or the freeze SHA.'}
+        </div>
       </div>
 
       <div className="glass-panel p-6 space-y-3">

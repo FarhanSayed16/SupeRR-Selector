@@ -126,14 +126,6 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
             </span>
           </div>
           <div className="glass-kpi p-3">
-            <span className="text-[10px] uppercase font-bold text-slate-500 block">Official Board</span>
-            <span className="text-lg font-black text-slate-900 font-mono">Auction</span>
-            <span className="text-[10px] text-slate-500 block">
-              IPL floors bat≥{meta?.min_ipl_pressure_balls_batter ?? 40} / bowl≥
-              {meta?.min_ipl_pressure_balls_bowler ?? 60}
-            </span>
-          </div>
-          <div className="glass-kpi p-3">
             <span className="text-[10px] uppercase font-bold text-slate-500 block">IPL Rate Weight</span>
             <span className="text-lg font-black text-slate-900 font-mono">
               {(meta?.ipl_weight ?? 1.3).toFixed(2)}x
@@ -142,79 +134,84 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
               baked into rates · T20I {(meta?.t20i_weight ?? 1.0).toFixed(2)}x
             </span>
           </div>
+          <div className="glass-kpi p-3">
+            <span className="text-[10px] uppercase font-bold text-slate-500 block">Sensitivity (computed)</span>
+            <span className="text-lg font-black text-slate-900 font-mono">
+              {Number(meta?.sensitivity?.batter_top10_stability_pct ?? 0).toFixed(0)}/
+              {Number(meta?.sensitivity?.bowler_top10_stability_pct ?? 0).toFixed(0)}%
+            </span>
+            <span className="text-[10px] text-slate-500 block">
+              bat/bowl Top 10 retention · Auction Official
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* RR War Room Priority Targets Directive */}
-      <div className="glass-panel p-5 space-y-3">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2.5 gap-2">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 rounded-full bg-rr-pink"></div>
-            <h2 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-              Strategic Scouting Directives: Key Auction Recruits for Kumar Sangakkara
+      {/* RR War Room Priority Targets — name-first, no hype pills */}
+      <div className="glass-panel p-5 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-200/80 pb-3 gap-2">
+          <div>
+            <p className="type-kicker mb-1.5">Auction Official · Priority shortlist</p>
+            <h2 className="type-dossier-title text-[1.2rem]">
+              Recruits for Sangakkara &amp; Lindsay
             </h2>
           </div>
-          <span className="text-[11px] font-mono text-rr-pink-deep bg-rr-pink-soft px-2 py-0.5 rounded border border-rr-pink-border font-semibold">
-            Targeting RR Structural Deficits
-          </span>
+          <p className="text-[12px] text-slate-500 font-medium leading-snug sm:text-right">
+            Lower-order finish · death overs · impact cover
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 divide-y sm:divide-y-0 lg:divide-x divide-slate-200/80">
           {[
             {
               id: 2756,
               name: 'Shashank Singh',
-              tag: '#6 Finisher Solution',
-              tagClass: 'bg-rr-pink-soft text-rr-pink-deep border-rr-pink-border',
-              metric: '+69.2 SR',
-              detail: '171.8 Pressure SR · Est. INR 5.5–8.0 Cr',
+              role: 'No. 6 finisher',
+              metric: '+69.2 SR uplift',
+              detail: '171.8 pressure SR · INR 5.5–8.0 Cr',
             },
             {
               id: 781,
               name: 'Sunil Narine',
-              tag: 'Death Choke Anchor',
-              tagClass: 'bg-rr-pink-soft text-rr-pink-deep border-rr-pink-border',
-              metric: '6.06 Econ',
-              detail: 'All-Phase Restrictor · Est. INR 10.0–13.0 Cr',
+              role: 'Death overs · spin',
+              metric: '6.06 death econ',
+              detail: 'All-phase restrictor · INR 10.0–13.0 Cr',
             },
             {
               id: 7327,
               name: 'Rasikh Salam',
-              tag: 'Death Seam Wickets',
-              tagClass: 'bg-slate-100 text-slate-800 border-slate-200',
-              metric: '10.6 BpW',
-              detail: 'Strike Bowler · Est. INR 1.5–3.0 Cr',
+              role: 'Death overs · seam',
+              metric: '10.6 balls/wkt',
+              detail: 'Strike seamer · INR 1.5–3.0 Cr',
             },
             {
               id: 8101,
               name: 'Ashutosh Sharma',
-              tag: 'Impact Sub Clutch',
-              tagClass: 'bg-amber-100 text-amber-900 border-amber-200',
-              metric: '+79.1 SR',
-              detail: 'Crisis 360 Finisher · Est. INR 2.5–4.5 Cr',
+              role: 'Impact substitute',
+              metric: '+79.1 SR uplift',
+              detail: 'Chase finisher · INR 2.5–4.5 Cr',
             },
           ].map((card) => (
-            <div
+            <button
+              type="button"
               key={card.id}
               onClick={() => onNavigate('player_profile', card.id)}
-              className="p-3.5 bg-white/70 hover:bg-rr-pink-soft/70 border border-slate-200/70 hover:border-rr-pink-border rounded-xl transition-all cursor-pointer group shadow-sm"
+              className="text-left p-3.5 sm:px-4 hover:bg-rr-pink-soft/50 transition-colors cursor-pointer group"
             >
               <div className="flex items-start gap-3">
-                <PlayerAvatar playerId={card.id} name={card.name} size="md" />
-                <div className="min-w-0 flex-1 space-y-1">
-                  <div className="flex justify-between items-start gap-2">
-                    <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border ${card.tagClass}`}>
-                      {card.tag}
-                    </span>
-                    <span className="text-xs font-mono font-bold text-rr-pink-deep shrink-0">{card.metric}</span>
-                  </div>
+                <PlayerAvatar playerId={card.id} name={card.name} size="md" ring={false} />
+                <div className="min-w-0 flex-1">
                   <h4 className="font-bold text-sm text-slate-900 group-hover:text-rr-pink-deep transition-colors truncate">
                     {card.name}
                   </h4>
-                  <p className="text-[11px] text-slate-600 leading-snug">{card.detail}</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5 border-l-2 border-rr-pink/40 pl-2">
+                    {card.role}
+                  </p>
+                  <p className="text-xs font-mono font-bold text-rr-pink-deep mt-2">{card.metric}</p>
+                  <p className="text-[11px] text-slate-600 mt-0.5 leading-snug">{card.detail}</p>
                 </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>

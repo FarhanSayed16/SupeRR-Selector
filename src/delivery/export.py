@@ -136,7 +136,11 @@ def export_delivery_packages() -> Dict[str, Path]:
     top10_bowl = pd.read_csv(RANKINGS_DIR / "top10_bowlers.csv")
     full_bat = pd.read_csv(RANKINGS_DIR / "full_batter_rankings.csv")
     full_bowl = pd.read_csv(RANKINGS_DIR / "full_bowler_rankings.csv")
-    
+    global_bat = pd.read_csv(RANKINGS_DIR / "top10_batters_global.csv")
+    global_bowl = pd.read_csv(RANKINGS_DIR / "top10_bowlers_global.csv")
+    excluded_path = RANKINGS_DIR / "excluded_low_ipl_sample.csv"
+    excluded_df = pd.read_csv(excluded_path) if excluded_path.exists() else pd.DataFrame()
+
     with open(RANKINGS_DIR / "frozen_top10_fingerprint.json", "r", encoding="utf-8") as f:
         freeze_meta = json.load(f)
     with open(QA_DIR / "pressure_summary.json", "r", encoding="utf-8") as f:
@@ -147,6 +151,7 @@ def export_delivery_packages() -> Dict[str, Path]:
         "product_name": "PressurePulse",
         "subtitle": "Rajasthan Royals Auction Intelligence System (IPL 2027)",
         "version": CONFIG.PRESSURE_VERSION,
+        "board": "auction_official",
         "build_timestamp": datetime.now(timezone.utc).isoformat(),
         "freeze_sha256": freeze_meta["freeze_sha256"],
         "seasons_covered": ["2022", "2023", "2024", "2025", "2026"],
@@ -154,6 +159,10 @@ def export_delivery_packages() -> Dict[str, Path]:
         "pressure_deliveries": pressure_summary["pressure_deliveries"],
         "pressure_percentage": pressure_summary["pressure_percentage"],
         "ipl_weight": CONFIG.IPL_WEIGHT,
+        "t20i_weight": CONFIG.T20I_WEIGHT,
+        "min_ipl_pressure_balls_batter": CONFIG.MIN_IPL_PRESSURE_BALLS_BATTER,
+        "min_ipl_pressure_balls_bowler": CONFIG.MIN_IPL_PRESSURE_BALLS_BOWLER,
+        "sensitivity": freeze_meta.get("sensitivity"),
         "disclaimer": "Proprietary Rajasthan Royals data pack evaluated strictly under SupeRR Selector competition terms."
     }
 
@@ -222,6 +231,7 @@ def export_delivery_packages() -> Dict[str, Path]:
     # 6. Methodology JSON Package
     methodology_pkg = {
         "pressure_version": CONFIG.PRESSURE_VERSION,
+        "official_board": "auction_official",
         "definition_sentence": pressure_summary["definition_sentence"],
         "chase_high_rrr": CONFIG.CHASE_HIGH_RRR,
         "chase_critical_rrr": CONFIG.CHASE_CRITICAL_RRR,
@@ -229,12 +239,19 @@ def export_delivery_packages() -> Dict[str, Path]:
         "collapse_wickets": CONFIG.COLLAPSE_WICKETS_LOST,
         "min_batter_pressure_balls": CONFIG.MIN_PRESSURE_BALLS_FACED,
         "min_bowler_pressure_balls": CONFIG.MIN_PRESSURE_BALLS_BOWLED,
+        "min_baseline_balls_batter": CONFIG.MIN_BASELINE_BALLS_FACED,
+        "min_baseline_balls_bowler": CONFIG.MIN_BASELINE_BALLS_BOWLED,
+        "min_ipl_pressure_balls_batter": CONFIG.MIN_IPL_PRESSURE_BALLS_BATTER,
+        "min_ipl_pressure_balls_bowler": CONFIG.MIN_IPL_PRESSURE_BALLS_BOWLER,
+        "ipl_weight": CONFIG.IPL_WEIGHT,
+        "t20i_weight": CONFIG.T20I_WEIGHT,
+        "include_super_overs": CONFIG.INCLUDE_SUPER_OVERS,
         "scoring_weights_batter": {
             "clutch_quality": 0.40,
             "uplift_vs_baseline": 0.25,
             "consistency": 0.20,
             "volume_depth": 0.15,
-            "ipl_multiplier_max": "+15%"
+            "rate_basis": "IPL/T20I weighted legal-ball SR"
         },
         "scoring_weights_bowler": {
             "restrictiveness_and_death_econ": 0.35,
@@ -242,15 +259,39 @@ def export_delivery_packages() -> Dict[str, Path]:
             "uplift_and_resistance": 0.15,
             "consistency": 0.10,
             "volume_depth": 0.10,
-            "ipl_multiplier_max": "+15%"
-        }
+            "rate_basis": "IPL/T20I weighted legal-ball economy; death econ soft-capped"
+        },
+        "board_policy": (
+            "Auction Official is the primary freeze (IPL sample floors + weighted rates). "
+            "Global Combined is a secondary board without IPL floors for methodology context."
+        ),
+        "prime_note": (
+            "P.R.I.M.E. display layer: innings phase (PP/mid/death) is role context; "
+            "match-state signals define pressure. Phase, pace/spin, collapse, and reliability "
+            "fields are evidence-only and do not change PressureScore or the freeze SHA."
+        ),
     }
+
+    global_bat_records = global_bat.to_dict(orient="records")
+    global_bowl_records = global_bowl.to_dict(orient="records")
+    excluded_keep = [
+        "player_id", "player_name", "category", "exclusion_reason", "rank",
+        "pressure_score", "ipl_pressure_balls", "ipl_pressure_share", "primary_role",
+    ]
+    if len(excluded_df):
+        cols = [c for c in excluded_keep if c in excluded_df.columns]
+        excluded_records = excluded_df[cols].to_dict(orient="records")
+    else:
+        excluded_records = []
 
     # Files to serialize
     artifacts = {
         "meta.json": meta_pkg,
         "top10_batters.json": top10_bat_records,
         "top10_bowlers.json": top10_bowl_records,
+        "top10_batters_global.json": global_bat_records,
+        "top10_bowlers_global.json": global_bowl_records,
+        "excluded_low_ipl_sample.json": excluded_records,
         "players_index.json": players_index,
         "players_detail.json": profiles,
         "pressure_summary.json": pressure_summary,

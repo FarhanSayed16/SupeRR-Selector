@@ -137,7 +137,7 @@ export const BowlerIntelligence: React.FC<BowlerIntelligenceProps> = ({
       </div>
 
       <div className="glass-panel overflow-hidden">
-        <div className="overflow-x-auto">
+        <div key={board} className="overflow-x-auto board-fade">
           <table className="w-full text-left text-xs">
             <thead className="bg-slate-50/80 text-slate-700 uppercase font-bold tracking-wider border-b border-slate-200 text-[11px]">
               <tr>
@@ -146,11 +146,11 @@ export const BowlerIntelligence: React.FC<BowlerIntelligenceProps> = ({
                 <th className="py-3 px-3 text-center">IPL%</th>
                 <th className="py-3 px-3 text-right">Pressure Score</th>
                 <th className="py-3 px-3 text-right">Weighted Econ</th>
-                <th className="py-3 px-3 text-right">Death Econ</th>
-                <th className="py-3 px-3 text-right">Baseline Econ</th>
+                <th className="py-3 px-3 text-right">PP / Mid / Death</th>
                 <th className="py-3 px-3 text-right">Wickets</th>
                 <th className="py-3 px-3 text-right">Balls/Wkt</th>
                 <th className="py-3 px-3 text-right">Dot Ball %</th>
+                <th className="py-3 px-3 text-center">Rel.</th>
                 <th className="py-3 px-3 text-center">Confidence</th>
                 <th className="py-3 px-3 text-center">Dossier</th>
               </tr>
@@ -189,13 +189,25 @@ export const BowlerIntelligence: React.FC<BowlerIntelligenceProps> = ({
                   <td className="py-3 px-3 text-right font-mono font-bold text-slate-900">
                     {Number(bw.weighted_pressure_economy ?? bw.pressure_economy).toFixed(2)}
                   </td>
-                  <td className="py-3 px-3 text-right font-mono font-bold">
-                    <span className="inline-flex items-center text-rr-pink-deep bg-rr-pink-soft border border-rr-pink-border px-1.5 rounded text-[11px]">
-                      {Number(bw.death_pressure_economy_capped ?? bw.death_pressure_economy).toFixed(2)}
-                    </span>
-                  </td>
-                  <td className="py-3 px-3 text-right font-mono text-slate-500">
-                    {Number(bw.baseline_economy).toFixed(2)}
+                  <td className="py-3 px-3">
+                    <div className="flex items-center justify-end gap-1">
+                      <div className="phase-chip">
+                        <span>PP</span>
+                        <span>{Number(bw.pp_pressure_economy ?? 0).toFixed(1)}</span>
+                      </div>
+                      <div className="phase-chip">
+                        <span>Mid</span>
+                        <span>{Number(bw.mid_pressure_economy ?? 0).toFixed(1)}</span>
+                      </div>
+                      <div className="phase-chip">
+                        <span>Death</span>
+                        <span>
+                          {Number(
+                            bw.death_pressure_economy_capped ?? bw.death_pressure_economy
+                          ).toFixed(1)}
+                        </span>
+                      </div>
+                    </div>
                   </td>
                   <td className="py-3 px-3 text-right font-mono font-bold text-slate-900">
                     {bw.pressure_wickets}
@@ -205,6 +217,19 @@ export const BowlerIntelligence: React.FC<BowlerIntelligenceProps> = ({
                   </td>
                   <td className="py-3 px-3 text-right font-mono text-slate-700">
                     {Number(bw.pressure_dot_pct).toFixed(1)}%
+                  </td>
+                  <td className="py-3 px-3">
+                    <div className="mx-auto w-14">
+                      <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-rr-pink rounded-full"
+                          style={{ width: `${Math.round(100 * Number(bw.reliability ?? 0))}%` }}
+                        />
+                      </div>
+                      <div className="text-center font-mono text-[10px] text-slate-600 mt-0.5">
+                        {Math.round(100 * Number(bw.reliability ?? 0))}%
+                      </div>
+                    </div>
                   </td>
                   <td className="py-3 px-3 text-center">
                     <ConfidenceBadge level={bw.sample_confidence} />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PressureSummary } from '../types';
+import { MetaPackage, PressureSummary } from '../types';
 import { 
   Activity, 
   ShieldCheck, 
@@ -13,9 +13,10 @@ import {
 
 interface PressureLabProps {
   summary: PressureSummary | null;
+  meta?: MetaPackage | null;
 }
 
-export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
+export const PressureLab: React.FC<PressureLabProps> = ({ summary, meta }) => {
   // Interactive Simulation State
   const [innings, setInnings] = useState<1 | 2>(2);
   const [over, setOver] = useState<number>(17);
@@ -27,6 +28,39 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
   if (!summary) {
     return <div className="text-slate-700 p-8">Loading Pressure Lab diagnostics...</div>;
   }
+
+  const sens = meta?.sensitivity;
+  const batStab = Number(sens?.batter_top10_stability_pct ?? 0);
+  const bowlStab = Number(sens?.bowler_top10_stability_pct ?? 0);
+  const phasePct = summary.phase_distribution_percentage || {};
+  const phaseCount = summary.phase_distribution_count || {};
+  const ppPct = Number(phasePct.powerplay ?? 0);
+  const midPct = Number(phasePct.middle ?? 0);
+  const deathPct = Number(phasePct.death ?? 0);
+  const outsideDeathPct = ppPct + midPct;
+  const phaseCards = [
+    {
+      key: 'powerplay',
+      label: 'Powerplay (Overs 1–6)',
+      pct: ppPct,
+      count: Number(phaseCount.powerplay ?? 0),
+      blurb: 'Triggered by early collapse defense & aggressive target setups.',
+    },
+    {
+      key: 'middle',
+      label: 'Middle Overs (Overs 7–15)',
+      pct: midPct,
+      count: Number(phaseCount.middle ?? 0),
+      blurb: 'Steep RRR and wicket-cluster pressure in the rebuild window.',
+    },
+    {
+      key: 'death',
+      label: 'Death Overs (Overs 16–20)',
+      pct: deathPct,
+      count: Number(phaseCount.death ?? 0),
+      blurb: 'Extreme execution phase where matches are closed out or lost.',
+    },
+  ];
 
   // Simulation Calculations
   const ballsBowled = Math.min(120, Math.floor(over) * 6);
@@ -308,10 +342,12 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
         </div>
 
         <div className="glass-panel p-4 ">
-          <span className="text-[10px] text-slate-500 uppercase font-bold block">Tournament Sensitivity Stability</span>
-          <div className="text-2xl font-black text-slate-900 mt-0.5 font-mono">90.0%</div>
+          <span className="text-[10px] text-slate-500 uppercase font-bold block">Top 10 Sensitivity (computed)</span>
+          <div className="text-2xl font-black text-slate-900 mt-0.5 font-mono">
+            {batStab.toFixed(1)}% / {bowlStab.toFixed(1)}%
+          </div>
           <p className="text-[11px] text-rr-pink font-semibold mt-0.5">
-            Top 10 stability under ±0.5 RRR shifts
+            Batter / bowler mean retention across RRR &amp; death-start shifts
           </p>
         </div>
       </div>
@@ -332,52 +368,58 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
           </div>
         </div>
 
-        {/* Phase Breakdown Bars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-1.5">
-            <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-800 font-bold uppercase text-[10px]">Powerplay (Overs 1–6)</span>
-              <span className="text-rr-pink-deep font-bold font-mono">10.2%</span>
+          {phaseCards.map((p) => (
+            <div key={p.key} className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-1.5">
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-slate-800 font-bold uppercase text-[10px]">{p.label}</span>
+                <span className="text-rr-pink-deep font-bold font-mono">{p.pct.toFixed(1)}%</span>
+              </div>
+              <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                <div
+                  className="bg-rr-pink h-full rounded-full transition-[width] duration-700 ease-out"
+                  style={{ width: `${Math.min(100, p.pct)}%` }}
+                />
+              </div>
+              <p className="text-[10px] text-slate-500">{p.count.toLocaleString()} balls · {p.blurb}</p>
             </div>
-            <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-              <div className="bg-rr-pink h-full rounded-full" style={{ width: '10.2%' }} />
-            </div>
-            <p className="text-[10px] text-slate-500">
-              8,050 balls • Triggered by aggressive target defenses & top-order collapse recovery.
-            </p>
-          </div>
-
-          <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-1.5">
-            <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-800 font-bold uppercase text-[10px]">Middle Overs (Overs 7–15)</span>
-              <span className="text-rr-pink-deep font-bold font-mono">33.5%</span>
-            </div>
-            <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-              <div className="bg-rr-pink h-full rounded-full" style={{ width: '33.5%' }} />
-            </div>
-            <p className="text-[10px] text-slate-500">
-              26,402 balls • Triggered by steep required run rates (RRR &gt;= 9.5) and sudden clusters of wickets.
-            </p>
-          </div>
-
-          <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-1.5">
-            <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-800 font-bold uppercase text-[10px]">Death Overs (Overs 16–20)</span>
-              <span className="text-rr-pink-deep font-bold font-mono">56.3%</span>
-            </div>
-            <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-              <div className="bg-gradient-to-r from-rr-pink to-rr-purple h-full rounded-full" style={{ width: '56.3%' }} />
-            </div>
-            <p className="text-[10px] text-slate-500">
-              44,454 balls • Extreme execution phase where matches are closed out or lost.
-            </p>
-          </div>
+          ))}
         </div>
 
         <div className="p-3 bg-rr-pink-soft/70 border border-rr-pink-border rounded-lg text-xs text-rr-pink-deep font-medium">
-          <strong>Key Analytical Takeaway:</strong> A full <strong>43.7%</strong> of all high-pressure deliveries occur <em>outside</em> the death overs. This guarantees that our model identifies genuine all-phase resilience rather than simply rewarding traditional death-over specialists.
+          <strong>Key Analytical Takeaway:</strong> A full{' '}
+          <strong>{outsideDeathPct.toFixed(1)}%</strong> of all high-pressure deliveries occur{' '}
+          <em>outside</em> the death overs. Phase is role context; pressure is match-state.
         </div>
       </div>
+
+      {summary.pressure_band_counts && (
+        <div className="glass-panel p-5 space-y-3">
+          <div className="flex items-center space-x-2">
+            <Sliders className="w-4 h-4 text-rr-pink" />
+            <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
+              Pressure Intensity Bands (display only)
+            </h2>
+          </div>
+          <p className="text-[11px] text-slate-600">
+            {summary.pressure_band_thresholds?.note ||
+              'Splits pressure_index on labelled pressure deliveries into low / medium / high. Not a re-rank.'}
+          </p>
+          <div className="grid grid-cols-3 gap-3 text-xs">
+            {(['low', 'medium', 'high'] as const).map((band) => (
+              <div key={band} className="bg-slate-50 border border-slate-200 rounded-lg p-3">
+                <span className="text-[10px] uppercase font-semibold text-slate-500 block">{band} intensity</span>
+                <p className="font-mono font-black text-slate-900 text-lg mt-0.5">
+                  {(summary.pressure_band_counts?.[band] ?? 0).toLocaleString()}
+                </p>
+                <p className="text-[10px] text-slate-500">
+                  {summary.pressure_band_percentage?.[band] ?? 0}% of pressure balls
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Signal Architecture */}
       <div className="space-y-3">

@@ -2,20 +2,28 @@ import React from 'react';
 import { PageId, BatterRecord, BowlerRecord } from '../types';
 import { ConfidenceBadge } from '../components/ConfidenceBadge';
 import { PlayerAvatar } from '../components/PlayerAvatar';
-import { 
-  ArrowLeft, 
-  Target, 
-  Shield, 
-  Award, 
-  Activity, 
-  CheckCircle, 
-  AlertTriangle, 
-  Coins, 
-  MapPin, 
-  BarChart3, 
-  Sparkles,
-  ChevronDown
-} from 'lucide-react';
+import { ArrowLeft, Activity, Coins, BarChart3, Layers } from 'lucide-react';
+
+/** Highlight SR / % / INR / numeric tokens for scouting lists */
+function emphasizeMetrics(text: string): React.ReactNode[] {
+  const re =
+    /(\d+(?:\.\d+)?(?:\s*(?:SR|Cr|cr|RPO|BpW|bpw|%))?|INR\s*[\d.,]+(?:\s*[–-]\s*INR\s*[\d.,]+)?(?:\s*Cr)?|\+\d+(?:\.\d+)?)/gi;
+  const nodes: React.ReactNode[] = [];
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let i = 0;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) nodes.push(text.slice(last, m.index));
+    nodes.push(
+      <span key={`m-${i++}`} className="metric-hot">
+        {m[0]}
+      </span>
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes.length ? nodes : [text];
+}
 
 interface PlayerProfileProps {
   playerId: number | null;
@@ -48,6 +56,24 @@ export const PlayerProfile: React.FC<PlayerProfileProps> = ({
       </div>
     );
   }
+
+  const ppBalls = Number(
+    isBowler
+      ? (player as BowlerRecord).pp_pressure_balls ?? 0
+      : (player as BatterRecord).pp_pressure_balls ?? 0
+  );
+  const midBalls = Number(
+    isBowler
+      ? (player as BowlerRecord).mid_pressure_balls ?? 0
+      : (player as BatterRecord).mid_pressure_balls ?? 0
+  );
+  const deathBalls = Number(
+    isBowler
+      ? (player as BowlerRecord).death_pressure_balls ?? 0
+      : (player as BatterRecord).death_pressure_balls ?? 0
+  );
+  const phaseTotal = Math.max(1, ppBalls + midBalls + deathBalls);
+  const relPct = Math.round(100 * Number((player as BatterRecord | BowlerRecord).reliability ?? 0));
 
   return (
     <div className="space-y-6 pb-12 font-sans">
@@ -265,116 +291,240 @@ export const PlayerProfile: React.FC<PlayerProfileProps> = ({
         </div>
       </div>
 
-      {/* Rajasthan Royals War Room Tactical Fit & Scouting Dossier */}
-      <div className="glass-panel p-5 sm:p-6 space-y-5 ">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-3 gap-2">
-          <div className="flex items-center space-x-2 text-rr-pink-deep">
-            <Award className="w-4 h-4 text-rr-pink" />
-            <h3 className="font-bold text-sm uppercase tracking-wide text-slate-900">
-              Official RR Scouting Dossier & Auction Strategy
+      {/* P.R.I.M.E. role-phase evidence (display only — freeze unchanged) */}
+      <div className="glass-panel p-5 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+          <div className="flex items-center space-x-2">
+            <Layers className="w-4 h-4 text-rr-pink" />
+            <h3 className="font-bold text-xs uppercase tracking-wide text-slate-900">
+              P.R.I.M.E. Role Context (phase ≠ pressure)
             </h3>
           </div>
-          <span className="text-xs font-mono font-bold text-rr-pink-deep bg-rr-pink-soft border border-rr-pink-border px-2.5 py-0.5 rounded-full w-fit">
-            Target Slot: {player.rr_slot || 'Core Starter'}
-          </span>
+          <div className="flex items-center gap-2 text-[11px]">
+            <span className="font-mono font-bold text-slate-800 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded">
+              Reliability {(((player as BatterRecord | BowlerRecord).reliability ?? 0) * 100).toFixed(0)}%
+            </span>
+            {(player as BatterRecord | BowlerRecord).adjusted_display_score != null && (
+              <span className="font-mono text-slate-600 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded">
+                Adj. display {(player as BatterRecord | BowlerRecord).adjusted_display_score!.toFixed(1)}
+              </span>
+            )}
+          </div>
         </div>
 
-        {/* Tactical Strengths & Vulnerabilities */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Strengths */}
-          <div className="bg-rr-pink-soft/40 border border-rr-pink-border rounded-lg p-4 space-y-2">
-            <div className="flex items-center space-x-2 text-rr-pink-deep">
-              <CheckCircle className="w-4 h-4 text-rr-pink" />
-              <h4 className="font-bold text-xs uppercase tracking-wider text-rr-pink-deep">
-                Key Pressure Strengths & Superpowers
-              </h4>
+        <div className="space-y-2">
+          <div className="flex h-2.5 rounded-full overflow-hidden bg-slate-100 border border-slate-200">
+            <div
+              className="bg-rr-navy/70 prime-bar-fill"
+              style={{ width: `${(100 * ppBalls) / phaseTotal}%` }}
+              title="Powerplay share"
+            />
+            <div
+              className="bg-rr-pink/70 prime-bar-fill"
+              style={{ width: `${(100 * midBalls) / phaseTotal}%` }}
+              title="Middle share"
+            />
+            <div
+              className="bg-rr-pink-deep prime-bar-fill"
+              style={{ width: `${(100 * deathBalls) / phaseTotal}%` }}
+              title="Death share"
+            />
+          </div>
+          <div className="flex flex-wrap gap-3 text-[10px] text-slate-500 font-semibold">
+            <span className="inline-flex items-center gap-1">
+              <span className="w-2 h-2 rounded-sm bg-rr-navy/70" /> PP {ppBalls}
+            </span>
+            <span className="inline-flex items-center gap-1">
+              <span className="w-2 h-2 rounded-sm bg-rr-pink/70" /> Mid {midBalls}
+            </span>
+            <span className="inline-flex items-center gap-1">
+              <span className="w-2 h-2 rounded-sm bg-rr-pink-deep" /> Death {deathBalls}
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-2.5 text-xs">
+          {!isBowler ? (
+            <>
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                <span className="text-[10px] uppercase font-semibold text-slate-500 block">Powerplay (1–6)</span>
+                <p className="font-mono font-black text-slate-900 mt-0.5">
+                  {Number((player as BatterRecord).pp_pressure_sr ?? 0).toFixed(1)} SR
+                </p>
+                <p className="text-[10px] text-slate-500">{ppBalls} balls</p>
+              </div>
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                <span className="text-[10px] uppercase font-semibold text-slate-500 block">Middle (7–15)</span>
+                <p className="font-mono font-black text-slate-900 mt-0.5">
+                  {Number((player as BatterRecord).mid_pressure_sr ?? 0).toFixed(1)} SR
+                </p>
+                <p className="text-[10px] text-slate-500">{midBalls} balls</p>
+              </div>
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                <span className="text-[10px] uppercase font-semibold text-slate-500 block">Death (16–20)</span>
+                <p className="font-mono font-black text-slate-900 mt-0.5">
+                  {Number((player as BatterRecord).death_pressure_sr ?? 0).toFixed(1)} SR
+                </p>
+                <p className="text-[10px] text-slate-500">{deathBalls} balls</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                <span className="text-[10px] uppercase font-semibold text-slate-500 block">Powerplay Econ</span>
+                <p className="font-mono font-black text-slate-900 mt-0.5">
+                  {Number((player as BowlerRecord).pp_pressure_economy ?? 0).toFixed(2)}
+                </p>
+                <p className="text-[10px] text-slate-500">{ppBalls} balls</p>
+              </div>
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                <span className="text-[10px] uppercase font-semibold text-slate-500 block">Middle Econ</span>
+                <p className="font-mono font-black text-slate-900 mt-0.5">
+                  {Number((player as BowlerRecord).mid_pressure_economy ?? 0).toFixed(2)}
+                </p>
+                <p className="text-[10px] text-slate-500">{midBalls} balls</p>
+              </div>
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                <span className="text-[10px] uppercase font-semibold text-slate-500 block">Death Econ</span>
+                <p className="font-mono font-black text-slate-900 mt-0.5">
+                  {Number(
+                    (player as BowlerRecord).death_pressure_economy_capped ??
+                      (player as BowlerRecord).death_pressure_economy
+                  ).toFixed(2)}
+                </p>
+                <p className="text-[10px] text-slate-500">{deathBalls} balls</p>
+              </div>
+            </>
+          )}
+        </div>
+
+        {!isBowler && (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+            <div className="bg-rr-pink-soft/40 border border-rr-pink-border rounded-lg p-2.5">
+              <span className="text-[10px] uppercase font-semibold text-rr-pink-deep block">Vs Pace (pressure)</span>
+              <p className="font-mono font-black text-slate-900 mt-0.5">
+                {Number((player as BatterRecord).vs_pace_pressure_sr ?? 0).toFixed(1)} SR
+              </p>
+              <p className="text-[10px] text-slate-500">{Number((player as BatterRecord).vs_pace_pressure_balls ?? 0)} balls</p>
             </div>
-            <ul className="space-y-1.5">
+            <div className="bg-rr-pink-soft/40 border border-rr-pink-border rounded-lg p-2.5">
+              <span className="text-[10px] uppercase font-semibold text-rr-pink-deep block">Vs Spin (pressure)</span>
+              <p className="font-mono font-black text-slate-900 mt-0.5">
+                {Number((player as BatterRecord).vs_spin_pressure_sr ?? 0).toFixed(1)} SR
+              </p>
+              <p className="text-[10px] text-slate-500">{Number((player as BatterRecord).vs_spin_pressure_balls ?? 0)} balls</p>
+            </div>
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-2.5">
+              <span className="text-[10px] uppercase font-semibold text-amber-900 block">Collapse / survival</span>
+              <p className="font-mono font-black text-slate-900 mt-0.5">
+                {Number((player as BatterRecord).collapse_pressure_sr ?? 0).toFixed(1)} SR
+              </p>
+              <p className="text-[10px] text-slate-500">{Number((player as BatterRecord).collapse_pressure_balls ?? 0)} balls</p>
+            </div>
+          </div>
+        )}
+
+        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-rr-pink rounded-full prime-bar-fill"
+            style={{ width: `${relPct}%` }}
+          />
+        </div>
+        <p className="text-[10px] text-slate-500">
+          Reliability {relPct}% = n/(n+k) shrinkage toward cohort mean for display only. Official PressureScore and freeze SHA are unchanged.
+        </p>
+      </div>
+
+      {/* Scouting dossier — type hierarchy + metric focus */}
+      <div className="glass-panel p-5 sm:p-7 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-200/80 pb-4 gap-3">
+          <div>
+            <p className="type-kicker mb-1.5">Auction Official dossier</p>
+            <h3 className="type-dossier-title">Scouting note &amp; bid guidance</h3>
+          </div>
+          <p className="text-[12px] text-slate-600 max-w-sm sm:text-right leading-snug">
+            <span className="type-kicker block mb-1">Slot</span>
+            <span className="font-mono text-[12px] font-semibold text-rr-navy">
+              {player.rr_slot || 'Core starter'}
+            </span>
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+          <div className="dossier-col-strength">
+            <h4 className="type-section type-section-strength mb-3">Strengths under pressure</h4>
+            <ol className="space-y-3 list-decimal list-outside ml-4">
               {(player.strengths || [
-                `Dominant strike execution under extreme leverage.`,
-                `Substantial uplift over non-pressure baseline numbers.`
+                'Dominant strike execution under extreme leverage.',
+                'Substantial uplift over non-pressure baseline numbers.',
               ]).map((st, i) => (
-                <li key={i} className="text-xs text-slate-700 flex items-start space-x-2">
-                  <span className="text-rr-pink font-bold">•</span>
-                  <span>{st}</span>
+                <li key={i} className="type-body pl-1">
+                  {emphasizeMetrics(st)}
                 </li>
               ))}
-            </ul>
+            </ol>
           </div>
-
-          {/* Vulnerabilities */}
-          <div className="bg-amber-50/40 border border-amber-200 rounded-lg p-4 space-y-2">
-            <div className="flex items-center space-x-2 text-amber-800">
-              <AlertTriangle className="w-4 h-4 text-amber-700" />
-              <h4 className="font-bold text-xs uppercase tracking-wider text-amber-900">
-                Scouting Vulnerabilities & Dismissal Risks
-              </h4>
-            </div>
-            <ul className="space-y-1.5">
+          <div className="dossier-col-risk">
+            <h4 className="type-section type-section-risk mb-3">Risks to manage</h4>
+            <ol className="space-y-3 list-decimal list-outside ml-4">
               {(player.vulnerabilities || [
-                `Requires careful phase management to maximize leverage.`,
-                `Boundary reliance can create brief dot-ball clusters.`
+                'Requires careful phase management to maximize leverage.',
+                'Boundary reliance can create brief dot-ball clusters.',
               ]).map((vb, i) => (
-                <li key={i} className="text-xs text-slate-700 flex items-start space-x-2">
-                  <span className="text-amber-700 font-bold">•</span>
-                  <span>{vb}</span>
+                <li key={i} className="type-body pl-1">
+                  {emphasizeMetrics(vb)}
                 </li>
               ))}
-            </ul>
+            </ol>
           </div>
         </div>
 
-        {/* Venue Fit & War Room Assessment */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="md:col-span-2 space-y-3">
-            <div className="bg-slate-50 border border-slate-200 rounded-lg p-3.5 space-y-1">
-              <div className="flex items-center space-x-2 text-rr-pink-deep">
-                <MapPin className="w-3.5 h-3.5 text-rr-pink" />
-                <span className="text-xs uppercase font-bold text-slate-900">Sawai Mansingh Stadium & Venue Fit</span>
-              </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                {player.venue_fit || 'Excels on true surfaces and exploits Jaipur dimensions through precision placement.'}
+        <div className="border-t border-slate-200/80 pt-5 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="md:col-span-2 space-y-5">
+            <div>
+              <h4 className="type-section mb-2">Sawai Mansingh · venue fit</h4>
+              <p className="type-body">
+                {player.venue_fit ||
+                  'Excels on true surfaces and exploits Jaipur dimensions through precision placement.'}
               </p>
             </div>
-
-            <div className="bg-slate-50 border border-slate-200 rounded-lg p-3.5 space-y-1">
-              <div className="flex items-center space-x-2 text-rr-pink-deep">
-                <Sparkles className="w-3.5 h-3.5 text-rr-pink" />
-                <span className="text-xs uppercase font-bold text-slate-900">War Room Assessment for Kumar Sangakkara & Giles Lindsay</span>
-              </div>
-              <p className="text-xs text-slate-700 italic leading-relaxed">
-                "{player.scouting_summary || player.rr_tactical_fit || 'High-leverage specialist who provides immediate strategic uplift to Rajasthan Royals.'}"
+            <div>
+              <h4 className="type-section mb-2">Note for Sangakkara &amp; Lindsay</h4>
+              <p className="type-note border-l-[3px] border-rr-pink pl-4">
+                {player.scouting_summary ||
+                  player.rr_tactical_fit ||
+                  'High-leverage specialist who provides immediate strategic uplift to Rajasthan Royals.'}
               </p>
             </div>
           </div>
 
-          {/* Auction Economics Card */}
-          <div className="rounded-2xl p-4 flex flex-col justify-between space-y-3 text-white bg-gradient-to-br from-rr-purple via-rr-navy to-rr-navy border border-white/20 shadow-lg">
-            <div>
-              <div className="flex items-center space-x-1.5 text-pink-200 mb-2">
-                <Coins className="w-3.5 h-3.5" />
-                <span className="text-[10px] font-bold uppercase tracking-wider">Auction Valuation</span>
-              </div>
-              <div className="space-y-2">
-                <div>
-                  <span className="text-[10px] text-pink-200 uppercase block">Acquisition Tier</span>
-                  <span className="text-xs font-bold text-white">{player.auction_tier || 'Prime Target'}</span>
-                </div>
-                <div>
-                  <span className="text-[10px] text-pink-200 uppercase block">Target Price Bracket</span>
-                  <span className="text-sm font-black text-amber-300 font-mono">{player.target_price_inr || 'INR 4.0 Cr – 7.0 Cr'}</span>
-                </div>
-                <div>
-                  <span className="text-[10px] text-pink-200 uppercase block">Max Bidding Ceiling</span>
-                  <span className="text-xs font-mono font-bold text-white">{player.max_bid_ceiling_inr || 'INR 8.0 Cr'}</span>
-                </div>
-              </div>
+          <div className="dossier-bid p-4 space-y-3.5">
+            <div className="flex items-center gap-1.5">
+              <Coins className="w-3.5 h-3.5 text-rr-pink" />
+              <span className="type-kicker">Bid range</span>
             </div>
-
+            <div>
+              <span className="type-kicker block mb-0.5">Tier</span>
+              <span className="text-[13px] font-semibold text-rr-navy">
+                {player.auction_tier || 'Prime target'}
+              </span>
+            </div>
+            <div>
+              <span className="type-kicker block mb-0.5">Target</span>
+              <span className="text-lg font-mono font-bold text-rr-pink-deep leading-tight">
+                {player.target_price_inr || 'INR 4.0 Cr – 7.0 Cr'}
+              </span>
+            </div>
+            <div>
+              <span className="type-kicker block mb-0.5">Ceiling</span>
+              <span className="text-[12px] font-mono font-medium text-slate-600">
+                {player.max_bid_ceiling_inr || 'INR 8.0 Cr'}
+              </span>
+            </div>
             {player.fallback_targets && player.fallback_targets.length > 0 && (
-              <div className="border-t border-rr-navy pt-2">
-                <span className="text-[9px] text-pink-300 uppercase block font-semibold">Contingency Backups</span>
-                <span className="text-[10px] text-pink-100 font-medium">
+              <div className="border-t border-rr-navy/10 pt-2.5">
+                <span className="type-kicker block mb-0.5">Fallbacks</span>
+                <span className="text-[12px] text-slate-600 leading-snug">
                   {player.fallback_targets.join(', ')}
                 </span>
               </div>

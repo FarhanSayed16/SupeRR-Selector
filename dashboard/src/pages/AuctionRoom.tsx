@@ -54,7 +54,7 @@ export const AuctionRoom: React.FC<AuctionRoomProps> = ({
               <img src={getBrandLogoSrc()} alt="RR" className="h-6 w-6 object-contain" />
               <span>Rajasthan Royals War Room</span>
               <span>•</span>
-              <span className="text-rr-pink-deep">Recruitment Strategy</span>
+              <span className="text-rr-pink-deep">Auction Official Board</span>
               <span>•</span>
               <span className="font-mono text-slate-400">IPL 2027</span>
             </div>
@@ -292,7 +292,7 @@ export const AuctionRoom: React.FC<AuctionRoomProps> = ({
                     <td className="py-2 px-3 text-slate-600 font-sans">#8 Mystery Death Anchor</td>
                     <td className="py-2 px-3 text-right text-rr-pink-deep font-bold">INR 10.0–13.0 Cr</td>
                     <td className="py-2 px-3 text-right text-slate-900">INR 15.0 Cr</td>
-                    <td className="py-2 px-3 text-slate-500 font-sans">Mitchell Santner / Mohammad Nawaz</td>
+                    <td className="py-2 px-3 text-slate-500 font-sans">Mitchell Santner / Kuldeep Yadav</td>
                   </tr>
                   <tr className="hover:bg-slate-50/50">
                     <td className="py-2 px-3 font-bold text-slate-900">Shashank Singh</td>
@@ -439,12 +439,12 @@ export const AuctionRoom: React.FC<AuctionRoomProps> = ({
               <span className="text-rr-pink-deep font-mono font-bold">INR 1.5–3.0 Cr</span>
             </li>
             <li className="flex justify-between pb-0.5 font-sans">
-              <span><strong>Sufiyan Muqeem:</strong> Mystery Wrist Spin (56.2% dots)</span>
-              <span className="text-rr-pink-deep font-mono font-bold">INR 1.0–2.5 Cr</span>
+              <span><strong>Matheesha Pathirana:</strong> Death Seam (Auction Official)</span>
+              <span className="text-rr-pink-deep font-mono font-bold">INR 5.0–8.0 Cr</span>
             </li>
           </ul>
           <div className="bg-rr-pink-soft/60 p-2.5 rounded border border-rr-pink-border text-[11px] text-rr-pink-deep font-medium font-sans">
-            <strong>War Room Impact:</strong> Secures 4 elite clutch match-winners for ~INR 14 Cr total, leaving 85% of RR's auction purse for marquee bidding.
+            <strong>War Room Impact:</strong> Secures 4 Auction Official clutch targets for ~INR 16–20 Cr, preserving purse for marquee rounds. (0% IPL Global names stay off this list.)
           </div>
         </div>
 

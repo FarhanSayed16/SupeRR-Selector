@@ -23,6 +23,14 @@ export interface MetaPackage {
   t20i_weight?: number;
   min_ipl_pressure_balls_batter?: number;
   min_ipl_pressure_balls_bowler?: number;
+  sensitivity?: {
+    batter_top10_stability_pct?: number;
+    bowler_top10_stability_pct?: number;
+    ipl_overlap_batters?: number;
+    ipl_overlap_bowlers?: number;
+    computed?: boolean;
+    [key: string]: unknown;
+  };
   disclaimer: string;
 }
 
@@ -63,11 +71,27 @@ export interface BatterRecord {
   boundary_uplift: number;
   avg_uplift: number;
   death_pressure_sr: number;
+  death_pressure_balls?: number;
   chase_pressure_sr: number;
   sample_confidence: 'High' | 'Medium' | 'Low';
   ipl_pressure_balls?: number;
   ipl_pressure_share?: number;
   weighted_pressure_sr?: number;
+  pp_pressure_balls?: number;
+  pp_pressure_sr?: number;
+  pp_pressure_dot_pct?: number;
+  mid_pressure_balls?: number;
+  mid_pressure_sr?: number;
+  mid_pressure_dot_pct?: number;
+  death_pressure_dot_pct?: number;
+  collapse_pressure_balls?: number;
+  collapse_pressure_sr?: number;
+  vs_pace_pressure_balls?: number;
+  vs_pace_pressure_sr?: number;
+  vs_spin_pressure_balls?: number;
+  vs_spin_pressure_sr?: number;
+  reliability?: number;
+  adjusted_display_score?: number;
   board?: string;
   squad_role?: string;
   rr_tactical_fit?: string;
@@ -111,6 +135,7 @@ export interface BowlerRecord {
   wicket_rate_uplift: number;
   death_pressure_economy: number;
   death_pressure_wickets: number;
+  death_pressure_balls?: number;
   chase_pressure_economy: number;
   chase_pressure_wickets: number;
   sample_confidence: 'High' | 'Medium' | 'Low';
@@ -118,6 +143,17 @@ export interface BowlerRecord {
   ipl_pressure_share?: number;
   weighted_pressure_economy?: number;
   death_pressure_economy_capped?: number;
+  pp_pressure_balls?: number;
+  pp_pressure_economy?: number;
+  pp_pressure_dot_pct?: number;
+  pp_pressure_wickets?: number;
+  mid_pressure_balls?: number;
+  mid_pressure_economy?: number;
+  mid_pressure_dot_pct?: number;
+  mid_pressure_wickets?: number;
+  death_pressure_dot_pct?: number;
+  reliability?: number;
+  adjusted_display_score?: number;
   board?: string;
   squad_role?: string;
   rr_tactical_fit?: string;
@@ -158,6 +194,13 @@ export interface PressureSummary {
   phase_distribution_count: Record<string, number>;
   phase_distribution_percentage: Record<string, number>;
   signal_activation_counts: Record<string, number>;
+  pressure_band_counts?: Record<string, number>;
+  pressure_band_percentage?: Record<string, number>;
+  pressure_band_thresholds?: {
+    low_max?: number;
+    medium_max?: number;
+    note?: string;
+  };
 }
 
 export interface MethodologyPackage {
@@ -178,6 +221,7 @@ export interface MethodologyPackage {
   t20i_weight?: number;
   include_super_overs?: boolean;
   board_policy?: string;
+  prime_note?: string;
   scoring_weights_batter: Record<string, any>;
   scoring_weights_bowler: Record<string, any>;
 }

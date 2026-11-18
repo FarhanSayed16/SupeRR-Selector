@@ -75,15 +75,38 @@ def run_tests():
         saved_sha = meta['freeze_sha256']
         version = meta['pressure_version']
         
-        # Re-compute sha matching validation.py
+        # Re-compute sha matching validation.py (pressure_v1.1 includes board)
         freeze_payload = {
             "version": version,
+            "board": meta.get("board", "auction_official"),
             "top10_batters": top_bat[["rank", "player_id", "player_name", "pressure_score"]].to_dict(orient="records"),
             "top10_bowlers": top_bowl[["rank", "player_id", "player_name", "pressure_score"]].to_dict(orient="records")
         }
         computed_sha = hashlib.sha256(json.dumps(freeze_payload, sort_keys=True).encode("utf-8")).hexdigest()
         assert computed_sha == saved_sha, f"SHA mismatch! {computed_sha} != {saved_sha}"
-        results.append(("4. Cryptographic Freeze Fingerprint", "PASS", f"SHA256: {computed_sha[:16]}... matched perfectly"))
+        sens = meta.get("sensitivity") or {}
+        assert sens.get("computed") is True, "sensitivity.computed must be true (not hardcoded)"
+        assert "batter_top10_stability_pct" in sens and "bowler_top10_stability_pct" in sens
+        assert "ipl_overlap_batters" in sens and "ipl_overlap_bowlers" in sens
+        # Auction Official: known 0% IPL Global leaders must be absent
+        for banned in ("Mohammad Nawaz", "Sufiyan Muqeem", "Abrar Ahmed"):
+            assert banned not in set(top_bowl["player_name"]), f"{banned} must not be on Auction Official Top 10"
+        # Legal-ball batting SR must differ from all-row SR on a known pressure sample
+        balls = pd.read_parquet("data/processed/fact_delivery_pressure.parquet")
+        sample = balls[(balls["striker_id"] == 126) & (balls["is_pressure"] == True)]
+        all_rows_sr = 100 * sample["runs"].sum() / max(len(sample), 1)
+        legal = sample[sample["is_legal_ball"] == True]
+        legal_sr = 100 * legal["runs"].sum() / max(len(legal), 1)
+        assert abs(all_rows_sr - legal_sr) > 0.01, "Expected legal-ball SR to differ from all-row SR (wides)"
+        # P.R.I.M.E. display fields present; freeze SHA still matches (score unchanged)
+        assert "pp_pressure_balls" in top_bat.columns and "reliability" in top_bat.columns
+        phase_sum = (
+            top_bat.iloc[0]["pp_pressure_balls"]
+            + top_bat.iloc[0]["mid_pressure_balls"]
+            + top_bat.iloc[0]["death_pressure_balls"]
+        )
+        assert abs(phase_sum - top_bat.iloc[0]["pressure_balls"]) < 1.0, "phase balls must sum to pressure balls"
+        results.append(("4. Cryptographic Freeze Fingerprint", "PASS", f"SHA256: {computed_sha[:16]}... matched; sensitivity computed"))
     except Exception as e:
         results.append(("4. Cryptographic Freeze Fingerprint", "FAIL", str(e)))
 
@@ -92,7 +115,9 @@ def run_tests():
         expected_files = [
             "meta.json", "methodology.json", "players_detail.json",
             "players_index.json", "pressure_summary.json",
-            "top10_batters.json", "top10_bowlers.json", "scouting_dossiers.json"
+            "top10_batters.json", "top10_bowlers.json", "scouting_dossiers.json",
+            "top10_batters_global.json", "top10_bowlers_global.json",
+            "excluded_low_ipl_sample.json",
         ]
         data_dir = Path("dashboard/public/data")
         for fn in expected_files:
@@ -101,7 +126,11 @@ def run_tests():
             with open(fp, "r", encoding="utf-8") as f:
                 d = json.load(f)
                 assert len(d) > 0, f"File {fn} is empty"
-        results.append(("5. Dashboard Public Data Feeds", "PASS", f"All 8 JSON packages valid and populated"))
+        with open(data_dir / "meta.json", encoding="utf-8") as f:
+            dash_meta = json.load(f)
+        assert dash_meta.get("board") == "auction_official"
+        assert dash_meta.get("version") == version
+        results.append(("5. Dashboard Public Data Feeds", "PASS", f"All {len(expected_files)} JSON packages valid and populated"))
     except Exception as e:
         results.append(("5. Dashboard Public Data Feeds", "FAIL", str(e)))
 

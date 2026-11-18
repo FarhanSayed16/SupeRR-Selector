@@ -3,6 +3,7 @@
 @theme {
   --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
 
   /* RR Glass — Rajasthan Royals */
   --color-rr-pink: #ec008c;
@@ -62,6 +63,84 @@ body {
 .font-mono {
   font-family: "JetBrains Mono", monospace;
   font-variant-numeric: tabular-nums;
+}
+
+.font-display {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+}
+
+/* Dossier / scouting type scale */
+.type-kicker {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.type-dossier-title {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #0b1b3a;
+}
+
+.type-section {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(11, 27, 58, 0.55);
+}
+
+.type-section-strength {
+  color: #c4006e;
+}
+
+.type-section-risk {
+  color: #475569;
+}
+
+.type-body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.type-note {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: #0b1b3a;
+}
+
+.metric-hot {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #c4006e;
+}
+
+.dossier-col-strength {
+  border-left: 3px solid #ec008c;
+  padding-left: 0.875rem;
+}
+
+.dossier-col-risk {
+  border-left: 3px solid #94a3b8;
+  padding-left: 0.875rem;
+}
+
+.dossier-bid {
+  background: rgba(253, 242, 248, 0.72);
+  border: 1px solid rgba(11, 27, 58, 0.12);
+  border-radius: 0.75rem;
 }
 
 /* —— Glass utilities —— */
