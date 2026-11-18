@@ -84,21 +84,25 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
         <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-36 sm:w-44 h-36 sm:h-44 opacity-[0.08] pointer-events-none hidden sm:block">
           <img src={getBrandLogoSrc()} alt="" className="w-full h-full object-contain" />
         </div>
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-100 pb-3 relative z-10">
-          <div>
-            <div className="flex items-center space-x-2 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-              <img src={getBrandLogoSrc()} alt="RR" className="h-6 w-6 object-contain" />
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4 border-b border-slate-100 pb-3 relative z-10">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+              <img src={getBrandLogoSrc()} alt="RR" className="h-6 w-6 object-contain shrink-0" />
               <span>Rajasthan Royals Analytics & Strategy</span>
-              <span>•</span>
+              <span className="text-slate-300" aria-hidden>
+                •
+              </span>
               <span className="text-rr-pink-deep">SupeRR Selector Season 2</span>
-              <span>•</span>
-              <span className="font-mono text-slate-400">Round 1</span>
+              <span className="text-slate-300 hidden sm:inline" aria-hidden>
+                •
+              </span>
+              <span className="font-mono text-slate-400 hidden sm:inline">Round 1</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-black text-rr-navy tracking-tight mt-0.5">
+            <h1 className="text-xl sm:text-2xl font-black text-rr-navy tracking-tight mt-1 leading-tight">
               IPL 2027 Auction War Room Intelligence Console
             </h1>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
             <button onClick={() => onNavigate('auction_room')} className="btn-primary">
               <span>RR 2027 Playing XI</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -170,7 +174,7 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 divide-y sm:divide-y-0 lg:divide-x divide-slate-200/80">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
           {[
             {
               id: 2756,
@@ -205,19 +209,17 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
               type="button"
               key={card.id}
               onClick={() => onNavigate('player_profile', card.id)}
-              className="text-left p-3.5 sm:px-4 hover:bg-rr-pink-soft/50 transition-colors cursor-pointer group"
+              className="glass-subcard text-left p-3.5 hover:border-rr-pink-border hover:bg-rr-pink-soft/40 transition-colors cursor-pointer group h-full"
             >
               <div className="flex items-start gap-3">
                 <PlayerAvatar playerId={card.id} name={card.name} size="md" ring={false} />
-                <div className="min-w-0 flex-1">
+                <div className="min-w-0 flex-1 space-y-1">
                   <h4 className="font-extrabold text-sm tracking-tight text-slate-900 group-hover:text-rr-pink-deep transition-colors truncate">
                     {card.name}
                   </h4>
-                  <p className="text-[11px] text-slate-500 mt-0.5 border-l-2 border-rr-pink/40 pl-2">
-                    {card.role}
-                  </p>
-                  <p className="text-xs font-mono font-bold text-rr-pink-deep mt-2">{card.metric}</p>
-                  <p className="text-[11px] text-slate-600 mt-0.5 leading-snug">{card.detail}</p>
+                  <p className="text-[11px] text-slate-500 leading-snug">{card.role}</p>
+                  <p className="text-xs font-mono font-bold text-rr-pink-deep pt-1">{card.metric}</p>
+                  <p className="text-[11px] text-slate-600 leading-snug">{card.detail}</p>
                 </div>
               </div>
             </button>

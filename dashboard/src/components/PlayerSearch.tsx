@@ -73,8 +73,8 @@ export const PlayerSearch: React.FC<PlayerSearchProps> = ({ index, onNavigate })
   };
 
   return (
-    <div ref={wrapRef} className="relative w-full max-w-[240px]">
-      <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2.5 pointer-events-none" />
+    <div ref={wrapRef} className="relative w-[min(100%,220px)] shrink-0">
+      <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
       <input
         ref={inputRef}
         type="search"
@@ -86,7 +86,7 @@ export const PlayerSearch: React.FC<PlayerSearchProps> = ({ index, onNavigate })
         }}
         onFocus={() => setOpen(true)}
         onKeyDown={onKeyDown}
-        className="w-full pl-8 pr-7 py-1.5 text-xs rounded-full bg-white/70 border border-white/90 text-rr-navy placeholder:text-ink-400 focus:outline-none focus:border-rr-pink focus:bg-white"
+        className="w-full h-8 pl-8 pr-7 text-xs rounded-full bg-white/70 border border-white/90 text-rr-navy placeholder:text-ink-400 focus:outline-none focus:border-rr-pink focus:bg-white"
         aria-label="Search players"
         aria-autocomplete="list"
         aria-expanded={open && q.trim().length >= 2}
@@ -94,7 +94,7 @@ export const PlayerSearch: React.FC<PlayerSearchProps> = ({ index, onNavigate })
       {q && (
         <button
           type="button"
-          className="absolute right-2 top-2 text-slate-400 hover:text-rr-navy cursor-pointer"
+          className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-rr-navy cursor-pointer"
           onClick={() => {
             setQ('');
             setOpen(false);

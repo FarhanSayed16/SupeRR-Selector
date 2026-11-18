@@ -44,21 +44,21 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="sticky top-0 z-50 px-3 sm:px-4 pt-3 pb-2">
-      <div className="glass-nav max-w-7xl mx-auto rounded-2xl px-3 sm:px-5">
-        <div className="flex items-center justify-between h-14 gap-3">
+      <div className="glass-nav max-w-7xl mx-auto rounded-2xl px-3 sm:px-4">
+        <div className="flex items-center gap-2 sm:gap-3 min-h-14 py-2">
           <div
-            className="flex items-center space-x-3 cursor-pointer group shrink-0"
+            className="flex items-center gap-2.5 cursor-pointer group shrink-0"
             onClick={() => onNavigate('command_centre')}
           >
-            <div className="w-11 h-11 rounded-xl bg-white flex items-center justify-center shadow-sm border border-slate-200/80 overflow-hidden p-1.5">
+            <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm border border-slate-200/80 overflow-hidden p-1.5">
               <img
                 src={getBrandLogoSrc()}
                 alt="Rajasthan Royals"
-                className="w-full h-full object-contain"
+                className="block w-full h-full object-contain"
               />
             </div>
-            <div className="hidden sm:block">
-              <div className="flex items-center space-x-1.5">
+            <div className="hidden sm:block leading-tight">
+              <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-sm tracking-tight text-rr-navy">
                   Pressure<span className="text-rr-pink">Pulse</span>
                 </span>
@@ -72,14 +72,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </div>
 
-          <nav className="hidden lg:flex items-center gap-0.5 bg-white/45 p-1 rounded-full border border-white/70">
+          <nav className="hidden xl:flex items-center gap-0.5 bg-white/45 p-1 rounded-full border border-white/70 mx-auto">
             {navItems.map((item) => {
               const active = currentPage === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs tracking-tight transition-all cursor-pointer ${
+                  className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs tracking-tight transition-all cursor-pointer whitespace-nowrap ${
                     active
                       ? 'bg-rr-pink text-white shadow-md font-bold'
                       : 'text-ink-500 hover:text-rr-navy hover:bg-white/70 font-semibold'
@@ -92,18 +92,19 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </nav>
 
-          <div className="hidden md:flex items-center gap-2 shrink-0">
-            <PlayerSearch index={playerIndex} onNavigate={onNavigate} />
-            <StatusChip label="Ranks Frozen" />
-            <span className="text-[10px] font-mono text-ink-500 hidden xl:inline">
+          <div className="ml-auto flex items-center gap-2 shrink-0">
+            <div className="hidden md:block">
+              <PlayerSearch index={playerIndex} onNavigate={onNavigate} />
+            </div>
+            <div className="hidden sm:flex items-center h-8">
+              <StatusChip label="Ranks Frozen" />
+            </div>
+            <span className="text-[10px] font-mono text-ink-500 hidden 2xl:inline">
               SHA {freezeSha ? freezeSha.slice(0, 8) : 'a819c0e6'}
             </span>
-          </div>
-
-          <div className="flex lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-rr-navy hover:bg-white/50 cursor-pointer"
+              className="xl:hidden p-2 rounded-xl text-rr-navy hover:bg-white/50 cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" strokeWidth={2.25} /> : <Menu className="w-5 h-5" strokeWidth={2.25} />}
@@ -112,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-white/50 pt-2 pb-3 space-y-1">
+          <div className="xl:hidden border-t border-white/50 pt-2 pb-3 space-y-1">
             {navItems.map((item) => {
               const active = currentPage === item.id;
               return (

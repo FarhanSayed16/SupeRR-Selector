@@ -50,7 +50,7 @@ export const PlayerAvatar: React.FC<PlayerAvatarProps> = ({
       <img
         src={src}
         alt={name}
-        className="w-full h-full object-cover object-top"
+        className="block w-full h-full object-cover object-top"
         loading="lazy"
         onError={() => setFailed(true)}
       />

@@ -81,9 +81,9 @@
       "bytes": 128390
     },
     "6256": {
-      "player_id": 6256,
+      "name": "Varun Chakravarthy",
       "src": "/assets/players/6256.jpg",
-      "bytes": 8627
+      "source": "cricbuzz c846040"
     },
     "7327": {
       "player_id": 7327,
@@ -454,6 +454,487 @@
       "name": "Daniel Sams",
       "src": "/assets/players/6518.jpg",
       "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Daniel_Sams_Batting.jpg/960px-Daniel_Sams_Batting.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    },
+    "5940": {
+      "name": "Riley Meredith",
+      "src": "/assets/players/5940.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/James_Whitcomb_Riley_-_The_Old_Soldier%27s_Story.pdf/page1-500px-James_Whitcomb_Riley_-_The_Old_Soldier%27s_Story.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "46137": {
+      "name": "Kartik Sharma",
+      "src": "/assets/players/46137.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6_%E0%A6%97%E0%A7%87%E0%A6%9C%E0%A7%87%E0%A6%9F%2C_%E0%A6%85%E0%A6%A4%E0%A6%BF%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%A4%2C_%E0%A7%A8%E0%A7%A6%E0%A7%A7%E0%A7%AD-%E0%A7%A7%E0%A7%A7-%E0%A7%A6%E0%A7%A7_-_%E0%A6%AA%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%B2%E0%A7%8D%E0%A6%AA%E0%A6%A8%E0%A6%BE_%E0%A6%AE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%A3%E0%A6%BE%E0%A6%B2%E0%A6%AF%E0%A6%BC_%28%E0%A7%A7%E0%A7%A9%29.pdf/page1-960px-thumbnail.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "6272": {
+      "name": "William Jacks",
+      "src": "/assets/players/6272.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/4_20_Will_Jacks.jpg/960px-4_20_Will_Jacks.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+    },
+    "4692": {
+      "name": "Lockie Ferguson",
+      "src": "/assets/players/4692.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Lockie_Ferguson.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "953": {
+      "name": "Lokesh Rahul",
+      "src": "/assets/players/953.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/6/69/KL_Rahul_at_Femina_Miss_India_2018_Grand_Finale_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "3645": {
+      "name": "Sarfaraz Khan",
+      "src": "/assets/players/3645.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/7/79/Sarfaraz_Khan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "4816": {
+      "name": "Khaleel Ahmed",
+      "src": "/assets/players/4816.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/f/f8/2_29_Khaleel_mugshot.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "23": {
+      "name": "Piyush Chawla",
+      "src": "/assets/players/23.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/d/da/Piyush_Chawla_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "5928": {
+      "name": "Prithvi Shaw",
+      "src": "/assets/players/5928.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Prithvi_shaw.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "6806": {
+      "name": "Tushar Deshpande",
+      "src": "/assets/players/6806.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Tushar_Deshpande.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "5738": {
+      "name": "Xavier Bartlett",
+      "src": "/assets/players/5738.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/The_New_York_Clipper_Annual%2C_1892_%28IA_ldpd_5655288_004%29.pdf/page1-500px-The_New_York_Clipper_Annual%2C_1892_%28IA_ldpd_5655288_004%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "28018": {
+      "name": "Ashok Sharma",
+      "src": "/assets/players/28018.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Haryana_Cricket_Association_tile_featuring_Ashok_Sharma_as_the_then_Vice_President.jpg/960px-Haryana_Cricket_Association_tile_featuring_Ashok_Sharma_as_the_then_Vice_President.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "403": {
+      "name": "Umesh Yadav",
+      "src": "/assets/players/403.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Umesh_Yadav.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "305": {
+      "name": "Ravichandran Ashwin",
+      "src": "/assets/players/305.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Minister_of_State_for_Youth_Affairs_and_Sports_%28Independent_Charge%29%2C_Shri_Sarbananda_Sonowal_conferring_the_Arjuna_Award_on_cricketer_Ravichandran_Ashwin%2C_in_New_Delhi_on_July_31%2C_2015_cropped.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "220": {
+      "name": "David Warner",
+      "src": "/assets/players/220.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/David_Warner.jpg/960px-David_Warner.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "7544": {
+      "name": "Venkatesh Iyer",
+      "src": "/assets/players/7544.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Venkatesh_Iyer.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+    },
+    "1440": {
+      "name": "Rahul Tripathi",
+      "src": "/assets/players/1440.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Newsletter_for_Birdwatchers_Contents_2002-18_Upto_Oct_2018.pdf/page1-960px-Newsletter_for_Birdwatchers_Contents_2002-18_Upto_Oct_2018.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "198": {
+      "name": "Manish Pandey",
+      "src": "/assets/players/198.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Manish_Pandey_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "2054": {
+      "name": "Jason Behrendorff",
+      "src": "/assets/players/2054.jpg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/8/80/Jason_behrendorff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+    },
+    "6284": {
+      "name": "Anukul Roy",
+      "src": "/assets/players/6284.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Behar_Herald_8-12-2020_%26_15-12-2020.pdf/page1-960px-Behar_Herald_8-12-2020_%26_15-12-2020.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "7473": {
+      "name": "Akash Deep",
+      "src": "/assets/players/7473.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6_%E0%A6%97%E0%A7%87%E0%A6%9C%E0%A7%87%E0%A6%9F%2C_%E0%A6%85%E0%A6%A4%E0%A6%BF%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%A4%2C_%E0%A7%A8%E0%A7%A6%E0%A7%A7%E0%A7%AD-%E0%A7%A7%E0%A7%A7-%E0%A7%A6%E0%A7%A7_-_%E0%A6%AA%E0%A6%B0%E0%A6%BF%E0%A6%95%E0%A6%B2%E0%A7%8D%E0%A6%AA%E0%A6%A8%E0%A6%BE_%E0%A6%AE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A6%A3%E0%A6%BE%E0%A6%B2%E0%A6%AF%E0%A6%BC_%28%E0%A7%A7%E0%A7%A9%29.pdf/page1-960px-thumbnail.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    "3629": {
+      "name": "Corbin Bosch",
+      "src": "/assets/players/3629.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c846101/i.jpg?d=high&p=det"
+    },
+    "5039": {
+      "name": "Rajat Patidar",
+      "src": "/assets/players/5039.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c760758/i.jpg?d=high&p=det"
+    },
+    "3653": {
+      "name": "Avesh Khan",
+      "src": "/assets/players/3653.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c593807/i.jpg?d=high&p=det"
+    },
+    "5809": {
+      "name": "Naveen ul Haq",
+      "src": "/assets/players/5809.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c352447/i.jpg?d=high&p=det"
+    },
+    "4986": {
+      "name": "Rovman Powell",
+      "src": "/assets/players/4986.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c845516/i.jpg?d=high&p=det"
+    },
+    "6725": {
+      "name": "Sherfane Rutherford",
+      "src": "/assets/players/6725.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c845523/i.jpg?d=high&p=det"
+    },
+    "3275": {
+      "name": "Alzarri Joseph",
+      "src": "/assets/players/3275.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c599386/i.jpg?d=high&p=det"
+    },
+    "2847": {
+      "name": "Shardul Thakur",
+      "src": "/assets/players/2847.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c352487/i.jpg?d=high&p=det"
+    },
+    "7216": {
+      "name": "Prabhsimran Singh",
+      "src": "/assets/players/7216.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c226515/i.jpg?d=high&p=det"
+    },
+    "4489": {
+      "name": "Prasidh Krishna",
+      "src": "/assets/players/4489.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c591958/i.jpg?d=high&p=det"
+    },
+    "7446": {
+      "name": "Abdul Samad",
+      "src": "/assets/players/7446.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c226276/i.jpg?d=high&p=det"
+    },
+    "1941": {
+      "name": "Devon Conway",
+      "src": "/assets/players/1941.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c845526/i.jpg?d=high&p=det"
+    },
+    "4106": {
+      "name": "Daryl Mitchell",
+      "src": "/assets/players/4106.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c845511/i.jpg?d=high&p=det"
+    },
+    "7270": {
+      "name": "Anrich Nortje",
+      "src": "/assets/players/7270.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c846100/i.jpg?d=high&p=det"
+    },
+    "6314": {
+      "name": "Devdutt Padikkal",
+      "src": "/assets/players/6314.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c591960/i.jpg?d=high&p=det"
+    },
+    "6281": {
+      "name": "Abhishek Sharma",
+      "src": "/assets/players/6281.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c846031/i.jpg?d=high&p=det"
+    },
+    "3648": {
+      "name": "Deepak Hooda",
+      "src": "/assets/players/3648.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c616518/i.jpg?d=high&p=det"
+    },
+    "7325": {
+      "name": "Harpreet Brar",
+      "src": "/assets/players/7325.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c154693/i.jpg?d=high&p=det"
+    },
+    "8530": {
+      "name": "Kartik Tyagi",
+      "src": "/assets/players/8530.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c226225/i.jpg?d=high&p=det"
+    },
+    "6683": {
+      "name": "Mayank Markande",
+      "src": "/assets/players/6683.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c155501/i.jpg?d=high&p=det"
+    },
+    "4821": {
+      "name": "Mahipal Lomror",
+      "src": "/assets/players/4821.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/i1/c157839/i.jpg?d=high&p=det"
+    },
+    "27964": {
+      "name": "Anshul Kamboj",
+      "src": "/assets/players/27964.jpg",
+      "source": "https://i.pinimg.com/originals/63/16/c3/6316c3181ec3afe57fb5048ee2b31a0c.jpg"
+    },
+    "25213": {
+      "name": "Dewald Brevis",
+      "src": "/assets/players/25213.jpg",
+      "source": "https://i.pinimg.com/originals/9d/a4/c3/9da4c3881f483d26c4364d56ffbd659c.jpg"
+    },
+    "39657": {
+      "name": "Eshan Malinga",
+      "src": "/assets/players/39657.jpg",
+      "source": "https://munasaccos.com.np/media/images/krishna_pd._bagale_VXDw0Bo.original.jpg"
+    },
+    "25669": {
+      "name": "Priyansh Arya",
+      "src": "/assets/players/25669.jpg",
+      "source": "https://i.pinimg.com/originals/f5/21/cc/f521cc1857f71a83ec5c449feff96c0a.jpg"
+    },
+    "58246": {
+      "name": "Prince Yadav",
+      "src": "/assets/players/58246.jpg",
+      "source": "https://i.pinimg.com/736x/6b/b1/f8/6bb1f82bf4c1a68f680203467bea6b16--prince-purple-rain-concert.jpg"
+    },
+    "58134": {
+      "name": "Digvesh Rathi",
+      "src": "/assets/players/58134.jpg",
+      "source": "https://png.pngtree.com/png-vector/20220731/ourlarge/pngtree-luxury-white-golden-set-arabic-islamic-banner-title-frame-text-box-png-image_6093861.png"
+    },
+    "29888": {
+      "name": "Harshit Rana",
+      "src": "/assets/players/29888.jpg",
+      "source": "https://wikibio.in/wp-content/uploads/2023/08/Harshit-at-Live-Concert-in-Varanasi-768x769.jpg"
+    },
+    "35318": {
+      "name": "Sakib Hussain",
+      "src": "/assets/players/35318.jpg",
+      "source": "https://image1.slideserve.com/2073226/slide9-l.jpg"
+    },
+    "47370": {
+      "name": "Aniket Verma",
+      "src": "/assets/players/47370.jpg",
+      "source": "https://www.momjunction.com/wp-content/uploads/2022/12/Aniket.jpg"
+    },
+    "786": {
+      "name": "Chris Jordan",
+      "src": "/assets/players/786.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c244783/chris-jordan.jpg"
+    },
+    "1924": {
+      "name": "Sam Billings",
+      "src": "/assets/players/1924.jpg",
+      "source": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Sam_Billings_Kent_V_Surrey_2015_at_Kia_Oval_Cricket_Ground_%2827190750944%29.jpg/500px-Sam_Billings_Kent_V_Surrey_2015_at_Kia_Oval_Cricket_Ground_%2827190750944%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "kind": "wiki"
+    },
+    "2334": {
+      "name": "Dwaine Pretorius",
+      "src": "/assets/players/2334.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c170695/dwaine-pretorius.jpg"
+    },
+    "2399": {
+      "name": "Dushmantha Chameera",
+      "src": "/assets/players/2399.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c847167/dushmantha-chameera.jpg"
+    },
+    "2436": {
+      "name": "Dasun Shanaka",
+      "src": "/assets/players/2436.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c849378/dasun-shanaka.jpg"
+    },
+    "3125": {
+      "name": "Nicholas Pooran",
+      "src": "/assets/players/3125.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c244722/nicholas-pooran.jpg"
+    },
+    "3926": {
+      "name": "Rahul Tewatia",
+      "src": "/assets/players/3926.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c196288/rahul-tewatia.jpg"
+    },
+    "4246": {
+      "name": "Nitish Rana",
+      "src": "/assets/players/4246.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c171047/nitish-rana.jpg"
+    },
+    "4260": {
+      "name": "Heinrich Klaasen",
+      "src": "/assets/players/4260.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c619866/heinrich-klaasen.jpg"
+    },
+    "4487": {
+      "name": "Vyshak Kumar",
+      "src": "/assets/players/4487.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c594320/vijaykumar-vyshak.jpg"
+    },
+    "4494": {
+      "name": "Abhinav Manohar",
+      "src": "/assets/players/4494.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c226446/beginning-of-the-dream-for-abhinav-manohar.jpg"
+    },
+    "4807": {
+      "name": "Joshua Little",
+      "src": "/assets/players/4807.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c845649/joshua-little.jpg"
+    },
+    "4837": {
+      "name": "Obed McCoy",
+      "src": "/assets/players/4837.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c244723/obed-mccoy.jpg"
+    },
+    "4904": {
+      "name": "Kamindu Mendis",
+      "src": "/assets/players/4904.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c847173/kamindu-mendis.jpg"
+    },
+    "5041": {
+      "name": "Mukesh Kumar",
+      "src": "/assets/players/5041.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c333872/mukesh-kumar.jpg"
+    },
+    "6161": {
+      "name": "Rahul Chahar",
+      "src": "/assets/players/6161.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c226225/rahul-chahar.jpg"
+    },
+    "6287": {
+      "name": "Yash Thakur",
+      "src": "/assets/players/6287.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c417521/yash-thakur-seizes-his-opportunity-with-both-hands.jpg"
+    },
+    "6460": {
+      "name": "Ayush Badoni",
+      "src": "/assets/players/6460.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c229274/the-making-of-ayush-badoni.jpg"
+    },
+    "6467": {
+      "name": "Anuj Rawat",
+      "src": "/assets/players/6467.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c226472/anuj-rawat.jpg"
+    },
+    "6669": {
+      "name": "Mohsin Khan",
+      "src": "/assets/players/6669.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c232399/mohsin-krunal-chameera-help-lsg-defend-1538.jpg"
+    },
+    "6671": {
+      "name": "Lalit Yadav",
+      "src": "/assets/players/6671.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c226516/lalit-yadav.jpg"
+    },
+    "6676": {
+      "name": "Azmatullah Omarzai",
+      "src": "/assets/players/6676.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c845424/azmatullah-omarzai.jpg"
+    },
+    "6726": {
+      "name": "Romario Shepherd",
+      "src": "/assets/players/6726.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c845509/romario-shepherd.jpg"
+    },
+    "7059": {
+      "name": "Nehal Wadhera",
+      "src": "/assets/players/7059.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c358391/anmolpreet-singh-nehal-wadhera-set-up-punjabs-maiden-smat-title-victory.jpg"
+    },
+    "7240": {
+      "name": "FazalHaq Farooqi",
+      "src": "/assets/players/7240.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c845428/fazalhaq-farooqi.jpg"
+    },
+    "7312": {
+      "name": "Nandre Burger",
+      "src": "/assets/players/7312.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c616020/nandre-burger.jpg"
+    },
+    "7322": {
+      "name": "Yash Dayal",
+      "src": "/assets/players/7322.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c232286/the-unshackling-of-yash-dayal.jpg"
+    },
+    "7503": {
+      "name": "Ravi Bishnoi",
+      "src": "/assets/players/7503.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c226280/ravi-bishnoi.jpg"
+    },
+    "7545": {
+      "name": "Kuldeep Sen",
+      "src": "/assets/players/7545.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c243921/kuldeep-sen-finishes-with-a-fifer-as-roi-clinch-irani-cup.jpg"
+    },
+    "8177": {
+      "name": "Akash Madhwal",
+      "src": "/assets/players/8177.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c930092/csk-sign-akash-madhwal-as-ayush-mhatre-replacement.jpg"
+    },
+    "8182": {
+      "name": "Donovan Ferreira",
+      "src": "/assets/players/8182.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c597841/donovan-ferreira.jpg"
+    },
+    "8634": {
+      "name": "Ashwani Kumar",
+      "src": "/assets/players/8634.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c641199/ashwani-kumar-the-fiery-underdog-who-refused-to-give-up.jpg"
+    },
+    "8746": {
+      "name": "Vaibhav Arora",
+      "src": "/assets/players/8746.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c649425/swings-of-fortune-vaibhav-aroras-rousing-journey-in-cricket.jpg"
+    },
+    "19312": {
+      "name": "Nuwan Thushara",
+      "src": "/assets/players/19312.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c226338/nuwan-thushara.jpg"
+    },
+    "19316": {
+      "name": "Maheesh Theekshana",
+      "src": "/assets/players/19316.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c847197/maheesh-theekshana.jpg"
+    },
+    "19714": {
+      "name": "Abishek Porel",
+      "src": "/assets/players/19714.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c1050176/abishek-porel-arrested-in-sexual-assault-case.jpg"
+    },
+    "25138": {
+      "name": "Harsh Dubey",
+      "src": "/assets/players/25138.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c1003996/harsh-dubey.jpg"
+    },
+    "26906": {
+      "name": "Angkrish Raghuvanshi",
+      "src": "/assets/players/26906.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c626309/angkrish-raghuvanshi.jpg"
+    },
+    "27960": {
+      "name": "Mayank Yadav",
+      "src": "/assets/players/27960.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c679359/a-quiet-return-for-mayank-yadav.jpg"
+    },
+    "32862": {
+      "name": "Allah Ghazanfar",
+      "src": "/assets/players/32862.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c737997/am-ghazanfar.jpg"
+    },
+    "41503": {
+      "name": "Yash Punja",
+      "src": "/assets/players/41503.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c981500/the-brotherly-instinct-that-shaped-yash-raj-punjas-rise.jpg"
+    },
+    "46066": {
+      "name": "Vipraj Nigam",
+      "src": "/assets/players/46066.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c643233/vipraj-nigam-spins-swings-and-dreams.jpg"
+    },
+    "56817": {
+      "name": "Shivang Kumar",
+      "src": "/assets/players/56817.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c965971/how-an-obsessed-shivang-kumar-found-his-niche.jpg"
+    },
+    "3916": {
+      "name": "Jitesh Sharma",
+      "src": "/assets/players/3916.jpg",
+      "source": "https://static.cricbuzz.com/a/img/v1/400x400/i1/c226474/jitesh-sharma.jpg"
+    },
+    "20006": {
+      "name": "Ramandeep Singh",
+      "src": "/assets/players/20006.jpg",
+      "source": "cricbuzz c474529"
     }
   },
   "count": 26
