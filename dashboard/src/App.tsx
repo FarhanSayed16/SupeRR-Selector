@@ -137,7 +137,9 @@ export function App() {
                 onNavigate={handleNavigate}
               />
             )}
-            {currentPage === 'pressure_lab' && <PressureLab summary={pressureSummary} />}
+            {currentPage === 'pressure_lab' && (
+              <PressureLab summary={pressureSummary} meta={meta} />
+            )}
             {currentPage === 'player_profile' && (
               <PlayerProfile
                 playerId={selectedPlayerId}
@@ -172,7 +174,7 @@ export function App() {
               <span className="font-medium">Rajasthan Royals × Unstop</span>
               <span className="text-ink-400">·</span>
               <span className="font-mono text-[11px] text-ink-500 bg-white/60 px-2 py-0.5 rounded-full border border-white/80">
-                SHA256: {meta?.freeze_sha256 ? meta.freeze_sha256.slice(0, 12) : '5cdd7b74'}…
+                SHA256: {meta?.freeze_sha256 ? meta.freeze_sha256.slice(0, 12) : 'a819c0e65bf4'}…
               </span>
             </div>
           </div>

@@ -3,7 +3,7 @@
   "subtitle": "Rajasthan Royals Auction Intelligence System (IPL 2027)",
   "version": "pressure_v1.1",
   "board": "auction_official",
-  "build_timestamp": "2026-11-18T09:01:36.599718+00:00",
+  "build_timestamp": "2026-11-18T09:41:22.828801+00:00",
   "freeze_sha256": "a819c0e65bf4ee045ef17c7b19824ccbec549c4b002402e9fbf47f477a04810c",
   "seasons_covered": [
     "2022",
@@ -19,5 +19,46 @@
   "t20i_weight": 1.0,
   "min_ipl_pressure_balls_batter": 40,
   "min_ipl_pressure_balls_bowler": 60,
+  "sensitivity": {
+    "rrr_nominal": 9.5,
+    "death_start_nominal": 16,
+    "variants_tested": [
+      {
+        "rrr": 9.0,
+        "death_start": 16
+      },
+      {
+        "rrr": 10.0,
+        "death_start": 16
+      },
+      {
+        "rrr": 9.5,
+        "death_start": 15
+      },
+      {
+        "rrr": 9.5,
+        "death_start": 17
+      }
+    ],
+    "batter_retention_by_variant_pct": [
+      90.0,
+      100.0,
+      90.0,
+      90.0
+    ],
+    "bowler_retention_by_variant_pct": [
+      100.0,
+      100.0,
+      90.0,
+      90.0
+    ],
+    "batter_top10_stability_pct": 92.5,
+    "bowler_top10_stability_pct": 95.0,
+    "ipl_overlap_batters": 9,
+    "ipl_overlap_bowlers": 9,
+    "ipl_overlap_batters_of": 10,
+    "ipl_overlap_bowlers_of": 10,
+    "computed": true
+  },
   "disclaimer": "Proprietary Rajasthan Royals data pack evaluated strictly under SupeRR Selector competition terms."
 }

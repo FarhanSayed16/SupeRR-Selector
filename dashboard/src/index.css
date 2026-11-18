@@ -211,8 +211,64 @@ body {
   }
 }
 
+.board-fade {
+  animation: board-fade-in 0.28s ease-out;
+}
+
+@keyframes board-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.prime-bar-fill {
+  transform-origin: left center;
+  animation: prime-bar-grow 0.7s ease-out;
+}
+
+@keyframes prime-bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.phase-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 2.6rem;
+  padding: 0.2rem 0.35rem;
+  border-radius: 0.4rem;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  line-height: 1.15;
+}
+
+.phase-chip span:first-child {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.phase-chip span:last-child {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0b1b3a;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page-enter,
+  .board-fade,
+  .prime-bar-fill,
   .glass-kpi,
   .btn-primary,
   .status-chip-dot {

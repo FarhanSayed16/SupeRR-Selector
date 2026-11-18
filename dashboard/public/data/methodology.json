@@ -30,5 +30,6 @@
     "volume_depth": 0.1,
     "rate_basis": "IPL/T20I weighted legal-ball economy; death econ soft-capped"
   },
-  "board_policy": "Auction Official is the primary freeze (IPL sample floors + weighted rates). Global Combined is a secondary board without IPL floors for methodology context."
+  "board_policy": "Auction Official is the primary freeze (IPL sample floors + weighted rates). Global Combined is a secondary board without IPL floors for methodology context.",
+  "prime_note": "P.R.I.M.E. display layer: innings phase (PP/mid/death) is role context; match-state signals define pressure. Phase, pace/spin, collapse, and reliability fields are evidence-only and do not change PressureScore or the freeze SHA."
 }

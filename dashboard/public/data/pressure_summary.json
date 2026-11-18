@@ -23,5 +23,20 @@
     "death_contest": 43430,
     "knockout_leverage": 5289,
     "super_overs": 0
+  },
+  "pressure_band_counts": {
+    "low": 31366,
+    "medium": 8145,
+    "high": 39357
+  },
+  "pressure_band_percentage": {
+    "low": 39.8,
+    "medium": 10.3,
+    "high": 49.9
+  },
+  "pressure_band_thresholds": {
+    "low_max": 0.4,
+    "medium_max": 0.7,
+    "note": "Bands split pressure_index on pressure deliveries only; display evidence, not a re-rank."
   }
 }

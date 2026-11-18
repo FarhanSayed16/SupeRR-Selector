@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, freezeS
           <div className="hidden md:flex items-center gap-2 shrink-0">
             <StatusChip label="Ranks Frozen" />
             <span className="text-[10px] font-mono text-ink-500 hidden xl:inline">
-              SHA {freezeSha ? freezeSha.slice(0, 8) : '5cdd7b74'}
+              SHA {freezeSha ? freezeSha.slice(0, 8) : 'a819c0e6'}
             </span>
           </div>
 

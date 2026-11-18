@@ -46,7 +46,7 @@ export const About: React.FC<{ meta: MetaPackage | null }> = ({ meta }) => {
           The dataset used in this model was provided by Rajasthan Royals for the SupeRR Selector competition. In strict adherence to competition rules, raw delivery-level CSVs are kept strictly private on local analytical workstations. Only derived statistical aggregates and model rankings are exposed to this dashboard.
         </p>
         <div className="p-3 bg-slate-50 rounded-lg text-xs font-mono text-slate-700 border border-slate-200">
-          Rank Freeze SHA256: {meta?.freeze_sha256 || '5cdd7b7451b5a6672dbfadccc3c36a9777ec5bafaec589339e22ba307202d272'}
+          Rank Freeze SHA256: {meta?.freeze_sha256 || 'a819c0e65bf4ee045ef17c7b19824ccbec549c4b002402e9fbf47f477a04810c'}
         </div>
       </div>
     </div>
