@@ -3,7 +3,7 @@
   "subtitle": "Rajasthan Royals Auction Intelligence System (IPL 2027)",
   "version": "pressure_v1.1",
   "board": "auction_official",
-  "build_timestamp": "2026-11-18T09:41:22.828801+00:00",
+  "build_timestamp": "2026-11-18T15:38:02.107053+00:00",
   "freeze_sha256": "a819c0e65bf4ee045ef17c7b19824ccbec549c4b002402e9fbf47f477a04810c",
   "seasons_covered": [
     "2022",

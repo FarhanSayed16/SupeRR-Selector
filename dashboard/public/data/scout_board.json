@@ -1,0 +1,168 @@
+{
+  "label": "Scout Board (human opinion)",
+  "policy": "Auction Official Top 10 stays frozen. This board is a side-by-side scout opinion for war-room debate \u2014 it does not rewrite PressureScore or the freeze SHA.",
+  "batters": [
+    {
+      "scout_rank": 1,
+      "player_name": "Shashank Singh",
+      "official_rank": 2,
+      "official_pressure_score": 91.09,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 2,
+      "player_name": "Ashutosh Sharma",
+      "official_rank": 6,
+      "official_pressure_score": 89.48,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 3,
+      "player_name": "Rinku Singh",
+      "official_rank": 8,
+      "official_pressure_score": 87.48,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 4,
+      "player_name": "Shreyas Iyer",
+      "official_rank": 7,
+      "official_pressure_score": 87.9,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 5,
+      "player_name": "Suryakumar Yadav",
+      "official_rank": 10,
+      "official_pressure_score": 86.01,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 6,
+      "player_name": "Rohit Sharma",
+      "official_rank": 1,
+      "official_pressure_score": 91.91,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 7,
+      "player_name": "Marcus Stoinis",
+      "official_rank": 9,
+      "official_pressure_score": 86.35,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 8,
+      "player_name": "Naman Dhir",
+      "official_rank": 3,
+      "official_pressure_score": 90.29,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 9,
+      "player_name": "Rishabh Pant",
+      "official_rank": 5,
+      "official_pressure_score": 89.56,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 10,
+      "player_name": "Riza",
+      "official_rank": null,
+      "official_pressure_score": null,
+      "board": "unmatched",
+      "note": "Name unmatched on Auction Official; not Mohammad Rizwan in eligible set."
+    }
+  ],
+  "bowlers": [
+    {
+      "scout_rank": 1,
+      "player_name": "Sunil Narine",
+      "official_rank": 1,
+      "official_pressure_score": 79.57,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 2,
+      "player_name": "Jasprit Bumrah",
+      "official_rank": 4,
+      "official_pressure_score": 74.19,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 3,
+      "player_name": "Rashid Khan",
+      "official_rank": 6,
+      "official_pressure_score": 72.56,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 4,
+      "player_name": "Mitchell Santner",
+      "official_rank": 2,
+      "official_pressure_score": 76.83,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 5,
+      "player_name": "Kuldeep Yadav",
+      "official_rank": 3,
+      "official_pressure_score": 74.91,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 6,
+      "player_name": "Varun Chakravarthy",
+      "official_rank": 9,
+      "official_pressure_score": 69.89,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 7,
+      "player_name": "Matheesha Pathirana",
+      "official_rank": 10,
+      "official_pressure_score": 68.33,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 8,
+      "player_name": "Rasikh Salam",
+      "official_rank": 8,
+      "official_pressure_score": 70.14,
+      "board": "auction_official",
+      "note": null
+    },
+    {
+      "scout_rank": 9,
+      "player_name": "Mohammad Nawaz",
+      "official_rank": 1,
+      "official_pressure_score": 89.66,
+      "board": "global_only",
+      "note": "Below Auction Official IPL sample floor \u2014 Global board only."
+    },
+    {
+      "scout_rank": 10,
+      "player_name": "Matthew Humphreys",
+      "official_rank": 6,
+      "official_pressure_score": 76.07,
+      "board": "global_only",
+      "note": "Below Auction Official IPL sample floor \u2014 Global board only."
+    }
+  ]
+}

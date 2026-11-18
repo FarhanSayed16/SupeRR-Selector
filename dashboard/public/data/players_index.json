@@ -6,7 +6,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 1,
-    "pressure_score": 91.91
+    "pressure_score": 91.91,
+    "board": "auction_official"
   },
   {
     "player_id": 2756,
@@ -15,16 +16,20 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 2,
-    "pressure_score": 91.09
+    "pressure_score": 91.09,
+    "board": "auction_official"
   },
   {
     "player_id": 37052,
     "player_name": "Naman Dhir",
     "primary_role": "Batting All-Rounder",
     "is_batter": true,
-    "is_bowler": false,
+    "is_bowler": true,
     "rank": 3,
-    "pressure_score": 90.29
+    "pressure_score": 90.29,
+    "board": "auction_official",
+    "bowler_rank": 155,
+    "bowler_pressure_score": 42.05
   },
   {
     "player_id": 143,
@@ -33,7 +38,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 4,
-    "pressure_score": 89.96
+    "pressure_score": 89.96,
+    "board": "auction_official"
   },
   {
     "player_id": 4703,
@@ -42,7 +48,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 5,
-    "pressure_score": 89.56
+    "pressure_score": 89.56,
+    "board": "auction_official"
   },
   {
     "player_id": 8101,
@@ -51,7 +58,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 6,
-    "pressure_score": 89.48
+    "pressure_score": 89.48,
+    "board": "auction_official"
   },
   {
     "player_id": 3647,
@@ -60,7 +68,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 7,
-    "pressure_score": 87.9
+    "pressure_score": 87.9,
+    "board": "auction_official"
   },
   {
     "player_id": 4708,
@@ -69,7 +78,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 8,
-    "pressure_score": 87.48
+    "pressure_score": 87.48,
+    "board": "auction_official"
   },
   {
     "player_id": 2639,
@@ -79,6 +89,7 @@
     "is_bowler": true,
     "rank": 9,
     "pressure_score": 86.35,
+    "board": "auction_official",
     "bowler_rank": 82,
     "bowler_pressure_score": 44.83
   },
@@ -89,7 +100,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 10,
-    "pressure_score": 86.01
+    "pressure_score": 86.01,
+    "board": "auction_official"
   },
   {
     "player_id": 8182,
@@ -98,7 +110,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 11,
-    "pressure_score": 85.7
+    "pressure_score": 85.7,
+    "board": "auction_official"
   },
   {
     "player_id": 2101,
@@ -107,7 +120,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 12,
-    "pressure_score": 85.6
+    "pressure_score": 85.6,
+    "board": "auction_official"
   },
   {
     "player_id": 23450,
@@ -116,7 +130,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 13,
-    "pressure_score": 84.87
+    "pressure_score": 84.87,
+    "board": "auction_official"
   },
   {
     "player_id": 20702,
@@ -125,7 +140,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 14,
-    "pressure_score": 84.14
+    "pressure_score": 84.14,
+    "board": "auction_official"
   },
   {
     "player_id": 4391,
@@ -135,6 +151,7 @@
     "is_bowler": true,
     "rank": 15,
     "pressure_score": 82.98,
+    "board": "auction_official",
     "bowler_rank": 115,
     "bowler_pressure_score": 27.79
   },
@@ -145,7 +162,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 16,
-    "pressure_score": 82.63
+    "pressure_score": 82.63,
+    "board": "auction_official"
   },
   {
     "player_id": 2877,
@@ -154,7 +172,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 17,
-    "pressure_score": 82.6
+    "pressure_score": 82.6,
+    "board": "auction_official"
   },
   {
     "player_id": 2258,
@@ -163,7 +182,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 18,
-    "pressure_score": 81.69
+    "pressure_score": 81.69,
+    "board": "auction_official"
   },
   {
     "player_id": 813,
@@ -172,7 +192,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 19,
-    "pressure_score": 81.02
+    "pressure_score": 81.02,
+    "board": "auction_official"
   },
   {
     "player_id": 47370,
@@ -181,7 +202,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 20,
-    "pressure_score": 80.73
+    "pressure_score": 80.73,
+    "board": "auction_official"
   },
   {
     "player_id": 47,
@@ -190,7 +212,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 21,
-    "pressure_score": 79.93
+    "pressure_score": 79.93,
+    "board": "auction_official"
   },
   {
     "player_id": 4853,
@@ -199,16 +222,20 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 22,
-    "pressure_score": 79.81
+    "pressure_score": 79.81,
+    "board": "auction_official"
   },
   {
     "player_id": 2984,
     "player_name": "Sikandar Raza",
     "primary_role": "All-Rounder",
     "is_batter": true,
-    "is_bowler": false,
+    "is_bowler": true,
     "rank": 23,
-    "pressure_score": 79.34
+    "pressure_score": 79.34,
+    "board": "auction_official",
+    "bowler_rank": 46,
+    "bowler_pressure_score": 61.4
   },
   {
     "player_id": 8,
@@ -217,7 +244,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 23,
-    "pressure_score": 79.34
+    "pressure_score": 79.34,
+    "board": "auction_official"
   },
   {
     "player_id": 6288,
@@ -226,7 +254,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 25,
-    "pressure_score": 79.26
+    "pressure_score": 79.26,
+    "board": "auction_official"
   },
   {
     "player_id": 8654,
@@ -235,7 +264,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 26,
-    "pressure_score": 79.07
+    "pressure_score": 79.07,
+    "board": "auction_official"
   },
   {
     "player_id": 6726,
@@ -245,6 +275,7 @@
     "is_bowler": true,
     "rank": 27,
     "pressure_score": 78.85,
+    "board": "auction_official",
     "bowler_rank": 69,
     "bowler_pressure_score": 48.53
   },
@@ -255,7 +286,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 28,
-    "pressure_score": 78.27
+    "pressure_score": 78.27,
+    "board": "auction_official"
   },
   {
     "player_id": 7260,
@@ -264,7 +296,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 29,
-    "pressure_score": 78.2
+    "pressure_score": 78.2,
+    "board": "auction_official"
   },
   {
     "player_id": 20006,
@@ -273,7 +306,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 30,
-    "pressure_score": 77.88
+    "pressure_score": 77.88,
+    "board": "auction_official"
   },
   {
     "player_id": 6059,
@@ -282,7 +316,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 31,
-    "pressure_score": 77.11
+    "pressure_score": 77.11,
+    "board": "auction_official"
   },
   {
     "player_id": 4986,
@@ -291,7 +326,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 32,
-    "pressure_score": 77.08
+    "pressure_score": 77.08,
+    "board": "auction_official"
   },
   {
     "player_id": 6725,
@@ -300,7 +336,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 33,
-    "pressure_score": 76.9
+    "pressure_score": 76.9,
+    "board": "auction_official"
   },
   {
     "player_id": 5039,
@@ -309,7 +346,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 33,
-    "pressure_score": 76.9
+    "pressure_score": 76.9,
+    "board": "auction_official"
   },
   {
     "player_id": 3926,
@@ -318,7 +356,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 35,
-    "pressure_score": 76.85
+    "pressure_score": 76.85,
+    "board": "auction_official"
   },
   {
     "player_id": 7897,
@@ -327,7 +366,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 36,
-    "pressure_score": 76.52
+    "pressure_score": 76.52,
+    "board": "auction_official"
   },
   {
     "player_id": 3125,
@@ -336,7 +376,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 37,
-    "pressure_score": 76.24
+    "pressure_score": 76.24,
+    "board": "auction_official"
   },
   {
     "player_id": 1077,
@@ -345,7 +386,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 38,
-    "pressure_score": 75.94
+    "pressure_score": 75.94,
+    "board": "auction_official"
   },
   {
     "player_id": 1318,
@@ -355,6 +397,7 @@
     "is_bowler": true,
     "rank": 39,
     "pressure_score": 75.65,
+    "board": "auction_official",
     "bowler_rank": 36,
     "bowler_pressure_score": 57.9
   },
@@ -365,16 +408,20 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 40,
-    "pressure_score": 75.57
+    "pressure_score": 75.57,
+    "board": "auction_official"
   },
   {
     "player_id": 4755,
     "player_name": "Shivam Dube",
     "primary_role": "Batting All-Rounder",
     "is_batter": true,
-    "is_bowler": false,
+    "is_bowler": true,
     "rank": 41,
-    "pressure_score": 75.1
+    "pressure_score": 75.1,
+    "board": "auction_official",
+    "bowler_rank": 203,
+    "bowler_pressure_score": 28.51
   },
   {
     "player_id": 3916,
@@ -383,7 +430,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 42,
-    "pressure_score": 75.04
+    "pressure_score": 75.04,
+    "board": "auction_official"
   },
   {
     "player_id": 772,
@@ -392,7 +440,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 43,
-    "pressure_score": 74.55
+    "pressure_score": 74.55,
+    "board": "auction_official"
   },
   {
     "player_id": 167,
@@ -401,7 +450,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 43,
-    "pressure_score": 74.55
+    "pressure_score": 74.55,
+    "board": "auction_official"
   },
   {
     "player_id": 4007,
@@ -410,7 +460,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 45,
-    "pressure_score": 74.08
+    "pressure_score": 74.08,
+    "board": "auction_official"
   },
   {
     "player_id": 3330,
@@ -420,6 +471,7 @@
     "is_bowler": true,
     "rank": 46,
     "pressure_score": 73.8,
+    "board": "auction_official",
     "bowler_rank": 47,
     "bowler_pressure_score": 54.32
   },
@@ -430,7 +482,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 47,
-    "pressure_score": 73.62
+    "pressure_score": 73.62,
+    "board": "auction_official"
   },
   {
     "player_id": 142,
@@ -439,7 +492,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 48,
-    "pressure_score": 72.5
+    "pressure_score": 72.5,
+    "board": "auction_official"
   },
   {
     "player_id": 152,
@@ -449,6 +503,7 @@
     "is_bowler": true,
     "rank": 49,
     "pressure_score": 72.19,
+    "board": "auction_official",
     "bowler_rank": 51,
     "bowler_pressure_score": 52.76
   },
@@ -459,7 +514,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 50,
-    "pressure_score": 72.01
+    "pressure_score": 72.01,
+    "board": "auction_official"
   },
   {
     "player_id": 2633,
@@ -469,6 +525,7 @@
     "is_bowler": true,
     "rank": 51,
     "pressure_score": 71.51,
+    "board": "auction_official",
     "bowler_rank": 35,
     "bowler_pressure_score": 58.39
   },
@@ -479,7 +536,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 52,
-    "pressure_score": 71.45
+    "pressure_score": 71.45,
+    "board": "auction_official"
   },
   {
     "player_id": 535,
@@ -488,7 +546,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 53,
-    "pressure_score": 71.41
+    "pressure_score": 71.41,
+    "board": "auction_official"
   },
   {
     "player_id": 6423,
@@ -497,16 +556,20 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 54,
-    "pressure_score": 71.36
+    "pressure_score": 71.36,
+    "board": "auction_official"
   },
   {
     "player_id": 6272,
     "player_name": "William Jacks",
     "primary_role": "Batting All-Rounder",
     "is_batter": true,
-    "is_bowler": false,
+    "is_bowler": true,
     "rank": 55,
-    "pressure_score": 71.23
+    "pressure_score": 71.23,
+    "board": "auction_official",
+    "bowler_rank": 180,
+    "bowler_pressure_score": 35.32
   },
   {
     "player_id": 3782,
@@ -515,7 +578,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 56,
-    "pressure_score": 70.99
+    "pressure_score": 70.99,
+    "board": "auction_official"
   },
   {
     "player_id": 4409,
@@ -525,6 +589,7 @@
     "is_bowler": true,
     "rank": 57,
     "pressure_score": 70.02,
+    "board": "auction_official",
     "bowler_rank": 68,
     "bowler_pressure_score": 48.8
   },
@@ -535,7 +600,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 58,
-    "pressure_score": 69.92
+    "pressure_score": 69.92,
+    "board": "auction_official"
   },
   {
     "player_id": 1596,
@@ -545,6 +611,7 @@
     "is_bowler": true,
     "rank": 59,
     "pressure_score": 69.89,
+    "board": "auction_official",
     "bowler_rank": 96,
     "bowler_pressure_score": 40.02
   },
@@ -555,7 +622,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 60,
-    "pressure_score": 69.79
+    "pressure_score": 69.79,
+    "board": "auction_official"
   },
   {
     "player_id": 3645,
@@ -564,7 +632,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 61,
-    "pressure_score": 69.77
+    "pressure_score": 69.77,
+    "board": "auction_official"
   },
   {
     "player_id": 8238,
@@ -573,7 +642,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 62,
-    "pressure_score": 69.37
+    "pressure_score": 69.37,
+    "board": "auction_official"
   },
   {
     "player_id": 6819,
@@ -582,7 +652,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 63,
-    "pressure_score": 69.2
+    "pressure_score": 69.2,
+    "board": "auction_official"
   },
   {
     "player_id": 7216,
@@ -591,7 +662,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 64,
-    "pressure_score": 68.91
+    "pressure_score": 68.91,
+    "board": "auction_official"
   },
   {
     "player_id": 6460,
@@ -600,7 +672,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 65,
-    "pressure_score": 68.08
+    "pressure_score": 68.08,
+    "board": "auction_official"
   },
   {
     "player_id": 2367,
@@ -609,7 +682,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 66,
-    "pressure_score": 67.65
+    "pressure_score": 67.65,
+    "board": "auction_official"
   },
   {
     "player_id": 7446,
@@ -618,7 +692,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 67,
-    "pressure_score": 67.52
+    "pressure_score": 67.52,
+    "board": "auction_official"
   },
   {
     "player_id": 3297,
@@ -627,7 +702,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 68,
-    "pressure_score": 66.9
+    "pressure_score": 66.9,
+    "board": "auction_official"
   },
   {
     "player_id": 5928,
@@ -636,7 +712,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 69,
-    "pressure_score": 66.89
+    "pressure_score": 66.89,
+    "board": "auction_official"
   },
   {
     "player_id": 2876,
@@ -646,6 +723,7 @@
     "is_bowler": true,
     "rank": 70,
     "pressure_score": 66.28,
+    "board": "auction_official",
     "bowler_rank": 38,
     "bowler_pressure_score": 56.26
   },
@@ -654,9 +732,12 @@
     "player_name": "Dasun Shanaka",
     "primary_role": "All-Rounder",
     "is_batter": true,
-    "is_bowler": false,
+    "is_bowler": true,
     "rank": 71,
-    "pressure_score": 65.86
+    "pressure_score": 65.86,
+    "board": "auction_official",
+    "bowler_rank": 169,
+    "bowler_pressure_score": 38.78
   },
   {
     "player_id": 838,
@@ -666,6 +747,7 @@
     "is_bowler": true,
     "rank": 72,
     "pressure_score": 65.69,
+    "board": "auction_official",
     "bowler_rank": 106,
     "bowler_pressure_score": 34.08
   },
@@ -676,7 +758,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 73,
-    "pressure_score": 65.31
+    "pressure_score": 65.31,
+    "board": "auction_official"
   },
   {
     "player_id": 4106,
@@ -685,7 +768,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 74,
-    "pressure_score": 64.44
+    "pressure_score": 64.44,
+    "board": "auction_official"
   },
   {
     "player_id": 8221,
@@ -695,6 +779,7 @@
     "is_bowler": true,
     "rank": 75,
     "pressure_score": 62.54,
+    "board": "auction_official",
     "bowler_rank": 79,
     "bowler_pressure_score": 45.86
   },
@@ -705,7 +790,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 76,
-    "pressure_score": 62.16
+    "pressure_score": 62.16,
+    "board": "auction_official"
   },
   {
     "player_id": 3605,
@@ -714,7 +800,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 77,
-    "pressure_score": 61.67
+    "pressure_score": 61.67,
+    "board": "auction_official"
   },
   {
     "player_id": 5939,
@@ -724,6 +811,7 @@
     "is_bowler": true,
     "rank": 78,
     "pressure_score": 61.37,
+    "board": "auction_official",
     "bowler_rank": 83,
     "bowler_pressure_score": 44.59
   },
@@ -735,6 +823,7 @@
     "is_bowler": true,
     "rank": 79,
     "pressure_score": 60.5,
+    "board": "auction_official",
     "bowler_rank": 2,
     "bowler_pressure_score": 76.83
   },
@@ -746,6 +835,7 @@
     "is_bowler": true,
     "rank": 80,
     "pressure_score": 60.08,
+    "board": "auction_official",
     "bowler_rank": 62,
     "bowler_pressure_score": 50.17
   },
@@ -757,6 +847,7 @@
     "is_bowler": true,
     "rank": 81,
     "pressure_score": 59.93,
+    "board": "auction_official",
     "bowler_rank": 72,
     "bowler_pressure_score": 47.48
   },
@@ -767,7 +858,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 82,
-    "pressure_score": 59.42
+    "pressure_score": 59.42,
+    "board": "auction_official"
   },
   {
     "player_id": 1924,
@@ -776,7 +868,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 83,
-    "pressure_score": 59.35
+    "pressure_score": 59.35,
+    "board": "auction_official"
   },
   {
     "player_id": 7544,
@@ -785,7 +878,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 84,
-    "pressure_score": 59.11
+    "pressure_score": 59.11,
+    "board": "auction_official"
   },
   {
     "player_id": 7059,
@@ -794,7 +888,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 85,
-    "pressure_score": 59.02
+    "pressure_score": 59.02,
+    "board": "auction_official"
   },
   {
     "player_id": 4854,
@@ -803,7 +898,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 86,
-    "pressure_score": 58.41
+    "pressure_score": 58.41,
+    "board": "auction_official"
   },
   {
     "player_id": 25669,
@@ -812,7 +908,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 87,
-    "pressure_score": 57.84
+    "pressure_score": 57.84,
+    "board": "auction_official"
   },
   {
     "player_id": 1205,
@@ -821,7 +918,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 88,
-    "pressure_score": 56.76
+    "pressure_score": 56.76,
+    "board": "auction_official"
   },
   {
     "player_id": 494,
@@ -830,7 +928,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 89,
-    "pressure_score": 55.93
+    "pressure_score": 55.93,
+    "board": "auction_official"
   },
   {
     "player_id": 7472,
@@ -840,6 +939,7 @@
     "is_bowler": true,
     "rank": 90,
     "pressure_score": 55.84,
+    "board": "auction_official",
     "bowler_rank": 119,
     "bowler_pressure_score": 19.15
   },
@@ -850,7 +950,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 91,
-    "pressure_score": 55.82
+    "pressure_score": 55.82,
+    "board": "auction_official"
   },
   {
     "player_id": 781,
@@ -860,6 +961,7 @@
     "is_bowler": true,
     "rank": 92,
     "pressure_score": 54.49,
+    "board": "auction_official",
     "bowler_rank": 1,
     "bowler_pressure_score": 79.57
   },
@@ -871,6 +973,7 @@
     "is_bowler": true,
     "rank": 93,
     "pressure_score": 54.46,
+    "board": "auction_official",
     "bowler_rank": 98,
     "bowler_pressure_score": 39.16
   },
@@ -882,6 +985,7 @@
     "is_bowler": true,
     "rank": 94,
     "pressure_score": 54.38,
+    "board": "auction_official",
     "bowler_rank": 110,
     "bowler_pressure_score": 32.88
   },
@@ -892,7 +996,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 95,
-    "pressure_score": 53.88
+    "pressure_score": 53.88,
+    "board": "auction_official"
   },
   {
     "player_id": 1040,
@@ -901,7 +1006,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 96,
-    "pressure_score": 52.59
+    "pressure_score": 52.59,
+    "board": "auction_official"
   },
   {
     "player_id": 4219,
@@ -911,6 +1017,7 @@
     "is_bowler": true,
     "rank": 97,
     "pressure_score": 52.51,
+    "board": "auction_official",
     "bowler_rank": 41,
     "bowler_pressure_score": 55.07
   },
@@ -921,7 +1028,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 98,
-    "pressure_score": 50.47
+    "pressure_score": 50.47,
+    "board": "auction_official"
   },
   {
     "player_id": 818,
@@ -931,6 +1039,7 @@
     "is_bowler": true,
     "rank": 99,
     "pressure_score": 49.69,
+    "board": "auction_official",
     "bowler_rank": 116,
     "bowler_pressure_score": 26.89
   },
@@ -941,7 +1050,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 100,
-    "pressure_score": 49.52
+    "pressure_score": 49.52,
+    "board": "auction_official"
   },
   {
     "player_id": 4722,
@@ -951,6 +1061,7 @@
     "is_bowler": true,
     "rank": 101,
     "pressure_score": 47.96,
+    "board": "auction_official",
     "bowler_rank": 6,
     "bowler_pressure_score": 72.56
   },
@@ -961,7 +1072,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 102,
-    "pressure_score": 47.44
+    "pressure_score": 47.44,
+    "board": "auction_official"
   },
   {
     "player_id": 305,
@@ -971,6 +1083,7 @@
     "is_bowler": true,
     "rank": 103,
     "pressure_score": 46.31,
+    "board": "auction_official",
     "bowler_rank": 81,
     "bowler_pressure_score": 45.35
   },
@@ -981,7 +1094,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 104,
-    "pressure_score": 45.14
+    "pressure_score": 45.14,
+    "board": "auction_official"
   },
   {
     "player_id": 4736,
@@ -990,7 +1104,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 105,
-    "pressure_score": 44.58
+    "pressure_score": 44.58,
+    "board": "auction_official"
   },
   {
     "player_id": 26906,
@@ -999,7 +1114,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 106,
-    "pressure_score": 43.27
+    "pressure_score": 43.27,
+    "board": "auction_official"
   },
   {
     "player_id": 198,
@@ -1008,7 +1124,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 107,
-    "pressure_score": 42.87
+    "pressure_score": 42.87,
+    "board": "auction_official"
   },
   {
     "player_id": 4494,
@@ -1017,7 +1134,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 108,
-    "pressure_score": 41.31
+    "pressure_score": 41.31,
+    "board": "auction_official"
   },
   {
     "player_id": 3648,
@@ -1026,7 +1144,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 109,
-    "pressure_score": 40.1
+    "pressure_score": 40.1,
+    "board": "auction_official"
   },
   {
     "player_id": 19714,
@@ -1035,7 +1154,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 110,
-    "pressure_score": 38.07
+    "pressure_score": 38.07,
+    "board": "auction_official"
   },
   {
     "player_id": 4900,
@@ -1045,6 +1165,7 @@
     "is_bowler": true,
     "rank": 111,
     "pressure_score": 37.05,
+    "board": "auction_official",
     "bowler_rank": 7,
     "bowler_pressure_score": 71.97
   },
@@ -1055,7 +1176,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 112,
-    "pressure_score": 33.28
+    "pressure_score": 33.28,
+    "board": "auction_official"
   },
   {
     "player_id": 6314,
@@ -1064,7 +1186,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 113,
-    "pressure_score": 28.7
+    "pressure_score": 28.7,
+    "board": "auction_official"
   },
   {
     "player_id": 109,
@@ -1073,7 +1196,8 @@
     "is_batter": true,
     "is_bowler": false,
     "rank": 114,
-    "pressure_score": 15.04
+    "pressure_score": 15.04,
+    "board": "auction_official"
   },
   {
     "player_id": 3644,
@@ -1082,7 +1206,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 3,
-    "pressure_score": 74.91
+    "pressure_score": 74.91,
+    "board": "auction_official"
   },
   {
     "player_id": 2933,
@@ -1091,7 +1216,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 4,
-    "pressure_score": 74.19
+    "pressure_score": 74.19,
+    "board": "auction_official"
   },
   {
     "player_id": 2636,
@@ -1100,7 +1226,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 5,
-    "pressure_score": 73.58
+    "pressure_score": 73.58,
+    "board": "auction_official"
   },
   {
     "player_id": 7327,
@@ -1109,7 +1236,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 8,
-    "pressure_score": 70.14
+    "pressure_score": 70.14,
+    "board": "auction_official"
   },
   {
     "player_id": 6256,
@@ -1118,7 +1246,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 9,
-    "pressure_score": 69.89
+    "pressure_score": 69.89,
+    "board": "auction_official"
   },
   {
     "player_id": 8661,
@@ -1127,7 +1256,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 10,
-    "pressure_score": 68.33
+    "pressure_score": 68.33,
+    "board": "auction_official"
   },
   {
     "player_id": 7967,
@@ -1136,7 +1266,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 11,
-    "pressure_score": 67.38
+    "pressure_score": 67.38,
+    "board": "auction_official"
   },
   {
     "player_id": 29888,
@@ -1145,7 +1276,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 12,
-    "pressure_score": 66.05
+    "pressure_score": 66.05,
+    "board": "auction_official"
   },
   {
     "player_id": 39657,
@@ -1154,7 +1286,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 13,
-    "pressure_score": 65.71
+    "pressure_score": 65.71,
+    "board": "auction_official"
   },
   {
     "player_id": 2382,
@@ -1163,7 +1296,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 14,
-    "pressure_score": 65.05
+    "pressure_score": 65.05,
+    "board": "auction_official"
   },
   {
     "player_id": 25048,
@@ -1172,7 +1306,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 15,
-    "pressure_score": 64.5
+    "pressure_score": 64.5,
+    "board": "auction_official"
   },
   {
     "player_id": 6464,
@@ -1181,7 +1316,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 16,
-    "pressure_score": 64.27
+    "pressure_score": 64.27,
+    "board": "auction_official"
   },
   {
     "player_id": 19316,
@@ -1190,7 +1326,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 17,
-    "pressure_score": 63.41
+    "pressure_score": 63.41,
+    "board": "auction_official"
   },
   {
     "player_id": 35318,
@@ -1199,7 +1336,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 18,
-    "pressure_score": 62.72
+    "pressure_score": 62.72,
+    "board": "auction_official"
   },
   {
     "player_id": 829,
@@ -1208,7 +1346,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 19,
-    "pressure_score": 62.65
+    "pressure_score": 62.65,
+    "board": "auction_official"
   },
   {
     "player_id": 278,
@@ -1217,7 +1356,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 20,
-    "pressure_score": 62.58
+    "pressure_score": 62.58,
+    "board": "auction_official"
   },
   {
     "player_id": 7503,
@@ -1226,7 +1366,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 21,
-    "pressure_score": 62.44
+    "pressure_score": 62.44,
+    "board": "auction_official"
   },
   {
     "player_id": 830,
@@ -1235,7 +1376,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 22,
-    "pressure_score": 61.51
+    "pressure_score": 61.51,
+    "board": "auction_official"
   },
   {
     "player_id": 4641,
@@ -1244,7 +1386,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 23,
-    "pressure_score": 61.32
+    "pressure_score": 61.32,
+    "board": "auction_official"
   },
   {
     "player_id": 3298,
@@ -1253,7 +1396,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 24,
-    "pressure_score": 61.13
+    "pressure_score": 61.13,
+    "board": "auction_official"
   },
   {
     "player_id": 7920,
@@ -1262,7 +1406,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 25,
-    "pressure_score": 61.03
+    "pressure_score": 61.03,
+    "board": "auction_official"
   },
   {
     "player_id": 3629,
@@ -1271,7 +1416,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 26,
-    "pressure_score": 60.64
+    "pressure_score": 60.64,
+    "board": "auction_official"
   },
   {
     "player_id": 2878,
@@ -1280,7 +1426,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 27,
-    "pressure_score": 60.57
+    "pressure_score": 60.57,
+    "board": "auction_official"
   },
   {
     "player_id": 1612,
@@ -1289,7 +1436,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 28,
-    "pressure_score": 60.41
+    "pressure_score": 60.41,
+    "board": "auction_official"
   },
   {
     "player_id": 6628,
@@ -1298,7 +1446,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 29,
-    "pressure_score": 60.12
+    "pressure_score": 60.12,
+    "board": "auction_official"
   },
   {
     "player_id": 5809,
@@ -1307,7 +1456,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 30,
-    "pressure_score": 60.11
+    "pressure_score": 60.11,
+    "board": "auction_official"
   },
   {
     "player_id": 4373,
@@ -1316,7 +1466,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 31,
-    "pressure_score": 59.78
+    "pressure_score": 59.78,
+    "board": "auction_official"
   },
   {
     "player_id": 27960,
@@ -1325,7 +1476,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 32,
-    "pressure_score": 59.35
+    "pressure_score": 59.35,
+    "board": "auction_official"
   },
   {
     "player_id": 2261,
@@ -1334,7 +1486,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 33,
-    "pressure_score": 59.08
+    "pressure_score": 59.08,
+    "board": "auction_official"
   },
   {
     "player_id": 22920,
@@ -1343,7 +1496,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 34,
-    "pressure_score": 58.49
+    "pressure_score": 58.49,
+    "board": "auction_official"
   },
   {
     "player_id": 4265,
@@ -1352,7 +1506,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 37,
-    "pressure_score": 56.54
+    "pressure_score": 56.54,
+    "board": "auction_official"
   },
   {
     "player_id": 3275,
@@ -1361,7 +1516,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 39,
-    "pressure_score": 55.56
+    "pressure_score": 55.56,
+    "board": "auction_official"
   },
   {
     "player_id": 25138,
@@ -1370,7 +1526,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 40,
-    "pressure_score": 55.55
+    "pressure_score": 55.55,
+    "board": "auction_official"
   },
   {
     "player_id": 161,
@@ -1379,7 +1536,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 42,
-    "pressure_score": 54.83
+    "pressure_score": 54.83,
+    "board": "auction_official"
   },
   {
     "player_id": 25132,
@@ -1388,7 +1546,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 43,
-    "pressure_score": 54.76
+    "pressure_score": 54.76,
+    "board": "auction_official"
   },
   {
     "player_id": 8177,
@@ -1397,7 +1556,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 44,
-    "pressure_score": 54.72
+    "pressure_score": 54.72,
+    "board": "auction_official"
   },
   {
     "player_id": 27964,
@@ -1406,7 +1566,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 45,
-    "pressure_score": 54.59
+    "pressure_score": 54.59,
+    "board": "auction_official"
   },
   {
     "player_id": 5940,
@@ -1415,7 +1576,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 46,
-    "pressure_score": 54.33
+    "pressure_score": 54.33,
+    "board": "auction_official"
   },
   {
     "player_id": 2320,
@@ -1424,7 +1586,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 48,
-    "pressure_score": 54.15
+    "pressure_score": 54.15,
+    "board": "auction_official"
   },
   {
     "player_id": 2399,
@@ -1433,7 +1596,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 49,
-    "pressure_score": 53.67
+    "pressure_score": 53.67,
+    "board": "auction_official"
   },
   {
     "player_id": 395,
@@ -1442,7 +1606,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 50,
-    "pressure_score": 52.81
+    "pressure_score": 52.81,
+    "board": "auction_official"
   },
   {
     "player_id": 3653,
@@ -1451,7 +1616,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 52,
-    "pressure_score": 52.53
+    "pressure_score": 52.53,
+    "board": "auction_official"
   },
   {
     "player_id": 5944,
@@ -1460,7 +1626,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 53,
-    "pressure_score": 52.24
+    "pressure_score": 52.24,
+    "board": "auction_official"
   },
   {
     "player_id": 7312,
@@ -1469,7 +1636,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 54,
-    "pressure_score": 51.97
+    "pressure_score": 51.97,
+    "board": "auction_official"
   },
   {
     "player_id": 360,
@@ -1478,7 +1646,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 55,
-    "pressure_score": 51.91
+    "pressure_score": 51.91,
+    "board": "auction_official"
   },
   {
     "player_id": 36982,
@@ -1487,7 +1656,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 56,
-    "pressure_score": 51.49
+    "pressure_score": 51.49,
+    "board": "auction_official"
   },
   {
     "player_id": 3628,
@@ -1496,7 +1666,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 57,
-    "pressure_score": 51.48
+    "pressure_score": 51.48,
+    "board": "auction_official"
   },
   {
     "player_id": 2847,
@@ -1505,7 +1676,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 58,
-    "pressure_score": 51.35
+    "pressure_score": 51.35,
+    "board": "auction_official"
   },
   {
     "player_id": 4692,
@@ -1514,7 +1686,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 59,
-    "pressure_score": 51.01
+    "pressure_score": 51.01,
+    "board": "auction_official"
   },
   {
     "player_id": 6161,
@@ -1523,7 +1696,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 60,
-    "pressure_score": 50.77
+    "pressure_score": 50.77,
+    "board": "auction_official"
   },
   {
     "player_id": 23467,
@@ -1532,7 +1706,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 61,
-    "pressure_score": 50.73
+    "pressure_score": 50.73,
+    "board": "auction_official"
   },
   {
     "player_id": 4807,
@@ -1541,7 +1716,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 63,
-    "pressure_score": 49.97
+    "pressure_score": 49.97,
+    "board": "auction_official"
   },
   {
     "player_id": 4816,
@@ -1550,7 +1726,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 64,
-    "pressure_score": 49.66
+    "pressure_score": 49.66,
+    "board": "auction_official"
   },
   {
     "player_id": 23,
@@ -1559,7 +1736,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 65,
-    "pressure_score": 49.56
+    "pressure_score": 49.56,
+    "board": "auction_official"
   },
   {
     "player_id": 4489,
@@ -1568,7 +1746,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 66,
-    "pressure_score": 49.3
+    "pressure_score": 49.3,
+    "board": "auction_official"
   },
   {
     "player_id": 46066,
@@ -1577,7 +1756,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 67,
-    "pressure_score": 49.19
+    "pressure_score": 49.19,
+    "board": "auction_official"
   },
   {
     "player_id": 6806,
@@ -1586,7 +1766,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 70,
-    "pressure_score": 48.32
+    "pressure_score": 48.32,
+    "board": "auction_official"
   },
   {
     "player_id": 67036,
@@ -1595,7 +1776,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 71,
-    "pressure_score": 47.71
+    "pressure_score": 47.71,
+    "board": "auction_official"
   },
   {
     "player_id": 5738,
@@ -1604,7 +1786,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 73,
-    "pressure_score": 47.44
+    "pressure_score": 47.44,
+    "board": "auction_official"
   },
   {
     "player_id": 8746,
@@ -1613,7 +1796,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 74,
-    "pressure_score": 47.21
+    "pressure_score": 47.21,
+    "board": "auction_official"
   },
   {
     "player_id": 4837,
@@ -1622,7 +1806,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 75,
-    "pressure_score": 46.9
+    "pressure_score": 46.9,
+    "board": "auction_official"
   },
   {
     "player_id": 28018,
@@ -1631,7 +1816,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 76,
-    "pressure_score": 46.79
+    "pressure_score": 46.79,
+    "board": "auction_official"
   },
   {
     "player_id": 8634,
@@ -1640,7 +1826,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 77,
-    "pressure_score": 46.69
+    "pressure_score": 46.69,
+    "board": "auction_official"
   },
   {
     "player_id": 1566,
@@ -1649,7 +1836,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 78,
-    "pressure_score": 46.56
+    "pressure_score": 46.56,
+    "board": "auction_official"
   },
   {
     "player_id": 403,
@@ -1658,7 +1846,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 80,
-    "pressure_score": 45.47
+    "pressure_score": 45.47,
+    "board": "auction_official"
   },
   {
     "player_id": 7325,
@@ -1667,7 +1856,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 84,
-    "pressure_score": 43.64
+    "pressure_score": 43.64,
+    "board": "auction_official"
   },
   {
     "player_id": 6287,
@@ -1676,7 +1866,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 85,
-    "pressure_score": 43.3
+    "pressure_score": 43.3,
+    "board": "auction_official"
   },
   {
     "player_id": 6669,
@@ -1685,7 +1876,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 86,
-    "pressure_score": 43.16
+    "pressure_score": 43.16,
+    "board": "auction_official"
   },
   {
     "player_id": 7322,
@@ -1694,7 +1886,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 87,
-    "pressure_score": 42.8
+    "pressure_score": 42.8,
+    "board": "auction_official"
   },
   {
     "player_id": 5577,
@@ -1703,7 +1896,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 88,
-    "pressure_score": 42.22
+    "pressure_score": 42.22,
+    "board": "auction_official"
   },
   {
     "player_id": 2411,
@@ -1712,7 +1906,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 89,
-    "pressure_score": 42.06
+    "pressure_score": 42.06,
+    "board": "auction_official"
   },
   {
     "player_id": 8530,
@@ -1721,7 +1916,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 90,
-    "pressure_score": 41.8
+    "pressure_score": 41.8,
+    "board": "auction_official"
   },
   {
     "player_id": 58246,
@@ -1730,7 +1926,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 91,
-    "pressure_score": 40.49
+    "pressure_score": 40.49,
+    "board": "auction_official"
   },
   {
     "player_id": 6683,
@@ -1739,7 +1936,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 92,
-    "pressure_score": 40.48
+    "pressure_score": 40.48,
+    "board": "auction_official"
   },
   {
     "player_id": 7240,
@@ -1748,7 +1946,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 93,
-    "pressure_score": 40.46
+    "pressure_score": 40.46,
+    "board": "auction_official"
   },
   {
     "player_id": 1813,
@@ -1757,7 +1956,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 93,
-    "pressure_score": 40.46
+    "pressure_score": 40.46,
+    "board": "auction_official"
   },
   {
     "player_id": 295,
@@ -1766,7 +1966,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 95,
-    "pressure_score": 40.44
+    "pressure_score": 40.44,
+    "board": "auction_official"
   },
   {
     "player_id": 5041,
@@ -1775,7 +1976,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 97,
-    "pressure_score": 39.6
+    "pressure_score": 39.6,
+    "board": "auction_official"
   },
   {
     "player_id": 1758,
@@ -1784,7 +1986,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 99,
-    "pressure_score": 38.03
+    "pressure_score": 38.03,
+    "board": "auction_official"
   },
   {
     "player_id": 32862,
@@ -1793,7 +1996,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 100,
-    "pressure_score": 37.57
+    "pressure_score": 37.57,
+    "board": "auction_official"
   },
   {
     "player_id": 28,
@@ -1802,7 +2006,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 101,
-    "pressure_score": 36.41
+    "pressure_score": 36.41,
+    "board": "auction_official"
   },
   {
     "player_id": 7250,
@@ -1811,7 +2016,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 102,
-    "pressure_score": 36.23
+    "pressure_score": 36.23,
+    "board": "auction_official"
   },
   {
     "player_id": 58134,
@@ -1820,7 +2026,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 103,
-    "pressure_score": 35.59
+    "pressure_score": 35.59,
+    "board": "auction_official"
   },
   {
     "player_id": 4487,
@@ -1829,7 +2036,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 104,
-    "pressure_score": 35.24
+    "pressure_score": 35.24,
+    "board": "auction_official"
   },
   {
     "player_id": 1071,
@@ -1838,7 +2046,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 105,
-    "pressure_score": 34.42
+    "pressure_score": 34.42,
+    "board": "auction_official"
   },
   {
     "player_id": 2334,
@@ -1847,7 +2056,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 107,
-    "pressure_score": 33.98
+    "pressure_score": 33.98,
+    "board": "auction_official"
   },
   {
     "player_id": 786,
@@ -1856,7 +2066,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 108,
-    "pressure_score": 33.71
+    "pressure_score": 33.71,
+    "board": "auction_official"
   },
   {
     "player_id": 2054,
@@ -1865,7 +2076,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 109,
-    "pressure_score": 33.67
+    "pressure_score": 33.67,
+    "board": "auction_official"
   },
   {
     "player_id": 41503,
@@ -1874,7 +2086,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 111,
-    "pressure_score": 32.75
+    "pressure_score": 32.75,
+    "board": "auction_official"
   },
   {
     "player_id": 7270,
@@ -1883,7 +2096,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 112,
-    "pressure_score": 32.68
+    "pressure_score": 32.68,
+    "board": "auction_official"
   },
   {
     "player_id": 6284,
@@ -1892,7 +2106,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 113,
-    "pressure_score": 32.61
+    "pressure_score": 32.61,
+    "board": "auction_official"
   },
   {
     "player_id": 19312,
@@ -1901,7 +2116,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 114,
-    "pressure_score": 30.05
+    "pressure_score": 30.05,
+    "board": "auction_official"
   },
   {
     "player_id": 20005,
@@ -1910,7 +2126,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 117,
-    "pressure_score": 25.76
+    "pressure_score": 25.76,
+    "board": "auction_official"
   },
   {
     "player_id": 7545,
@@ -1919,7 +2136,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 118,
-    "pressure_score": 22.53
+    "pressure_score": 22.53,
+    "board": "auction_official"
   },
   {
     "player_id": 6518,
@@ -1928,7 +2146,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 120,
-    "pressure_score": 15.79
+    "pressure_score": 15.79,
+    "board": "auction_official"
   },
   {
     "player_id": 56817,
@@ -1937,7 +2156,8 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 121,
-    "pressure_score": 11.91
+    "pressure_score": 11.91,
+    "board": "auction_official"
   },
   {
     "player_id": 7473,
@@ -1946,6 +2166,1855 @@
     "is_batter": false,
     "is_bowler": true,
     "rank": 122,
-    "pressure_score": 10.48
+    "pressure_score": 10.48,
+    "board": "auction_official"
+  },
+  {
+    "player_id": 768,
+    "player_name": "Reeza Hendricks",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 3,
+    "pressure_score": 91.03,
+    "board": "global"
+  },
+  {
+    "player_id": 6273,
+    "player_name": "Tom Banton",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 8,
+    "pressure_score": 88.57,
+    "board": "global"
+  },
+  {
+    "player_id": 2485,
+    "player_name": "Babar Azam",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 11,
+    "pressure_score": 86.67,
+    "board": "global"
+  },
+  {
+    "player_id": 796,
+    "player_name": "Matthew Wade",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 22,
+    "pressure_score": 81.33,
+    "board": "global"
+  },
+  {
+    "player_id": 8301,
+    "player_name": "Asif Khan",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 23,
+    "pressure_score": 81.31,
+    "board": "global"
+  },
+  {
+    "player_id": 332,
+    "player_name": "Angelo Mathews",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 26,
+    "pressure_score": 80.18,
+    "board": "global"
+  },
+  {
+    "player_id": 2533,
+    "player_name": "Najibullah Zadran",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 27,
+    "pressure_score": 79.99,
+    "board": "global"
+  },
+  {
+    "player_id": 4229,
+    "player_name": "George Linde",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 28,
+    "pressure_score": 79.95,
+    "board": "global"
+  },
+  {
+    "player_id": 2671,
+    "player_name": "Liton Das",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 33,
+    "pressure_score": 79.28,
+    "board": "global"
+  },
+  {
+    "player_id": 1107,
+    "player_name": "Mohammad Nabi",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 52,
+    "pressure_score": 74.89,
+    "board": "global",
+    "bowler_rank": 151,
+    "bowler_pressure_score": 42.49
+  },
+  {
+    "player_id": 2490,
+    "player_name": "Mohammad Nawaz",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 56,
+    "pressure_score": 73.81,
+    "board": "global",
+    "bowler_rank": 1,
+    "bowler_pressure_score": 89.66
+  },
+  {
+    "player_id": 7741,
+    "player_name": "Gareth Delany",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 58,
+    "pressure_score": 73.75,
+    "board": "global",
+    "bowler_rank": 51,
+    "bowler_pressure_score": 60.79
+  },
+  {
+    "player_id": 1101,
+    "player_name": "George Dockrell",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 60,
+    "pressure_score": 73.02,
+    "board": "global"
+  },
+  {
+    "player_id": 4812,
+    "player_name": "Harry Tector",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 67,
+    "pressure_score": 71.38,
+    "board": "global"
+  },
+  {
+    "player_id": 7903,
+    "player_name": "Shamim Hossain",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 70,
+    "pressure_score": 71.0,
+    "board": "global"
+  },
+  {
+    "player_id": 49027,
+    "player_name": "Bevon Jacobs",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 73,
+    "pressure_score": 69.93,
+    "board": "global"
+  },
+  {
+    "player_id": 4369,
+    "player_name": "Shai Hope",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 78,
+    "pressure_score": 69.74,
+    "board": "global"
+  },
+  {
+    "player_id": 24017,
+    "player_name": "Brian Bennett",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 79,
+    "pressure_score": 69.72,
+    "board": "global"
+  },
+  {
+    "player_id": 8739,
+    "player_name": "Muhammad Irfan",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 80,
+    "pressure_score": 69.48,
+    "board": "global"
+  },
+  {
+    "player_id": 3954,
+    "player_name": "Andrew Balbirnie",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 84,
+    "pressure_score": 68.8,
+    "board": "global"
+  },
+  {
+    "player_id": 6398,
+    "player_name": "Aaron Hardie",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 85,
+    "pressure_score": 68.62,
+    "board": "global"
+  },
+  {
+    "player_id": 4773,
+    "player_name": "Jaker Ali Anik",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 86,
+    "pressure_score": 68.15,
+    "board": "global"
+  },
+  {
+    "player_id": 23311,
+    "player_name": "Jacob Bethell",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 87,
+    "pressure_score": 68.1,
+    "board": "global"
+  },
+  {
+    "player_id": 4926,
+    "player_name": "Shadab Khan",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 89,
+    "pressure_score": 67.83,
+    "board": "global",
+    "bowler_rank": 18,
+    "bowler_pressure_score": 69.56
+  },
+  {
+    "player_id": 2930,
+    "player_name": "Rassie van der Dussen",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 92,
+    "pressure_score": 67.34,
+    "board": "global"
+  },
+  {
+    "player_id": 6651,
+    "player_name": "Towhid Hridoy",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 93,
+    "pressure_score": 67.22,
+    "board": "global"
+  },
+  {
+    "player_id": 2214,
+    "player_name": "Gulbadin Naib",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 96,
+    "pressure_score": 66.76,
+    "board": "global"
+  },
+  {
+    "player_id": 7690,
+    "player_name": "Saim Ayub",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 97,
+    "pressure_score": 66.59,
+    "board": "global",
+    "bowler_rank": 38,
+    "bowler_pressure_score": 63.09
+  },
+  {
+    "player_id": 6448,
+    "player_name": "Ibrahim Zadran",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 100,
+    "pressure_score": 65.8,
+    "board": "global"
+  },
+  {
+    "player_id": 3024,
+    "player_name": "Mohammad Rizwan",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 102,
+    "pressure_score": 65.47,
+    "board": "global"
+  },
+  {
+    "player_id": 7049,
+    "player_name": "Kamil Mishara",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 104,
+    "pressure_score": 65.27,
+    "board": "global"
+  },
+  {
+    "player_id": 2921,
+    "player_name": "Fakhar Zaman",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 105,
+    "pressure_score": 65.26,
+    "board": "global"
+  },
+  {
+    "player_id": 8652,
+    "player_name": "Mohammad Ishaq",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 107,
+    "pressure_score": 63.87,
+    "board": "global"
+  },
+  {
+    "player_id": 3374,
+    "player_name": "Mark Chapman",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 108,
+    "pressure_score": 63.84,
+    "board": "global"
+  },
+  {
+    "player_id": 4847,
+    "player_name": "Finn Allen",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 109,
+    "pressure_score": 63.47,
+    "board": "global"
+  },
+  {
+    "player_id": 7338,
+    "player_name": "Haider Ali",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 110,
+    "pressure_score": 63.07,
+    "board": "global"
+  },
+  {
+    "player_id": 3672,
+    "player_name": "Kusal Mendis",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 111,
+    "pressure_score": 62.68,
+    "board": "global"
+  },
+  {
+    "player_id": 3669,
+    "player_name": "Sadeera Samarawickrama",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 113,
+    "pressure_score": 62.3,
+    "board": "global"
+  },
+  {
+    "player_id": 3056,
+    "player_name": "Iftikhar Ahmed",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 117,
+    "pressure_score": 61.01,
+    "board": "global",
+    "bowler_rank": 72,
+    "bowler_pressure_score": 56.76
+  },
+  {
+    "player_id": 3578,
+    "player_name": "Imad Wasim",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 118,
+    "pressure_score": 60.73,
+    "board": "global"
+  },
+  {
+    "player_id": 3091,
+    "player_name": "Sahibzada Farhan",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 122,
+    "pressure_score": 59.67,
+    "board": "global"
+  },
+  {
+    "player_id": 2680,
+    "player_name": "Nurul Hasan",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 125,
+    "pressure_score": 59.11,
+    "board": "global"
+  },
+  {
+    "player_id": 2463,
+    "player_name": "Ryan Burl",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 128,
+    "pressure_score": 58.63,
+    "board": "global"
+  },
+  {
+    "player_id": 7052,
+    "player_name": "Dunith Wellalage",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 129,
+    "pressure_score": 58.54,
+    "board": "global",
+    "bowler_rank": 173,
+    "bowler_pressure_score": 37.69
+  },
+  {
+    "player_id": 8647,
+    "player_name": "Sediqullah Atal",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 130,
+    "pressure_score": 58.47,
+    "board": "global"
+  },
+  {
+    "player_id": 1568,
+    "player_name": "Kane Williamson",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 131,
+    "pressure_score": 58.44,
+    "board": "global"
+  },
+  {
+    "player_id": 2003,
+    "player_name": "Bhanuka Rajapaksa",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 133,
+    "pressure_score": 58.36,
+    "board": "global"
+  },
+  {
+    "player_id": 223,
+    "player_name": "Steven Smith",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 135,
+    "pressure_score": 57.78,
+    "board": "global"
+  },
+  {
+    "player_id": 24779,
+    "player_name": "Ijaz Ahmadzai",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 136,
+    "pressure_score": 57.09,
+    "board": "global"
+  },
+  {
+    "player_id": 8726,
+    "player_name": "Alishan Sharafu",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 139,
+    "pressure_score": 55.86,
+    "board": "global"
+  },
+  {
+    "player_id": 4867,
+    "player_name": "Wesley Madhevere",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 142,
+    "pressure_score": 55.72,
+    "board": "global"
+  },
+  {
+    "player_id": 5882,
+    "player_name": "Afif Hossain",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 147,
+    "pressure_score": 53.7,
+    "board": "global"
+  },
+  {
+    "player_id": 7900,
+    "player_name": "Tanzid Hasan",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 148,
+    "pressure_score": 53.15,
+    "board": "global"
+  },
+  {
+    "player_id": 21781,
+    "player_name": "Clive Madande",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 149,
+    "pressure_score": 53.02,
+    "board": "global"
+  },
+  {
+    "player_id": 3323,
+    "player_name": "Jimmy Neesham",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 152,
+    "pressure_score": 52.02,
+    "board": "global",
+    "bowler_rank": 148,
+    "bowler_pressure_score": 42.82
+  },
+  {
+    "player_id": 2416,
+    "player_name": "Kyle Mayers",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 153,
+    "pressure_score": 50.77,
+    "board": "global"
+  },
+  {
+    "player_id": 6931,
+    "player_name": "Pathum Nissanka",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 154,
+    "pressure_score": 50.76,
+    "board": "global"
+  },
+  {
+    "player_id": 3377,
+    "player_name": "Babar Hayat",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 156,
+    "pressure_score": 50.43,
+    "board": "global"
+  },
+  {
+    "player_id": 3097,
+    "player_name": "Shan Masood",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 157,
+    "pressure_score": 50.05,
+    "board": "global"
+  },
+  {
+    "player_id": 499,
+    "player_name": "Shakib Al Hasan",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 160,
+    "pressure_score": 49.31,
+    "board": "global",
+    "bowler_rank": 137,
+    "bowler_pressure_score": 44.82
+  },
+  {
+    "player_id": 2687,
+    "player_name": "Roston Chase",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 161,
+    "pressure_score": 49.08,
+    "board": "global",
+    "bowler_rank": 153,
+    "bowler_pressure_score": 42.07
+  },
+  {
+    "player_id": 27137,
+    "player_name": "Hammad Mirza",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 162,
+    "pressure_score": 48.58,
+    "board": "global"
+  },
+  {
+    "player_id": 3639,
+    "player_name": "Brandon King",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 163,
+    "pressure_score": 48.39,
+    "board": "global"
+  },
+  {
+    "player_id": 6664,
+    "player_name": "Dion Myers",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 165,
+    "pressure_score": 47.78,
+    "board": "global"
+  },
+  {
+    "player_id": 8741,
+    "player_name": "Mohammad Haris",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 166,
+    "pressure_score": 47.76,
+    "board": "global"
+  },
+  {
+    "player_id": 3727,
+    "player_name": "Matthew Short",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 167,
+    "pressure_score": 47.65,
+    "board": "global"
+  },
+  {
+    "player_id": 507,
+    "player_name": "Mohammad Mahmudullah",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 169,
+    "pressure_score": 46.43,
+    "board": "global"
+  },
+  {
+    "player_id": 7355,
+    "player_name": "Tayyab Tahir",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 171,
+    "pressure_score": 46.22,
+    "board": "global"
+  },
+  {
+    "player_id": 1481,
+    "player_name": "Kusal Perera",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 172,
+    "pressure_score": 45.15,
+    "board": "global"
+  },
+  {
+    "player_id": 8638,
+    "player_name": "Basil Hameed",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 175,
+    "pressure_score": 43.79,
+    "board": "global"
+  },
+  {
+    "player_id": 5808,
+    "player_name": "Karim Janat",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 176,
+    "pressure_score": 43.51,
+    "board": "global",
+    "bowler_rank": 217,
+    "bowler_pressure_score": 11.59
+  },
+  {
+    "player_id": 3280,
+    "player_name": "Nazmul Hossain Shanto",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 178,
+    "pressure_score": 43.19,
+    "board": "global"
+  },
+  {
+    "player_id": 4895,
+    "player_name": "Charith Asalanka",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 179,
+    "pressure_score": 42.88,
+    "board": "global"
+  },
+  {
+    "player_id": 6881,
+    "player_name": "Scott Edwards",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 181,
+    "pressure_score": 42.4,
+    "board": "global"
+  },
+  {
+    "player_id": 4814,
+    "player_name": "Lorcan Tucker",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 183,
+    "pressure_score": 40.17,
+    "board": "global"
+  },
+  {
+    "player_id": 3700,
+    "player_name": "Tim Seifert",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 185,
+    "pressure_score": 39.68,
+    "board": "global"
+  },
+  {
+    "player_id": 6512,
+    "player_name": "Michael Bracewell",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 186,
+    "pressure_score": 39.58,
+    "board": "global",
+    "bowler_rank": 63,
+    "bowler_pressure_score": 59.63
+  },
+  {
+    "player_id": 49003,
+    "player_name": "Hasan Nawaz",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 188,
+    "pressure_score": 37.78,
+    "board": "global"
+  },
+  {
+    "player_id": 7094,
+    "player_name": "Curtis Campher",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 189,
+    "pressure_score": 37.08,
+    "board": "global",
+    "bowler_rank": 200,
+    "bowler_pressure_score": 30.65
+  },
+  {
+    "player_id": 4111,
+    "player_name": "Khushdil Shah",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 191,
+    "pressure_score": 36.32,
+    "board": "global"
+  },
+  {
+    "player_id": 5837,
+    "player_name": "Mahedi Hasan",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": true,
+    "is_bowler": true,
+    "rank": 192,
+    "pressure_score": 35.94,
+    "board": "global",
+    "bowler_rank": 54,
+    "bowler_pressure_score": 60.46
+  },
+  {
+    "player_id": 6985,
+    "player_name": "Bas de Leede",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 193,
+    "pressure_score": 35.92,
+    "board": "global"
+  },
+  {
+    "player_id": 4662,
+    "player_name": "Cole McConchie",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 194,
+    "pressure_score": 35.09,
+    "board": "global"
+  },
+  {
+    "player_id": 7704,
+    "player_name": "Pavan Rathnayake",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 195,
+    "pressure_score": 33.84,
+    "board": "global"
+  },
+  {
+    "player_id": 20327,
+    "player_name": "Usman Khan",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 196,
+    "pressure_score": 33.68,
+    "board": "global"
+  },
+  {
+    "player_id": 3489,
+    "player_name": "Salman Agha",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 198,
+    "pressure_score": 33.19,
+    "board": "global"
+  },
+  {
+    "player_id": 17432,
+    "player_name": "Ross Adair",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 199,
+    "pressure_score": 32.72,
+    "board": "global"
+  },
+  {
+    "player_id": 6922,
+    "player_name": "Abdul Samad",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 200,
+    "pressure_score": 32.15,
+    "board": "global"
+  },
+  {
+    "player_id": 8600,
+    "player_name": "Tadiwanashe Marumani",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 201,
+    "pressure_score": 29.27,
+    "board": "global"
+  },
+  {
+    "player_id": 19781,
+    "player_name": "Mitchell Owen",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 202,
+    "pressure_score": 28.73,
+    "board": "global"
+  },
+  {
+    "player_id": 2379,
+    "player_name": "Ben Duckett",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 204,
+    "pressure_score": 28.26,
+    "board": "global"
+  },
+  {
+    "player_id": 21790,
+    "player_name": "Tashinga Musekiwa",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 205,
+    "pressure_score": 27.3,
+    "board": "global"
+  },
+  {
+    "player_id": 7155,
+    "player_name": "Sahan Arachchige",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 206,
+    "pressure_score": 27.02,
+    "board": "global"
+  },
+  {
+    "player_id": 3383,
+    "player_name": "Kinchit Shah",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 207,
+    "pressure_score": 24.04,
+    "board": "global"
+  },
+  {
+    "player_id": 7937,
+    "player_name": "Wasim Ali",
+    "primary_role": "Batting All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 208,
+    "pressure_score": 23.91,
+    "board": "global"
+  },
+  {
+    "player_id": 2972,
+    "player_name": "Yasim Murtaza",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 209,
+    "pressure_score": 21.35,
+    "board": "global"
+  },
+  {
+    "player_id": 26646,
+    "player_name": "Rahul Chopra",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 210,
+    "pressure_score": 20.94,
+    "board": "global"
+  },
+  {
+    "player_id": 728,
+    "player_name": "Dawid Malan",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 211,
+    "pressure_score": 20.36,
+    "board": "global"
+  },
+  {
+    "player_id": 6674,
+    "player_name": "Rahmanullah Gurbaz",
+    "primary_role": "Wicketkeeper-Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 212,
+    "pressure_score": 19.31,
+    "board": "global"
+  },
+  {
+    "player_id": 26519,
+    "player_name": "Janith Liyanage",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 213,
+    "pressure_score": 18.42,
+    "board": "global"
+  },
+  {
+    "player_id": 3282,
+    "player_name": "Mehidy Hasan Miraz",
+    "primary_role": "All-Rounder",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 214,
+    "pressure_score": 17.21,
+    "board": "global"
+  },
+  {
+    "player_id": 7894,
+    "player_name": "Tony Munyonga",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 215,
+    "pressure_score": 16.52,
+    "board": "global"
+  },
+  {
+    "player_id": 6433,
+    "player_name": "Darwish Rasooli",
+    "primary_role": "Batter",
+    "is_batter": true,
+    "is_bowler": false,
+    "rank": 216,
+    "pressure_score": 16.18,
+    "board": "global"
+  },
+  {
+    "player_id": 5979,
+    "player_name": "Abrar Ahmed",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 2,
+    "pressure_score": 83.65,
+    "board": "global"
+  },
+  {
+    "player_id": 34485,
+    "player_name": "Sufiyan Muqeem",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 3,
+    "pressure_score": 80.29,
+    "board": "global"
+  },
+  {
+    "player_id": 22471,
+    "player_name": "Matthew Humphreys",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 6,
+    "pressure_score": 76.07,
+    "board": "global"
+  },
+  {
+    "player_id": 6643,
+    "player_name": "Hasan Mahmud",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 7,
+    "pressure_score": 75.57,
+    "board": "global"
+  },
+  {
+    "player_id": 7364,
+    "player_name": "Haris Rauf",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 11,
+    "pressure_score": 73.4,
+    "board": "global"
+  },
+  {
+    "player_id": 2681,
+    "player_name": "Taskin Ahmed",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 12,
+    "pressure_score": 73.06,
+    "board": "global"
+  },
+  {
+    "player_id": 2417,
+    "player_name": "Akeal Hosein",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 17,
+    "pressure_score": 69.61,
+    "board": "global"
+  },
+  {
+    "player_id": 27504,
+    "player_name": "Dushan Hemantha",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 19,
+    "pressure_score": 69.25,
+    "board": "global"
+  },
+  {
+    "player_id": 6355,
+    "player_name": "Shaheen Afridi",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 20,
+    "pressure_score": 68.64,
+    "board": "global"
+  },
+  {
+    "player_id": 2526,
+    "player_name": "Ish Sodhi",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 23,
+    "pressure_score": 66.74,
+    "board": "global"
+  },
+  {
+    "player_id": 286,
+    "player_name": "Kane Richardson",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 24,
+    "pressure_score": 66.55,
+    "board": "global"
+  },
+  {
+    "player_id": 8380,
+    "player_name": "Mohammad Rishad Hossain",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 25,
+    "pressure_score": 66.52,
+    "board": "global"
+  },
+  {
+    "player_id": 2985,
+    "player_name": "Mark Wood",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 27,
+    "pressure_score": 65.9,
+    "board": "global"
+  },
+  {
+    "player_id": 48616,
+    "player_name": "Abdul Saqlain",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 29,
+    "pressure_score": 65.64,
+    "board": "global"
+  },
+  {
+    "player_id": 3276,
+    "player_name": "Gudakesh Motie",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 33,
+    "pressure_score": 64.24,
+    "board": "global"
+  },
+  {
+    "player_id": 3720,
+    "player_name": "Craig Young",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 34,
+    "pressure_score": 63.84,
+    "board": "global"
+  },
+  {
+    "player_id": 29066,
+    "player_name": "Zakary Foulkes",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 35,
+    "pressure_score": 63.46,
+    "board": "global"
+  },
+  {
+    "player_id": 6450,
+    "player_name": "Mujeeb Ur Rahman",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 37,
+    "pressure_score": 63.13,
+    "board": "global"
+  },
+  {
+    "player_id": 3550,
+    "player_name": "Sharafuddin Ashraf",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 39,
+    "pressure_score": 62.97,
+    "board": "global"
+  },
+  {
+    "player_id": 20704,
+    "player_name": "Salman Mirza",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 44,
+    "pressure_score": 62.4,
+    "board": "global"
+  },
+  {
+    "player_id": 7699,
+    "player_name": "Abbas Afridi",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 47,
+    "pressure_score": 61.32,
+    "board": "global"
+  },
+  {
+    "player_id": 4237,
+    "player_name": "Tabraiz Shamsi",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 56,
+    "pressure_score": 60.13,
+    "board": "global"
+  },
+  {
+    "player_id": 5750,
+    "player_name": "Ehsan Khan",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 59,
+    "pressure_score": 60.1,
+    "board": "global"
+  },
+  {
+    "player_id": 6354,
+    "player_name": "Spencer Johnson",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 60,
+    "pressure_score": 60.07,
+    "board": "global"
+  },
+  {
+    "player_id": 4856,
+    "player_name": "Benjamin Sears",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 61,
+    "pressure_score": 59.81,
+    "board": "global"
+  },
+  {
+    "player_id": 47050,
+    "player_name": "Shamar Joseph",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 68,
+    "pressure_score": 58.31,
+    "board": "global"
+  },
+  {
+    "player_id": 2483,
+    "player_name": "Lizaad Williams",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 70,
+    "pressure_score": 57.31,
+    "board": "global"
+  },
+  {
+    "player_id": 1389,
+    "player_name": "Sean Abbott",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 71,
+    "pressure_score": 57.12,
+    "board": "global"
+  },
+  {
+    "player_id": 479,
+    "player_name": "Adil Rashid",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 75,
+    "pressure_score": 55.83,
+    "board": "global"
+  },
+  {
+    "player_id": 4840,
+    "player_name": "Odean Smith",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 76,
+    "pressure_score": 55.73,
+    "board": "global"
+  },
+  {
+    "player_id": 3697,
+    "player_name": "Kyle Jamieson",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 83,
+    "pressure_score": 54.65,
+    "board": "global"
+  },
+  {
+    "player_id": 8009,
+    "player_name": "Junaid Siddique",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 95,
+    "pressure_score": 51.8,
+    "board": "global"
+  },
+  {
+    "player_id": 8805,
+    "player_name": "Ottneil Baartman",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 96,
+    "pressure_score": 51.61,
+    "board": "global"
+  },
+  {
+    "player_id": 5441,
+    "player_name": "Barry McCarthy",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 97,
+    "pressure_score": 51.53,
+    "board": "global"
+  },
+  {
+    "player_id": 4874,
+    "player_name": "Richard Ngarava",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 100,
+    "pressure_score": 51.36,
+    "board": "global"
+  },
+  {
+    "player_id": 1159,
+    "player_name": "Tendai Chatara",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 103,
+    "pressure_score": 50.91,
+    "board": "global"
+  },
+  {
+    "player_id": 56685,
+    "player_name": "Abdullah Ahmadzai",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 108,
+    "pressure_score": 49.96,
+    "board": "global"
+  },
+  {
+    "player_id": 3641,
+    "player_name": "Ben Dwarshuis",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 109,
+    "pressure_score": 49.66,
+    "board": "global"
+  },
+  {
+    "player_id": 6523,
+    "player_name": "Blessing Muzarabani",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 113,
+    "pressure_score": 49.23,
+    "board": "global"
+  },
+  {
+    "player_id": 1487,
+    "player_name": "Adam Milne",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 117,
+    "pressure_score": 48.44,
+    "board": "global"
+  },
+  {
+    "player_id": 5189,
+    "player_name": "Faheem Ashraf",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 119,
+    "pressure_score": 48.12,
+    "board": "global"
+  },
+  {
+    "player_id": 42548,
+    "player_name": "Muhammad Jawadullah",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 124,
+    "pressure_score": 46.92,
+    "board": "global"
+  },
+  {
+    "player_id": 5379,
+    "player_name": "Mark Adair",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 127,
+    "pressure_score": 46.78,
+    "board": "global"
+  },
+  {
+    "player_id": 24767,
+    "player_name": "Ripon Mondol",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 130,
+    "pressure_score": 46.18,
+    "board": "global"
+  },
+  {
+    "player_id": 6286,
+    "player_name": "Shivam Mavi",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 134,
+    "pressure_score": 45.22,
+    "board": "global"
+  },
+  {
+    "player_id": 2997,
+    "player_name": "Paul van Meekeren",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 135,
+    "pressure_score": 44.92,
+    "board": "global"
+  },
+  {
+    "player_id": 21784,
+    "player_name": "Brad Evans",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 139,
+    "pressure_score": 43.87,
+    "board": "global"
+  },
+  {
+    "player_id": 6436,
+    "player_name": "Qais Ahmad",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 140,
+    "pressure_score": 43.72,
+    "board": "global"
+  },
+  {
+    "player_id": 1219,
+    "player_name": "David Willey",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 142,
+    "pressure_score": 43.35,
+    "board": "global"
+  },
+  {
+    "player_id": 38855,
+    "player_name": "Mohammad Saifuddin",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 144,
+    "pressure_score": 43.2,
+    "board": "global"
+  },
+  {
+    "player_id": 4658,
+    "player_name": "Nasum Ahmed",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 146,
+    "pressure_score": 43.02,
+    "board": "global"
+  },
+  {
+    "player_id": 2315,
+    "player_name": "Reece Topley",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 147,
+    "pressure_score": 42.96,
+    "board": "global"
+  },
+  {
+    "player_id": 6097,
+    "player_name": "Brydon Carse",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 149,
+    "pressure_score": 42.8,
+    "board": "global"
+  },
+  {
+    "player_id": 8049,
+    "player_name": "Naseem Shah",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 156,
+    "pressure_score": 41.89,
+    "board": "global"
+  },
+  {
+    "player_id": 7696,
+    "player_name": "Mohammad Wasim",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 158,
+    "pressure_score": 41.72,
+    "board": "global"
+  },
+  {
+    "player_id": 26663,
+    "player_name": "Kwena Maphaka",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 159,
+    "pressure_score": 41.14,
+    "board": "global"
+  },
+  {
+    "player_id": 722,
+    "player_name": "Liam Dawson",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 160,
+    "pressure_score": 40.8,
+    "board": "global"
+  },
+  {
+    "player_id": 4201,
+    "player_name": "Fareed Malik",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 169,
+    "pressure_score": 38.78,
+    "board": "global"
+  },
+  {
+    "player_id": 27743,
+    "player_name": "DT Doram",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 172,
+    "pressure_score": 37.83,
+    "board": "global"
+  },
+  {
+    "player_id": 25030,
+    "player_name": "Zaman Khan",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 175,
+    "pressure_score": 37.49,
+    "board": "global"
+  },
+  {
+    "player_id": 22134,
+    "player_name": "Luke Jongwe",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 177,
+    "pressure_score": 36.39,
+    "board": "global"
+  },
+  {
+    "player_id": 7689,
+    "player_name": "Dilshan Madushanka",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 182,
+    "pressure_score": 34.8,
+    "board": "global"
+  },
+  {
+    "player_id": 4639,
+    "player_name": "Wellington Masakadza",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 183,
+    "pressure_score": 34.44,
+    "board": "global"
+  },
+  {
+    "player_id": 4499,
+    "player_name": "Saqib Mahmood",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 187,
+    "pressure_score": 33.78,
+    "board": "global"
+  },
+  {
+    "player_id": 6160,
+    "player_name": "Chamika Karunaratne",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 190,
+    "pressure_score": 33.06,
+    "board": "global"
+  },
+  {
+    "player_id": 3174,
+    "player_name": "Matt Henry",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 192,
+    "pressure_score": 32.79,
+    "board": "global"
+  },
+  {
+    "player_id": 4842,
+    "player_name": "Shamar Springer",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 196,
+    "pressure_score": 32.14,
+    "board": "global"
+  },
+  {
+    "player_id": 7344,
+    "player_name": "Shoriful Islam",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 197,
+    "pressure_score": 31.81,
+    "board": "global"
+  },
+  {
+    "player_id": 7905,
+    "player_name": "Tanzim Sakib",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 198,
+    "pressure_score": 31.8,
+    "board": "global"
+  },
+  {
+    "player_id": 3660,
+    "player_name": "Luke Wood",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 199,
+    "pressure_score": 31.78,
+    "board": "global"
+  },
+  {
+    "player_id": 2304,
+    "player_name": "Tymal Mills",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 202,
+    "pressure_score": 28.76,
+    "board": "global"
+  },
+  {
+    "player_id": 3664,
+    "player_name": "Binura Fernando",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 204,
+    "pressure_score": 28.11,
+    "board": "global"
+  },
+  {
+    "player_id": 8295,
+    "player_name": "Matthew Forde",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 206,
+    "pressure_score": 27.5,
+    "board": "global"
+  },
+  {
+    "player_id": 1944,
+    "player_name": "Keshav Maharaj",
+    "primary_role": "Bowling All-Rounder",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 208,
+    "pressure_score": 26.53,
+    "board": "global"
+  },
+  {
+    "player_id": 8614,
+    "player_name": "William ORourke",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 210,
+    "pressure_score": 25.66,
+    "board": "global"
+  },
+  {
+    "player_id": 5562,
+    "player_name": "Richard Gleeson",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 212,
+    "pressure_score": 22.09,
+    "board": "global"
+  },
+  {
+    "player_id": 1772,
+    "player_name": "Sheldon Cottrell",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 213,
+    "pressure_score": 20.78,
+    "board": "global"
+  },
+  {
+    "player_id": 6677,
+    "player_name": "Mohammad Hasnain",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 218,
+    "pressure_score": 10.69,
+    "board": "global"
+  },
+  {
+    "player_id": 5892,
+    "player_name": "Blair Tickner",
+    "primary_role": "Bowler",
+    "is_batter": false,
+    "is_bowler": true,
+    "rank": 219,
+    "pressure_score": 10.49,
+    "board": "global"
   }
 ]

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageId } from '../types';
+import { PageId, PlayerIndexItem } from '../types';
 import {
   LayoutDashboard,
   Crosshair,
@@ -12,17 +12,24 @@ import {
   X,
 } from 'lucide-react';
 import { StatusChip } from './StatusChip';
+import { PlayerSearch } from './PlayerSearch';
 import { getBrandLogoSrc } from '../lib/images';
 
 interface NavbarProps {
   currentPage: PageId;
   onNavigate: (page: PageId, playerId?: number) => void;
   freezeSha?: string;
+  playerIndex?: PlayerIndexItem[];
 }
 
 const iconProps = { className: 'w-4 h-4', strokeWidth: 2.25 as const };
 
-export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, freezeSha }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  currentPage,
+  onNavigate,
+  freezeSha,
+  playerIndex = [],
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   const navItems: { id: PageId; label: string; short?: string; icon: React.ReactNode }[] = [
@@ -86,6 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, freezeS
           </nav>
 
           <div className="hidden md:flex items-center gap-2 shrink-0">
+            <PlayerSearch index={playerIndex} onNavigate={onNavigate} />
             <StatusChip label="Ranks Frozen" />
             <span className="text-[10px] font-mono text-ink-500 hidden xl:inline">
               SHA {freezeSha ? freezeSha.slice(0, 8) : 'a819c0e6'}
@@ -125,7 +133,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, freezeS
                 </button>
               );
             })}
-            <div className="pt-2 px-1">
+            <div className="pt-2 px-1 space-y-2">
+              <PlayerSearch
+                index={playerIndex}
+                onNavigate={(page, id) => {
+                  onNavigate(page, id);
+                  setMobileMenuOpen(false);
+                }}
+              />
               <StatusChip label="Ranks Frozen" />
             </div>
           </div>

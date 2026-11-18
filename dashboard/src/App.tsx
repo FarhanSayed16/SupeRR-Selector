@@ -6,15 +6,23 @@ import {
   BowlerRecord,
   PressureSummary,
   ExcludedPlayer,
+  PlayerIndexItem,
+  PlayerDetailMap,
+  ScoutBoard,
 } from './types';
 import {
   fetchMeta,
   fetchTop10Batters,
   fetchTop10Bowlers,
-  fetchGlobalBatters,
-  fetchGlobalBowlers,
+  fetchFullBatters,
+  fetchFullBowlers,
+  fetchFullGlobalBatters,
+  fetchFullGlobalBowlers,
   fetchExcludedLowIpl,
   fetchPressureSummary,
+  fetchPlayersIndex,
+  fetchPlayersDetail,
+  fetchScoutBoard,
 } from './lib/data';
 import { Navbar } from './components/Navbar';
 import { CommandCentre } from './pages/CommandCentre';
@@ -34,10 +42,15 @@ export function App() {
   const [meta, setMeta] = useState<MetaPackage | null>(null);
   const [batters, setBatters] = useState<BatterRecord[]>([]);
   const [bowlers, setBowlers] = useState<BowlerRecord[]>([]);
+  const [fullBatters, setFullBatters] = useState<BatterRecord[]>([]);
+  const [fullBowlers, setFullBowlers] = useState<BowlerRecord[]>([]);
   const [globalBatters, setGlobalBatters] = useState<BatterRecord[]>([]);
   const [globalBowlers, setGlobalBowlers] = useState<BowlerRecord[]>([]);
   const [excluded, setExcluded] = useState<ExcludedPlayer[]>([]);
   const [pressureSummary, setPressureSummary] = useState<PressureSummary | null>(null);
+  const [playerIndex, setPlayerIndex] = useState<PlayerIndexItem[]>([]);
+  const [playerDetails, setPlayerDetails] = useState<PlayerDetailMap>({});
+  const [scoutBoard, setScoutBoard] = useState<ScoutBoard | null>(null);
 
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -50,26 +63,41 @@ export function App() {
           metaData,
           battersData,
           bowlersData,
-          globalBattersData,
-          globalBowlersData,
+          fullBat,
+          fullBowl,
+          globalBat,
+          globalBowl,
           excludedData,
           summaryData,
+          indexData,
+          detailData,
+          scoutData,
         ] = await Promise.all([
           fetchMeta(),
           fetchTop10Batters(),
           fetchTop10Bowlers(),
-          fetchGlobalBatters(),
-          fetchGlobalBowlers(),
+          fetchFullBatters(),
+          fetchFullBowlers(),
+          fetchFullGlobalBatters(),
+          fetchFullGlobalBowlers(),
           fetchExcludedLowIpl(),
           fetchPressureSummary(),
+          fetchPlayersIndex(),
+          fetchPlayersDetail(),
+          fetchScoutBoard(),
         ]);
         setMeta(metaData);
         setBatters(battersData);
         setBowlers(bowlersData);
-        setGlobalBatters(globalBattersData);
-        setGlobalBowlers(globalBowlersData);
+        setFullBatters(fullBat);
+        setFullBowlers(fullBowl);
+        setGlobalBatters(globalBat);
+        setGlobalBowlers(globalBowl);
         setExcluded(excludedData);
         setPressureSummary(summaryData);
+        setPlayerIndex(indexData);
+        setPlayerDetails(detailData);
+        setScoutBoard(scoutData);
       } catch (err) {
         console.error('Failed to load dashboard data:', err);
         setError(
@@ -96,6 +124,7 @@ export function App() {
         currentPage={currentPage}
         onNavigate={handleNavigate}
         freezeSha={meta?.freeze_sha256}
+        playerIndex={playerIndex}
       />
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 pt-4 pb-4">
@@ -118,12 +147,13 @@ export function App() {
                 meta={meta}
                 batters={batters}
                 bowlers={bowlers}
+                scoutBoard={scoutBoard}
                 onNavigate={handleNavigate}
               />
             )}
             {currentPage === 'batters' && (
               <BatterIntelligence
-                batters={batters}
+                batters={fullBatters}
                 globalBatters={globalBatters}
                 excluded={excluded}
                 onNavigate={handleNavigate}
@@ -131,7 +161,7 @@ export function App() {
             )}
             {currentPage === 'bowlers' && (
               <BowlerIntelligence
-                bowlers={bowlers}
+                bowlers={fullBowlers}
                 globalBowlers={globalBowlers}
                 excluded={excluded}
                 onNavigate={handleNavigate}
@@ -143,8 +173,9 @@ export function App() {
             {currentPage === 'player_profile' && (
               <PlayerProfile
                 playerId={selectedPlayerId}
-                batters={[...batters, ...globalBatters]}
-                bowlers={[...bowlers, ...globalBowlers]}
+                batters={fullBatters}
+                bowlers={fullBowlers}
+                details={playerDetails}
                 onNavigate={handleNavigate}
               />
             )}

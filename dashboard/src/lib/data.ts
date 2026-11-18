@@ -3,9 +3,11 @@ import {
   BatterRecord,
   BowlerRecord,
   PlayerIndexItem,
+  PlayerDetailMap,
   PressureSummary,
   MethodologyPackage,
   ExcludedPlayer,
+  ScoutBoard,
 } from '../types';
 
 let cachedMeta: MetaPackage | null = null;
@@ -13,9 +15,14 @@ let cachedBatters: BatterRecord[] | null = null;
 let cachedBowlers: BowlerRecord[] | null = null;
 let cachedGlobalBatters: BatterRecord[] | null = null;
 let cachedGlobalBowlers: BowlerRecord[] | null = null;
+let cachedFullBatters: BatterRecord[] | null = null;
+let cachedFullBowlers: BowlerRecord[] | null = null;
+let cachedFullGlobalBatters: BatterRecord[] | null = null;
+let cachedFullGlobalBowlers: BowlerRecord[] | null = null;
 let cachedExcluded: ExcludedPlayer[] | null = null;
 let cachedIndex: PlayerIndexItem[] | null = null;
-let cachedDetails: Record<string, any> | null = null;
+let cachedDetails: PlayerDetailMap | null = null;
+let cachedScout: ScoutBoard | null = null;
 let cachedPressure: PressureSummary | null = null;
 let cachedMethodology: MethodologyPackage | null = null;
 
@@ -61,6 +68,34 @@ export async function fetchExcludedLowIpl(): Promise<ExcludedPlayer[]> {
   return cachedExcluded!;
 }
 
+export async function fetchFullBatters(): Promise<BatterRecord[]> {
+  if (cachedFullBatters) return cachedFullBatters;
+  const res = await fetch('/data/full_batter_rankings.json');
+  cachedFullBatters = await res.json();
+  return cachedFullBatters!;
+}
+
+export async function fetchFullBowlers(): Promise<BowlerRecord[]> {
+  if (cachedFullBowlers) return cachedFullBowlers;
+  const res = await fetch('/data/full_bowler_rankings.json');
+  cachedFullBowlers = await res.json();
+  return cachedFullBowlers!;
+}
+
+export async function fetchFullGlobalBatters(): Promise<BatterRecord[]> {
+  if (cachedFullGlobalBatters) return cachedFullGlobalBatters;
+  const res = await fetch('/data/full_batter_rankings_global.json');
+  cachedFullGlobalBatters = await res.json();
+  return cachedFullGlobalBatters!;
+}
+
+export async function fetchFullGlobalBowlers(): Promise<BowlerRecord[]> {
+  if (cachedFullGlobalBowlers) return cachedFullGlobalBowlers;
+  const res = await fetch('/data/full_bowler_rankings_global.json');
+  cachedFullGlobalBowlers = await res.json();
+  return cachedFullGlobalBowlers!;
+}
+
 export async function fetchPlayersIndex(): Promise<PlayerIndexItem[]> {
   if (cachedIndex) return cachedIndex;
   const res = await fetch('/data/players_index.json');
@@ -68,11 +103,18 @@ export async function fetchPlayersIndex(): Promise<PlayerIndexItem[]> {
   return cachedIndex!;
 }
 
-export async function fetchPlayersDetail(): Promise<Record<string, any>> {
+export async function fetchPlayersDetail(): Promise<PlayerDetailMap> {
   if (cachedDetails) return cachedDetails;
   const res = await fetch('/data/players_detail.json');
   cachedDetails = await res.json();
   return cachedDetails!;
+}
+
+export async function fetchScoutBoard(): Promise<ScoutBoard> {
+  if (cachedScout) return cachedScout;
+  const res = await fetch('/data/scout_board.json');
+  cachedScout = await res.json();
+  return cachedScout!;
 }
 
 export async function fetchPressureSummary(): Promise<PressureSummary> {

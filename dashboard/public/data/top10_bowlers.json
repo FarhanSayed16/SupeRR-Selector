@@ -76,27 +76,9 @@
     "adjusted_display_score": 76.63,
     "board": "auction",
     "rank": 1,
-    "archetype": "All-Time Elite Defensive Mystery Anchor & Death Choke Artist",
-    "rr_slot": "Lead Spin Spearhead (Overs 7, 9, 17, 19)",
-    "auction_tier": "Marquee Spin Specialist",
-    "target_price_inr": "INR 10.0 Cr \u2013 INR 14.0 Cr",
-    "max_bid_ceiling_inr": "INR 15.0 Cr",
-    "fallback_targets": [
-      "Varun Chakravarthy",
-      "Maheesh Theekshana"
-    ],
-    "strengths": [
-      "Tournament-defining 6.47 Pressure Economy across 554 pressure balls",
-      "Astonishing 6.06 Death Overs Economy (16-20) under extreme pressure (unrivaled globally)",
-      "39.9% dot ball rate and 35 pressure wickets (strike rate: 15.8 balls per wicket)",
-      "Complete disguise on knuckle ball, carrom ball, and orthodox off-break"
-    ],
-    "vulnerabilities": [
-      "Rarely gives big flight to invite mistimed hits, occasionally allowing singles when defending sub-6 totals",
-      "Batting can be neutralized by high-pace body-line bouncers if used as pinch-hitter"
-    ],
-    "venue_fit": "Sawai Mansingh Stadium is paradise for Narine: the large square boundaries make his flat, trajectory-varied bowling nearly impossible to hit for six.",
-    "scouting_summary": "The single most restrictive bowler in the entire dataset. Solves RR's death-over leakage permanently by bowling overs 17 and 19 for under 7 runs."
+    "squad_role": "Mystery Spin Enforcer / Death Restrictor",
+    "rr_tactical_fit": "Unrivalled 6.06 death over economy under pressure; pair with RR's spin battery to choke middle-to-death scoring.",
+    "synergy_score": 98
   },
   {
     "player_id": 4101,
@@ -175,26 +157,9 @@
     "adjusted_display_score": 74.22,
     "board": "auction",
     "rank": 2,
-    "archetype": "Tactical Mastermind Left-Arm Orthodox Anchor",
-    "rr_slot": "Powerplay & Middle Restrictor (Overs 5, 8, 10, 12)",
-    "auction_tier": "Overseas Tactical Buy",
-    "target_price_inr": "INR 2.0 Cr \u2013 INR 4.0 Cr",
-    "max_bid_ceiling_inr": "INR 4.5 Cr",
-    "fallback_targets": [
-      "Keshav Maharaj",
-      "Roelof van der Merwe"
-    ],
-    "strengths": [
-      "6.91 Pressure Economy across 563 pressure balls with 40 wickets (14.1 balls per wicket)",
-      "39.1% dot ball rate under pressure",
-      "Subtle variation in pace and trajectory, rarely gives boundary balls",
-      "Elite fielding and reliable lower-order batting composure"
-    ],
-    "vulnerabilities": [
-      "9.51 death overs economy indicates he should not be bowled in overs 18-20"
-    ],
-    "venue_fit": "Can bowl anywhere; highly effective at Jaipur with his flat, defensive trajectories.",
-    "scouting_summary": "The consummate professional. Gives RR tactical flexibility to choke the middle overs and create scoreboard pressure."
+    "squad_role": "Left-Arm Orthodox Choke Specialist",
+    "rr_tactical_fit": "Sub-6.0 economy under pressure (5.98) with lethal arm-ball variation; controls powerplay and middle phase chokes.",
+    "synergy_score": 91
   },
   {
     "player_id": 3644,
@@ -273,26 +238,9 @@
     "adjusted_display_score": 72.94,
     "board": "auction",
     "rank": 3,
-    "archetype": "Premier Left-Arm Wrist-Spin Strike Force",
-    "rr_slot": "Lead Attacking Spinner (Overs 7, 9, 11, 14)",
-    "auction_tier": "Marquee Indian Bowling Anchor",
-    "target_price_inr": "INR 9.0 Cr \u2013 INR 13.0 Cr",
-    "max_bid_ceiling_inr": "INR 14.5 Cr",
-    "fallback_targets": [
-      "Ravi Bishnoi",
-      "Yuzvendra Chahal"
-    ],
-    "strengths": [
-      "51 pressure wickets across 714 balls with a strike rate of 14.0 balls per dismissal",
-      "Revamped quicker trajectory (85-92 kph) prevents batters from stepping out",
-      "Exceptional dip and sharp turn both ways against RHB and LHB",
-      "7.67 overall pressure economy (very respectable for an attacking wrist-spinner)"
-    ],
-    "vulnerabilities": [
-      "8.45 death overs economy shows he is best used as a middle-overs partnership breaker rather than 20th-over specialist"
-    ],
-    "venue_fit": "Thrives at Sawai Mansingh Stadium where wrist spin historically dominates visiting batting lineups.",
-    "scouting_summary": "The definitive Indian attacking spinner. Guarantees 2-3 wickets in middle overs, halting opposition momentum before Sandeep Sharma closes at the death."
+    "squad_role": "Left-Arm Wrist Spin Weapon",
+    "rr_tactical_fit": "Lowest recorded pressure economy in the dataset (5.30) with 56.2% dot balls; high-upside auction target for RR war room.",
+    "synergy_score": 95
   },
   {
     "player_id": 2933,
@@ -371,26 +319,9 @@
     "adjusted_display_score": 72.44,
     "board": "auction",
     "rank": 4,
-    "archetype": "The Global Gold Standard Pace Spearhead",
-    "rr_slot": "Opening Strike Bowler (Overs 1, 3) & Death Closer (Overs 17, 19)",
-    "auction_tier": "Icon / Platinum Target",
-    "target_price_inr": "INR 18.0 Cr \u2013 INR 22.0 Cr",
-    "max_bid_ceiling_inr": "INR 25.0 Cr",
-    "fallback_targets": [
-      "Trent Boult",
-      "Arshdeep Singh"
-    ],
-    "strengths": [
-      "Universal excellence: 7.49 Pressure Economy and 7.41 Death Economy across 780 balls",
-      "53 wickets at 14.7 balls per dismissal with 38.2% dot balls",
-      "Pinpoint toe-crushing yorker, dipping slower ball, and vicious skidding bouncer",
-      "Psychological supremacy: opposition teams systematically look to play him out for 20 runs"
-    ],
-    "vulnerabilities": [
-      "Workload management and physical maintenance throughout a congested calendar"
-    ],
-    "venue_fit": "Universal performer. Lethal on both Jaipur's skiddy surface and Guwahati's bouncy pitch.",
-    "scouting_summary": "The benchmark bowler against whom every candidate is measured. Having Bumrah guarantees RR can defend any total above 160."
+    "squad_role": "Attacking Leg-Spin / Mystery Spinner",
+    "rr_tactical_fit": "Consistent wicket-taker (24 wickets at 5.89 economy in pressure); unreadable variations on dry Jaipur tracks.",
+    "synergy_score": 92
   },
   {
     "player_id": 2636,
@@ -469,25 +400,9 @@
     "adjusted_display_score": 70.99,
     "board": "auction",
     "rank": 5,
-    "archetype": "Leg-Spin Restrictor & Middle-Over Choke",
-    "rr_slot": "Primary spinner (overs 7\u201315 + death overs)",
-    "auction_tier": "Overseas Specialist",
-    "target_price_inr": "INR 6.0 Cr \u2013 9.0 Cr",
-    "max_bid_ceiling_inr": "INR 9.0 Cr",
-    "fallback_targets": [
-      "Wanindu Hasaranga",
-      "Noor Ahmad"
-    ],
-    "strengths": [
-      "Strong weighted pressure economy with IPL sample depth",
-      "Wicket threat vs right-hand middle orders",
-      "Comfortable bowling with men back in the circle"
-    ],
-    "vulnerabilities": [
-      "Left-hand power hitters can target the shorter side"
-    ],
-    "venue_fit": "Jaipur grip amplifies his wrong'un and top-spinner.",
-    "scouting_summary": "IPL-proven leg-spin choke option on the Auction Official board."
+    "squad_role": "Premier Left-Arm Wrist Spinner",
+    "rr_tactical_fit": "Elite wicket-taking strike rate in middle overs (51 pressure wickets); breaks critical partnerships under siege.",
+    "synergy_score": 96
   },
   {
     "player_id": 4722,
@@ -566,26 +481,9 @@
     "adjusted_display_score": 71.43,
     "board": "auction",
     "rank": 6,
-    "archetype": "World-Class Match-Winning Leg-Spin Heavyweight",
-    "rr_slot": "Core Spin Spearhead & High-Leverage Enforcer",
-    "auction_tier": "Marquee Icon Target",
-    "target_price_inr": "INR 14.0 Cr \u2013 INR 18.0 Cr",
-    "max_bid_ceiling_inr": "INR 19.0 Cr",
-    "fallback_targets": [
-      "Wanindu Hasaranga",
-      "Noor Ahmad"
-    ],
-    "strengths": [
-      "Highest pressure volume in dataset: 1,165 balls with 96 wickets (12.1 balls per wicket)",
-      "7.71 Pressure Economy with 37.5% dot ball rate",
-      "Lightning-quick arm action makes his googly impossible to read off the hand",
-      "Adds explosive lower-order batting hitting at #8"
-    ],
-    "vulnerabilities": [
-      "8.36 death economy means he should be bowled out by over 17"
-    ],
-    "venue_fit": "Devastating at Sawai Mansingh Stadium; opposition batters have zero room to work with against his speed.",
-    "scouting_summary": "A proven match-winner who guarantees wickets in every high-pressure scenario. Transforms Rajasthan's bowling attack into the best in the tournament."
+    "squad_role": "World-Leading Death / Super-Over Bowler",
+    "rr_tactical_fit": "Unrivalled 7.41 death economy and 53 pressure wickets across 780 balls; the gold standard of bowling under pressure.",
+    "synergy_score": 100
   },
   {
     "player_id": 4900,
@@ -664,25 +562,9 @@
     "adjusted_display_score": 70.27,
     "board": "auction",
     "rank": 7,
-    "archetype": "Attacking Leg-Spinner / All-Phase Wicket Threat",
-    "rr_slot": "Frontline spinner + lower-order bat",
-    "auction_tier": "Overseas Match-Winner",
-    "target_price_inr": "INR 8.0 Cr \u2013 12.0 Cr",
-    "max_bid_ceiling_inr": "INR 12.0 Cr",
-    "fallback_targets": [
-      "Adam Zampa",
-      "Noor Ahmad"
-    ],
-    "strengths": [
-      "High wicket rate under pressure with googly variation",
-      "Can bowl powerplay and death overs",
-      "Useful lower-order batting for RR balance"
-    ],
-    "vulnerabilities": [
-      "Economy can spike if googly is read early"
-    ],
-    "venue_fit": "SMS turn and bounce suit his attacking length.",
-    "scouting_summary": "Attacking overseas spinner who clears IPL floors and adds batting depth."
+    "squad_role": "Domestic Death Overs Slower-Ball Specialist",
+    "rr_tactical_fit": "High-value Indian domestic pace bowler taking a wicket every 10.6 balls under pressure; ideal auction budget multiplier.",
+    "synergy_score": 97
   },
   {
     "player_id": 7327,
@@ -761,26 +643,9 @@
     "adjusted_display_score": 66.89,
     "board": "auction",
     "rank": 8,
-    "archetype": "High-Value Domestic Death Seamer & Wicket Machine",
-    "rr_slot": "#2 Death Pace Specialist (Overs 16 & 18) / Sandeep Sharma Partner",
-    "auction_tier": "Domestic Value Breakthrough (Prime Scouted Gem)",
-    "target_price_inr": "INR 1.5 Cr \u2013 INR 3.5 Cr",
-    "max_bid_ceiling_inr": "INR 5.0 Cr",
-    "fallback_targets": [
-      "Simarjeet Singh",
-      "Yash Dayal"
-    ],
-    "strengths": [
-      "Exceptional wicket strike rate: 10.6 balls per wicket under pressure (30 wickets in 319 balls!)",
-      "Economy resistance: his pressure economy (9.10) is significantly BETTER than his baseline economy (10.25)",
-      "Tremendous back-of-the-hand slower ball and accurate wide yorker execution",
-      "Uncapped/emerging Indian fast bowler status protects auction purse"
-    ],
-    "vulnerabilities": [
-      "Economy of 9.10 under pressure is higher than elite spinners, but acceptable given his extreme wicket-taking frequency"
-    ],
-    "venue_fit": "His change-of-pace deliveries grip into Jaipur's clay surface, making him exceptionally difficult to pick under lights.",
-    "scouting_summary": "The ultimate domestic value discovery. Solves RR's domestic pace depth at minimal purse impact, freeing capital for marquee batters."
+    "squad_role": "Global Elite Franchise Wicket-Taker",
+    "rr_tactical_fit": "96 pressure wickets (dataset record) with an 8.36 death economy; unmatched experience in tournament knockouts.",
+    "synergy_score": 99
   },
   {
     "player_id": 6256,
@@ -859,26 +724,9 @@
     "adjusted_display_score": 68.59,
     "board": "auction",
     "rank": 9,
-    "archetype": "Deceptive Mystery Spinner with Stumps-Targeting Trajectory",
-    "rr_slot": "Middle & Late-Overs Attacking Mystery Spinner",
-    "auction_tier": "Premium Indian Spin Core",
-    "target_price_inr": "INR 8.0 Cr \u2013 INR 11.0 Cr",
-    "max_bid_ceiling_inr": "INR 12.0 Cr",
-    "fallback_targets": [
-      "Suyash Sharma",
-      "Mayank Markande"
-    ],
-    "strengths": [
-      "66 pressure wickets across 877 balls (13.3 balls per dismissal)",
-      "39.8% dot ball rate and 8.37 pressure economy",
-      "Attacks the stumps directly (high bowled and LBW dismissal percentage)",
-      "Carrom ball and top-spinner are difficult to gauge under night floodlights"
-    ],
-    "vulnerabilities": [
-      "Vulnerable if wet ball impairs grip at death overs"
-    ],
-    "venue_fit": "Jaipur's red-soil track gives his carrom ball extra skid and bounce.",
-    "scouting_summary": "A proven Indian mystery weapon. Guarantees RR has an attacking wicket-taker who can dismantle opposition middle orders in pressure chases."
+    "squad_role": "Economical Finger Spin / Defending Anchor",
+    "rr_tactical_fit": "Sub-7.0 economy under pressure (6.91) across 563 balls; exceptional boundary-prevention accuracy.",
+    "synergy_score": 93
   },
   {
     "player_id": 8661,
@@ -957,24 +805,8 @@
     "adjusted_display_score": 66.91,
     "board": "auction",
     "rank": 10,
-    "archetype": "Sling-Arm Death Seamer",
-    "rr_slot": "Overs 16\u201320 death overs specialist",
-    "auction_tier": "Overseas Specialist",
-    "target_price_inr": "INR 5.0 Cr \u2013 8.0 Cr",
-    "max_bid_ceiling_inr": "INR 8.0 Cr",
-    "fallback_targets": [
-      "Rasikh Salam",
-      "Lockie Ferguson"
-    ],
-    "strengths": [
-      "Unique release angle creates late swing into the blockhole",
-      "Strong death-pressure wicket threat",
-      "Complements RR's Sandeep Sharma end"
-    ],
-    "vulnerabilities": [
-      "Workload management and injury history need monitoring"
-    ],
-    "venue_fit": "Straight boundaries at SMS reward his yorker-length attack.",
-    "scouting_summary": "Death-overs pace option with enough IPL sample to sit on Auction Official."
+    "squad_role": "Middle-Over Breakthrough Mystery Bowler",
+    "rr_tactical_fit": "66 pressure wickets at 13.3 balls per dismissal; forces false strokes when batsmen attempt to accelerate.",
+    "synergy_score": 95
   }
 ]
