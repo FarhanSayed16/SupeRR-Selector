@@ -1,0 +1,135 @@
+{
+  "players": {
+    "126": {
+      "player_id": 126,
+      "src": "/assets/players/126.jpg",
+      "bytes": 200778
+    },
+    "143": {
+      "player_id": 143,
+      "src": "/assets/players/143.jpg",
+      "bytes": 47050
+    },
+    "1699": {
+      "player_id": 1699,
+      "src": "/assets/players/1699.jpg",
+      "bytes": 56300
+    },
+    "23450": {
+      "player_id": 23450,
+      "src": "/assets/players/23450.jpg",
+      "bytes": 206304
+    },
+    "2490": {
+      "player_id": 2490,
+      "src": "/assets/players/2490.jpg",
+      "bytes": 8247
+    },
+    "2756": {
+      "player_id": 2756,
+      "src": "/assets/players/2756.jpg",
+      "bytes": 215440
+    },
+    "2877": {
+      "player_id": 2877,
+      "src": "/assets/players/2877.jpg",
+      "bytes": 49080
+    },
+    "2933": {
+      "player_id": 2933,
+      "src": "/assets/players/2933.jpg",
+      "bytes": 215669
+    },
+    "34485": {
+      "player_id": 34485,
+      "src": "/assets/players/34485.jpg",
+      "bytes": 13928
+    },
+    "3644": {
+      "player_id": 3644,
+      "src": "/assets/players/3644.jpg",
+      "bytes": 209309
+    },
+    "37052": {
+      "player_id": 37052,
+      "src": "/assets/players/37052.jpg",
+      "bytes": 189843
+    },
+    "4101": {
+      "player_id": 4101,
+      "src": "/assets/players/4101.jpg",
+      "bytes": 20547
+    },
+    "4703": {
+      "player_id": 4703,
+      "src": "/assets/players/4703.jpg",
+      "bytes": 178879
+    },
+    "4708": {
+      "player_id": 4708,
+      "src": "/assets/players/4708.jpg",
+      "bytes": 9133
+    },
+    "4722": {
+      "player_id": 4722,
+      "src": "/assets/players/4722.jpg",
+      "bytes": 35260
+    },
+    "5979": {
+      "player_id": 5979,
+      "src": "/assets/players/5979.jpg",
+      "bytes": 128390
+    },
+    "6256": {
+      "player_id": 6256,
+      "src": "/assets/players/6256.jpg",
+      "bytes": 8627
+    },
+    "7327": {
+      "player_id": 7327,
+      "src": "/assets/players/7327.jpg",
+      "bytes": 42552
+    },
+    "781": {
+      "player_id": 781,
+      "src": "/assets/players/781.jpg",
+      "bytes": 222724
+    },
+    "8101": {
+      "player_id": 8101,
+      "src": "/assets/players/8101.jpg",
+      "bytes": 221901
+    },
+    "9001": {
+      "player_id": 9001,
+      "src": "/assets/players/9001.jpg",
+      "bytes": 211304
+    },
+    "9002": {
+      "player_id": 9002,
+      "src": "/assets/players/9002.jpg",
+      "bytes": 206313
+    },
+    "9003": {
+      "player_id": 9003,
+      "src": "/assets/players/9003.jpg",
+      "bytes": 223557
+    },
+    "9004": {
+      "player_id": 9004,
+      "src": "/assets/players/9004.jpg",
+      "bytes": 212128
+    },
+    "9005": {
+      "player_id": 9005,
+      "src": "/assets/players/9005.jpg",
+      "bytes": 217976
+    },
+    "9006": {
+      "player_id": 9006,
+      "src": "/assets/players/9006.jpg",
+      "bytes": 229570
+    }
+  },
+  "count": 26
+}
