@@ -1,0 +1,79 @@
+[
+  {
+    "player_id": 768,
+    "player_name": "Reeza Hendricks",
+    "category": "Batter",
+    "exclusion_reason": "Below Auction Official IPL sample floor",
+    "rank": 3,
+    "pressure_score": 91.03,
+    "ipl_pressure_balls": 0.0,
+    "ipl_pressure_share": 0.0,
+    "primary_role": "Batter"
+  },
+  {
+    "player_id": 6273,
+    "player_name": "Tom Banton",
+    "category": "Batter",
+    "exclusion_reason": "Below Auction Official IPL sample floor",
+    "rank": 8,
+    "pressure_score": 88.57,
+    "ipl_pressure_balls": 0.0,
+    "ipl_pressure_share": 0.0,
+    "primary_role": "Wicketkeeper-Batter"
+  },
+  {
+    "player_id": 2490,
+    "player_name": "Mohammad Nawaz",
+    "category": "Bowler",
+    "exclusion_reason": "Below Auction Official IPL sample floor",
+    "rank": 1,
+    "pressure_score": 89.66,
+    "ipl_pressure_balls": 0.0,
+    "ipl_pressure_share": 0.0,
+    "primary_role": "Bowling All-Rounder"
+  },
+  {
+    "player_id": 5979,
+    "player_name": "Abrar Ahmed",
+    "category": "Bowler",
+    "exclusion_reason": "Below Auction Official IPL sample floor",
+    "rank": 2,
+    "pressure_score": 83.65,
+    "ipl_pressure_balls": 0.0,
+    "ipl_pressure_share": 0.0,
+    "primary_role": "Bowler"
+  },
+  {
+    "player_id": 34485,
+    "player_name": "Sufiyan Muqeem",
+    "category": "Bowler",
+    "exclusion_reason": "Below Auction Official IPL sample floor",
+    "rank": 3,
+    "pressure_score": 80.29,
+    "ipl_pressure_balls": 0.0,
+    "ipl_pressure_share": 0.0,
+    "primary_role": "Bowler"
+  },
+  {
+    "player_id": 22471,
+    "player_name": "Matthew Humphreys",
+    "category": "Bowler",
+    "exclusion_reason": "Below Auction Official IPL sample floor",
+    "rank": 6,
+    "pressure_score": 76.07,
+    "ipl_pressure_balls": 0.0,
+    "ipl_pressure_share": 0.0,
+    "primary_role": "Bowler"
+  },
+  {
+    "player_id": 6643,
+    "player_name": "Hasan Mahmud",
+    "category": "Bowler",
+    "exclusion_reason": "Below Auction Official IPL sample floor",
+    "rank": 7,
+    "pressure_score": 75.57,
+    "ipl_pressure_balls": 0.0,
+    "ipl_pressure_share": 0.0,
+    "primary_role": "Bowling All-Rounder"
+  }
+]
