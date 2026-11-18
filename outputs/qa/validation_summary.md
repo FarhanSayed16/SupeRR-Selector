@@ -2,8 +2,9 @@
 
 ## 1. Cryptographic Freeze Fingerprint
 - **Status:** `FROZEN_OFFICIAL`
-- **SHA256 Fingerprint:** `5cdd7b7451b5a6672dbfadccc3c36a9777ec5bafaec589339e22ba307202d272`
-- **Pressure Specification Version:** `pressure_v1`
+- **Board:** Auction Official
+- **SHA256 Fingerprint:** `a819c0e65bf4ee045ef17c7b19824ccbec549c4b002402e9fbf47f477a04810c`
+- **Pressure Specification Version:** `pressure_v1.1`
 
 ## 2. Integrity & Orthogonality Audits
 | Audit Check | Condition Tested | Result | Status |
@@ -13,34 +14,39 @@
 | Batters Uniqueness | Top 10 Batters unique IDs | 10 / 10 | **PASS** |
 | Bowlers Uniqueness | Top 10 Bowlers unique IDs | 10 / 10 | **PASS** |
 | Disjoint Lists | Zero cross-category player duplication | 0 overlaps | **PASS** |
-| Sample Sufficiency (Batters) | Min pressure balls faced in Top 10 | 208 >= 30 | **PASS** |
-| Sample Sufficiency (Bowlers) | Min pressure balls bowled in Top 10 | 281 >= 30 | **PASS** |
+| Sample Sufficiency (Batters) | Min pressure balls | 208 >= 50 | **PASS** |
+| Sample Sufficiency (Bowlers) | Min pressure balls | 319 >= 80 | **PASS** |
+| IPL Floor (Batters) | Min IPL pressure balls | 142 >= 40 | **PASS** |
+| IPL Floor (Bowlers) | Min IPL pressure balls | 81 >= 60 | **PASS** |
 
-## 3. Sensitivity & Domain Stability
-- **Threshold Perturbation Stability:** 90% list retention under ±0.5 RRR and ±1 death over shift.
-- **IPL Domain Overlap:** 80% of top performers rank in the elite tier of pure IPL-only match slices.
+## 3. Sensitivity & Domain Stability (computed)
+- **Batter Top 10 mean retention:** 92.5% across RRR/death perturbations.
+- **Bowler Top 10 mean retention:** 95.0% across RRR/death perturbations.
+- **Per-variant batter retention %:** [90.0, 100.0, 90.0, 90.0]
+- **Per-variant bowler retention %:** [100.0, 100.0, 90.0, 90.0]
+- **IPL-only Top 12 overlap:** batters 9/10, bowlers 9/10.
 
-## 4. Official Frozen Top 10 Roster
+## 4. Official Frozen Top 10 Roster (Auction Official)
 ### Batters
 1. Rohit Sharma
 2. Shashank Singh
 3. Naman Dhir
-4. Ashutosh Sharma
-5. Dinesh Karthik
-6. Rishabh Pant
-7. Sai Sudharsan
-8. Vijay Shankar
-9. Suryakumar Yadav
-10. Rinku Singh
+4. Dinesh Karthik
+5. Rishabh Pant
+6. Ashutosh Sharma
+7. Shreyas Iyer
+8. Rinku Singh
+9. Marcus Stoinis
+10. Suryakumar Yadav
 
 ### Bowlers
 1. Sunil Narine
-2. Mohammad Nawaz
-3. Sufiyan Muqeem
-4. Abrar Ahmed
-5. Kuldeep Yadav
-6. Jasprit Bumrah
-7. Rasikh Salam
-8. Rashid Khan
-9. Mitchell Santner
-10. Varun Chakravarthy
+2. Mitchell Santner
+3. Kuldeep Yadav
+4. Jasprit Bumrah
+5. Adam Zampa
+6. Rashid Khan
+7. Wanindu Hasaranga
+8. Rasikh Salam
+9. Varun Chakravarthy
+10. Matheesha Pathirana

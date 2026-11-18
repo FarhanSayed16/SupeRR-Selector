@@ -399,27 +399,28 @@
 # PHASE 15 — Frontend foundation (design system & app shell)
 
 **Goal:** RR-branded scalable shell with routes stubbed.  
-**Detail refs:** FRONTEND_PLAN §3 · §4 · §9 · §15 Phase F1  
+**Detail refs:** FRONTEND_PLAN §3 · [`UI_GLASSMORPHIC_PLAN.md`](./UI_GLASSMORPHIC_PLAN.md) · §4 · §9  
+**Visual system (locked):** **RR Glass** — light glassmorphism, pink signal, navy text, frosted panels (not turf-green, not solid dark war-room).  
 **Can parallel with Phase 14 if JSON contracts already drafted.**
 
 ### Sub-phases
 
 - [x] 15.1 Scaffold React + Vite + TypeScript app in `dashboard/`  
 - [x] 15.2 Setup Tailwind (or chosen styling) wired to design tokens  
-- [x] 15.3 Implement colour tokens (pink, navy, purple, gold, surfaces, confidence colours)  
+- [x] 15.3 Implement RR Glass colour tokens (pink, navy, purple, gold, glass fills, confidence)  
 - [x] 15.4 Implement typography tokens (display, heading, body, data numerals, labels)  
-- [x] 15.5 Implement spacing / radius / elevation tokens  
+- [x] 15.5 Implement spacing / radius / elevation + glass utilities  
 - [x] 15.6 Establish icon set mapping for nav + metrics  
-- [x] 15.7 Build App Shell (top nav / mobile nav pattern)  
+- [x] 15.7 Build App Shell (floating glass nav / mobile nav pattern)  
 - [x] 15.8 Add primary nav items for all main routes  
 - [x] 15.9 Add brand wordmark / PressurePulse mark placement  
 - [x] 15.10 Stub routes: Home, Batters, Bowlers, Pressure Lab, Auction Room, Methodology, Player, About  
-- [x] 15.11 Add version / freeze chip placeholder in chrome  
-- [x] 15.12 Verify dark war-room theme reads RR (not generic SaaS) against reference jpeg  
+- [x] 15.11 Add version / `RANKS FROZEN` status chip in chrome  
+- [x] 15.12 Verify RR Glass theme reads franchise-grade (vs AirWatch refs + RR pink/navy)  
 
 ### Phase Gate 15
 
-- [x] **GATE:** App runs locally; nav reaches all stubs; tokens + shell look on-brand  
+- [x] **GATE:** App runs locally; nav reaches all stubs; RR Glass tokens + shell look on-brand  
 
 ---
 
@@ -565,11 +566,12 @@
 - [x] 21.12 Chart accessibility labels (not colour-only)  
 - [x] 21.13 Performance pass: route code-split, lazy charts if needed  
 - [x] 21.14 Cross-browser smoke (Chrome + Edge minimum on Windows)  
-- [x] 21.15 Visual QA against RR reference image (brand feel, not pixel clone)  
+- [x] 21.15 Visual QA against RR Glass plan + AirWatch structural refs (brand feel, not pixel clone)  
+- [x] 21.16 Confirm zero turf-green / emerald legacy classes remain in UI  
 
 ### Phase Gate 21
 
-- [x] **GATE:** FE polish complete; mobile+desktop acceptable; a11y basics pass  
+- [x] **GATE:** FE polish complete; RR Glass consistent; mobile+desktop acceptable; a11y basics pass  
 
 ---
 
@@ -689,6 +691,18 @@ Check only when Phases 01–25 gates are done.
 - [x] MASTER_PLAN checkboxes reflect reality  
 
 **If all boxes above are `[x]`, PressurePulse Round 1 is complete.**
+
+---
+
+## Addendum — Phase 26: Analysis Hardening (`pressure_v1.1`)
+
+Detail: [`ANALYSIS_HARDENING_PLAN.md`](./ANALYSIS_HARDENING_PLAN.md)
+
+- [x] 26.1 Unify CONFIG / ranking / methodology / UI weight & eligibility claims  
+- [x] 26.2 Legal-ball batting; bake IPL 1.30 / T20I 1.00 into rates; Auction Official IPL floors; super-over gate  
+- [x] 26.3 Computed sensitivity (retention + IPL-overlap) — no hardcoded 90/80  
+- [x] 26.4 Re-freeze SHA, regen JSON/PDF, sync dashboard  
+- [x] 26.5 Official vs Global toggle, IPL% chips, exclusion notes  
 
 ---
 

@@ -11,9 +11,9 @@
 | All-Rounder | 31 | 2.5% |
 
 ## 2. Eligibility Gating (Pressure Volume >= 30 balls, Matches >= 5)
-- **Eligible Batters Pool:** 379 players
-- **Eligible Bowlers Pool:** 320 players
-- **Dual-Eligible All-Rounders:** 176 players
+- **Eligible Batters Pool:** 322 players
+- **Eligible Bowlers Pool:** 227 players
+- **Dual-Eligible All-Rounders:** 119 players
 
 ## 3. Spot-Check Validation of Prominent Players
 | Player | Role | Pressure BF | Pressure BB | Eligible Batter | Eligible Bowler |

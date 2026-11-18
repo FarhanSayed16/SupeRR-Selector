@@ -14,6 +14,8 @@
 | 3 | [`TECH_STACK_AND_SYSTEM.md`](./TECH_STACK_AND_SYSTEM.md) | Stack choices, system architecture, repo layout, deploy path | Setup, tooling, hosting |
 | 4 | [`BACKEND_PLAN.md`](./BACKEND_PLAN.md) | Backend layers, services, modules, features, handoffs (no code) | Building the intel engine |
 | 5 | [`FRONTEND_PLAN.md`](./FRONTEND_PLAN.md) | Pages, nav, design system, motion, UI structure (no code) | Building the dashboard |
+| 5b | [`UI_GLASSMORPHIC_PLAN.md`](./UI_GLASSMORPHIC_PLAN.md) | **Locked RR Glass theme** — tokens, recipes, page mapping | Visual redesign / UI polish |
+| 5c | [`ANALYSIS_HARDENING_PLAN.md`](./ANALYSIS_HARDENING_PLAN.md) | **pressure_v1.1** — Auction Official floors, weighted rates, sensitivity | Metric/score truth & re-freeze |
 | 6 | [`projectdetails.md`](./projectdetails.md) | Unstop page scrape — timelines, prizes, form fields | Submission form fields |
 | 7 | [`RRSitedata.md`](./RRSitedata.md) | RR website IA / tone reference | Brand & content cues |
 | 8 | `1794678506882-9180.jpeg` | RR UI colour / layout reference | Visual design checks |

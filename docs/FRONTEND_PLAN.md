@@ -37,24 +37,27 @@ The UI must feel like **Rajasthan Royals digital** — pink energy, navy depth, 
 
 ## 3. Design system (visual foundation)
 
+> **Locked visual system:** **RR Glass** (light glassmorphism). Full tokens, recipes, and page mapping live in [`UI_GLASSMORPHIC_PLAN.md`](./UI_GLASSMORPHIC_PLAN.md).
+
 ### 3.1 Theme direction
 
-**Name:** Royals War-Room Dark + Pink Signal  
+**Name:** RR Glass (AirWatch-structure × Rajasthan Royals colour)
 
-- Dominant surfaces: midnight navy / deep purple  
-- Signal colour: royal pink for CTAs, active states, key numbers  
-- Sparse gold for rank #1 / premium highlights only  
-- Light “evidence panels” (white / soft surface) for heavy tables and infographics — same pattern as RR “in numbers” sections  
-- Diagonal stripe / velocity motif in heroes and section headers (subtle, not wallpaper noise)
+- Full-bleed atmospheric wash: soft pink → lavender → cool navy mist  
+- Frosted translucent glass panels (`backdrop-blur`) with thin white borders  
+- Signal colour: royal pink for CTAs, active accents, key numbers  
+- Text: deep navy on glass for titles and values  
+- Sparse gold for rank #1 only  
+- Nested near-opaque white subcards inside glass for dense tables/charts  
+- Floating pill nav with solid white active pill (pink label/icon)
 
 **Avoid**
 
+- Turf-green / emerald legacy palette  
+- Solid dark war-room chrome as the default shell  
+- Sky-blue AirWatch colour clone  
 - Generic purple-on-white SaaS look  
-- Cream + terracotta editorial look  
-- Neon glow overload  
-- Emoji as UI  
-- Too many rounded-full pills  
-- Multi-layer muddy shadows  
+- Neon glow overload · emoji as UI · muddy multi-shadow stacks  
 
 ---
 
@@ -62,22 +65,18 @@ The UI must feel like **Rajasthan Royals digital** — pink energy, navy depth, 
 
 | Token role | Direction | Usage |
 |------------|-----------|--------|
-| Primary pink | Hot magenta / RR pink | Primary buttons, active nav, links, key highlights |
-| Pink deep | Darker pink | Hover / pressed states |
-| Navy | Midnight blue | App chrome, side nav, footers |
-| Purple deep | Dark purple | Premium player panels, hero gradients |
-| Gold | Royal gold | Rank 1 badge, sparse “elite” markers |
-| Surface light | Near-white soft tint | Tables, methodology long-read, “in numbers” blocks |
-| Surface dark | Navy/purple | Default app background |
-| Text primary (on dark) | White | Headings on dark |
-| Text primary (on light) | Navy | Headings on light panels |
-| Text muted | Cool grey-blue | Captions, meta |
-| Success / confidence high | Clear green (restrained) | High confidence badges |
-| Warning / confidence mid | Amber | Medium sample |
-| Danger / confidence low | Soft red | Low sample / caution |
-| Border subtle | Low-contrast line | Card edges without heavy boxing |
+| Primary pink | `#EC008C` | Primary buttons, accents, key numbers |
+| Pink deep | `#C4006E` | Hover / pressed |
+| Navy | `#0B1B3A` | Titles, primary text on glass |
+| Purple deep | `#2A1450` | Atmospheric gradient depth |
+| Gold | `#D4A017` | Rank 1 badge only |
+| Glass fill | `rgba(255,255,255,0.55–0.72)` + blur | Nav, hero, cards |
+| Glass border | `rgba(255,255,255,0.65)` | Panel edges |
+| Text muted | Cool slate | Captions, meta |
+| Confidence high / mid / low | Restrained green / amber / soft red | Badges only |
+| Chart series | Pink + navy + muted slate | Recharts — no emerald |
 
-**Rule:** Pink is the *signal*, navy is the *stage*, gold is the *medal* — never equal volume of all three.
+**Rule:** Pink is the *signal*, navy is the *text/stage*, gold is the *medal* — never equal volume of all three.
 
 ---
 

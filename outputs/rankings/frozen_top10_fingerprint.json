@@ -1,43 +1,80 @@
 {
-  "freeze_sha256": "5cdd7b7451b5a6672dbfadccc3c36a9777ec5bafaec589339e22ba307202d272",
+  "freeze_sha256": "a819c0e65bf4ee045ef17c7b19824ccbec549c4b002402e9fbf47f477a04810c",
   "status": "FROZEN_OFFICIAL",
-  "pressure_version": "pressure_v1",
+  "pressure_version": "pressure_v1.1",
+  "board": "auction_official",
   "top10_batters_ordered": [
     "Rohit Sharma",
     "Shashank Singh",
     "Naman Dhir",
-    "Ashutosh Sharma",
     "Dinesh Karthik",
     "Rishabh Pant",
-    "Sai Sudharsan",
-    "Vijay Shankar",
-    "Suryakumar Yadav",
-    "Rinku Singh"
+    "Ashutosh Sharma",
+    "Shreyas Iyer",
+    "Rinku Singh",
+    "Marcus Stoinis",
+    "Suryakumar Yadav"
   ],
   "top10_bowlers_ordered": [
     "Sunil Narine",
-    "Mohammad Nawaz",
-    "Sufiyan Muqeem",
-    "Abrar Ahmed",
+    "Mitchell Santner",
     "Kuldeep Yadav",
     "Jasprit Bumrah",
-    "Rasikh Salam",
+    "Adam Zampa",
     "Rashid Khan",
-    "Mitchell Santner",
-    "Varun Chakravarthy"
+    "Wanindu Hasaranga",
+    "Rasikh Salam",
+    "Varun Chakravarthy",
+    "Matheesha Pathirana"
   ],
   "audit_checks": {
     "leakage_count": 0,
     "min_batter_pressure_balls": 208,
-    "min_bowler_pressure_balls": 281,
+    "min_bowler_pressure_balls": 319,
+    "min_batter_ipl_pressure_balls": 142,
+    "min_bowler_ipl_pressure_balls": 81,
     "cross_list_duplicates": 0,
     "within_list_duplicates": 0
   },
   "sensitivity": {
     "rrr_nominal": 9.5,
-    "batter_top10_stability_pct": 90.0,
-    "bowler_top10_stability_pct": 90.0,
-    "ipl_overlap_batters": 8,
-    "ipl_overlap_bowlers": 8
+    "death_start_nominal": 16,
+    "variants_tested": [
+      {
+        "rrr": 9.0,
+        "death_start": 16
+      },
+      {
+        "rrr": 10.0,
+        "death_start": 16
+      },
+      {
+        "rrr": 9.5,
+        "death_start": 15
+      },
+      {
+        "rrr": 9.5,
+        "death_start": 17
+      }
+    ],
+    "batter_retention_by_variant_pct": [
+      90.0,
+      100.0,
+      90.0,
+      90.0
+    ],
+    "bowler_retention_by_variant_pct": [
+      100.0,
+      100.0,
+      90.0,
+      90.0
+    ],
+    "batter_top10_stability_pct": 92.5,
+    "bowler_top10_stability_pct": 95.0,
+    "ipl_overlap_batters": 9,
+    "ipl_overlap_bowlers": 9,
+    "ipl_overlap_batters_of": 10,
+    "ipl_overlap_bowlers_of": 10,
+    "computed": true
   }
 }

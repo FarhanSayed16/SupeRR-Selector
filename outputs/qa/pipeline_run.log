@@ -111,3 +111,24 @@
 2026-11-15 01:41:50 [INFO] [PressurePulse]: Delivery packages synchronized: 7 JSON files in dashboard/public/data/
 2026-11-15 01:41:50 [INFO] [PressurePulse]: Run manifest successfully written to D:\SupeRR Selector\outputs\qa\run_manifest.json
 2026-11-15 01:41:50 [INFO] [PressurePulse]: Pipeline completed successfully in 4.72s.
+2026-11-18 14:25:05 [INFO] [PressurePulse]: ==================================================
+2026-11-18 14:25:05 [INFO] [PressurePulse]:  Starting PressurePulse Pipeline (pressure_v1.1)
+2026-11-18 14:25:05 [INFO] [PressurePulse]: ==================================================
+2026-11-18 14:25:05 [INFO] [PressurePulse]: >>> Stage 1: Ingestion & Data Warehouse
+2026-11-18 14:25:06 [INFO] [PressurePulse]: Warehouse ready: 200999 deliveries loaded.
+2026-11-18 14:25:06 [INFO] [PressurePulse]: >>> Stage 2: Match State Reconstruction
+2026-11-18 14:25:07 [INFO] [PressurePulse]: State reconstruction ready: 200999 deliveries state-indexed.
+2026-11-18 14:25:07 [INFO] [PressurePulse]: >>> Stage 3: Pressure Definition Engine
+2026-11-18 14:25:08 [INFO] [PressurePulse]: Pressure engine ready: 39.24% balls marked pressure.
+2026-11-18 14:25:08 [INFO] [PressurePulse]: >>> Stage 4: Player Role Classification
+2026-11-18 14:25:08 [INFO] [PressurePulse]: Role classification ready: 322 batters and 227 bowlers eligible.
+2026-11-18 14:25:08 [INFO] [PressurePulse]: >>> Stage 5: Batting Metrics
+2026-11-18 14:25:09 [INFO] [PressurePulse]: Batting metrics ready: 322 batters evaluated.
+2026-11-18 14:25:09 [INFO] [PressurePulse]: >>> Stage 6: Bowling Metrics
+2026-11-18 14:25:10 [INFO] [PressurePulse]: Bowling metrics ready: 227 bowlers evaluated.
+2026-11-18 14:25:10 [INFO] [PressurePulse]: >>> Stage 7: Scoring & Top 10 Ranking
+2026-11-18 14:25:16 [INFO] [PressurePulse]: Top 10 frozen with SHA256: a819c0e6... #1 Batter = Rohit Sharma, #1 Bowler = Sunil Narine
+2026-11-18 14:25:16 [INFO] [PressurePulse]: >>> Stage 8: Delivery & JSON/CSV Exports
+2026-11-18 14:25:16 [INFO] [PressurePulse]: Delivery packages synchronized: 10 JSON files in dashboard/public/data/
+2026-11-18 14:25:16 [INFO] [PressurePulse]: Run manifest successfully written to D:\SupeRR Selector\outputs\qa\run_manifest.json
+2026-11-18 14:25:16 [INFO] [PressurePulse]: Pipeline completed successfully in 11.59s.

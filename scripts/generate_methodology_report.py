@@ -281,22 +281,29 @@ def build_pdf():
         "specifically during steep chases (RRR &gt;= 9.5), death-over contests, severe batting collapses (&lt;=3 wickets in hand), or critical playoff knockout stages.\"</i>",
         body_style
     ))
+    sens = freeze_meta.get("sensitivity") or {}
+    bat_stab = sens.get("batter_top10_stability_pct", "n/a")
+    bowl_stab = sens.get("bowler_top10_stability_pct", "n/a")
+    ipl_bat = sens.get("ipl_overlap_batters", "n/a")
+    ipl_bowl = sens.get("ipl_overlap_bowlers", "n/a")
+    freeze_sha = freeze_meta["freeze_sha256"]
+
     story.append(Paragraph(
-        "<b>Empirical Proof That Pressure Is NOT Just Death Overs:</b> Across 200,999 deliveries, 78,906 balls (39.26%) are classified as high pressure. "
-        "Crucially, <b>43.7% of all pressure deliveries occur outside the death overs</b>: Powerplay accounts for 10.2% (8,050 balls) driven by early top-order collapse defense, "
-        "and Middle Overs account for 33.5% (26,402 balls) driven by escalating required rates and cluster dismissals.",
+        "<b>Empirical Proof That Pressure Is NOT Just Death Overs:</b> Across 200,999 deliveries, 78,868 balls (39.24%) are classified as high pressure. "
+        "Outside death: Powerplay 10.2% and Middle 33.5% of pressure deliveries (collapse defense + escalating RRR).",
         body_style
     ))
 
     # ================= 3. METRICS & SCORING =================
     story.append(Paragraph("3. Scoring Models & Fairness Constraints", h1_style))
     story.append(Paragraph(
-        "<b>Batting Score (0–100):</b> 40% Clutch Quality (SR 110–180, Boundary %, Batting Avg) + 25% SR Uplift (Pressure SR − Baseline SR) + "
-        "20% Match Consistency (inverse coefficient of variation) + 15% Sample Volume, multiplied by up to 1.15x for IPL exposure.<br/>"
-        "<b>Bowling Score (0–100):</b> 35% Restrictiveness (overall & death economy, dot %) + 30% Wicket Threat (balls per dismissal & wickets taken) + "
-        "15% Economy Resistance Uplift + 10% Consistency + 10% Volume, multiplied by up to 1.15x for IPL exposure.<br/>"
-        "<b>Fairness & Eligibility:</b> Strict volume gates (&gt;=50 pressure balls for batters, &gt;=80 pressure balls for bowlers, across &gt;=5 matches) prevent fluke samples. "
-        "Zero cross-list overlap is mathematically enforced.",
+        "<b>Board:</b> Auction Official is the primary freeze; Global Combined is a secondary methodology board.<br/>"
+        "<b>Batting Score (0–100):</b> 40% Clutch Quality + 25% SR Uplift + 20% Consistency + 15% Volume. "
+        "Rates use <b>legal balls</b>; IPL deliveries enter at <b>1.30x</b> and T20I at <b>1.00x</b> inside SR (no separate +15% score boost).<br/>"
+        "<b>Bowling Score (0–100):</b> 35% Restrictiveness (weighted economy + death soft-cap) + 30% Wicket Threat + "
+        "15% Economy Uplift + 10% Consistency + 10% Volume, with the same IPL/T20I rate weighting.<br/>"
+        "<b>Eligibility:</b> Batters ≥50 pressure / ≥40 baseline / ≥5 matches / ≥40 IPL pressure balls; "
+        "Bowlers ≥80 / ≥60 / ≥5 / ≥60 IPL. Zero cross-list overlap enforced.",
         body_style
     ))
     story.append(Spacer(1, 6))
@@ -309,13 +316,11 @@ def build_pdf():
         "For Season 2, PressurePulse transitions from quantitative filtering to a comprehensive <b>Franchise Scouting & Recruitment System</b>, "
         "identifying tactical archetypes, auction price tiers, and specific roles within the RR Playing XI:<br/>"
         "• <b>The 'Vignesh Puthur' Stealth Domestic Blueprint:</b> Rather than overspending on inflated names, RR should target high-leverage domestic value gems: "
-        "<b>Shashank Singh</b> (#6 finisher, +69.2 SR uplift, 185.5 death SR, 29.1% dot rate, Target: INR 5.5–8.5 Cr), "
-        "<b>Ashutosh Sharma</b> (360° sweep specialist, +79.1 SR uplift, 174.1 chase SR, Target: INR 3.0–5.0 Cr), and "
-        "<b>Rasikh Salam</b> (death seam specialist, exceptional 10.6 balls/wkt, Target: INR 1.5–3.5 Cr). "
-        "Acquiring all three for ~INR 12–15 Cr locks down RR's lower-order finishing and death pace depth while preserving 85% of purse capacity.<br/>"
-        "• <b>Sawai Mansingh Stadium Ground Compatibility:</b> Defending totals on Jaipur's 70m+ square boundaries requires extreme dot-ball pressure. "
-        "<b>Sunil Narine</b> (unrivaled 6.06 death economy under pressure) and <b>Sufiyan Muqeem</b> (lowest tournament economy of 5.30 with 56.2% dot balls) "
-        "weaponize the SMS Stadium surface, starving opposition hitters of boundary release.<br/>"
+        "<b>Shashank Singh</b> (#6 finisher), <b>Ashutosh Sharma</b> (impact clutch), and <b>Rasikh Salam</b> (death seam) "
+        "while preserving purse capacity.<br/>"
+        "• <b>Sawai Mansingh Stadium Ground Compatibility:</b> Defending totals on Jaipur's square boundaries requires extreme dot-ball pressure. "
+        "<b>Sunil Narine</b>, <b>Mitchell Santner</b>, and <b>Kuldeep Yadav</b> (Auction Official) starve opposition hitters of boundary release. "
+        "0% IPL Global leaders (e.g. Nawaz / Muqeem / Abrar) remain on Global Combined only.<br/>"
         "• <b>Projected RR 2027 Playing XI:</b> 1. Y. Jaiswal, 2. R. Sharma (Scouted), 3. S. Samson (C/WK), 4. R. Parag, 5. S. Hetmyer, "
         "6. Shashank Singh (Scouted), 7. D. Jurel, 8. S. Narine (Scouted), 9. Sandeep Sharma, 10. Rasikh Salam (Scouted), 11. K. Yadav (Scouted) | Impact: Ashutosh Sharma (Scouted).",
         body_style
@@ -325,9 +330,11 @@ def build_pdf():
     # ================= 5. VALIDATION & INTEGRITY =================
     story.append(Paragraph("5. Reliability, Sensitivity & Reproducibility", h1_style))
     story.append(Paragraph(
-        "<b>1. Data Leakage & Orthogonality:</b> Audited all 200,999 deliveries. Pressure deliveries and baseline deliveries are strictly disjoint subsets (0 leaks).<br/>"
-        "<b>2. Sensitivity Analysis:</b> Perturbing the RRR threshold by ±0.5 RPO results in 90% retention of the official Top 10 roster, proving mathematical robustness.<br/>"
-        "<b>3. Reproducibility:</b> Running <code>python -m src.run_pipeline</code> regenerates the exact identical rankings with SHA256 fingerprint: <code>5cdd7b7451b5a6672dbfadccc3c36a9777ec5bafaec589339e22ba307202d272</code>.",
+        "<b>1. Data Leakage & Orthogonality:</b> Audited all 200,999 deliveries. Pressure and baseline are strictly disjoint (0 leaks).<br/>"
+        f"<b>2. Sensitivity (computed):</b> Mean Top 10 retention across RRR∈{{9.0,10.0}} and death-start∈{{15,17}} — "
+        f"batters {bat_stab}%, bowlers {bowl_stab}%. IPL-only Top 12 overlap: batters {ipl_bat}/10, bowlers {ipl_bowl}/10.<br/>"
+        f"<b>3. Reproducibility:</b> <code>python -m src.run_pipeline</code> regenerates Auction Official ranks with SHA256 "
+        f"<code>{freeze_sha}</code> ({freeze_meta.get('pressure_version', 'pressure_v1.1')}).",
         body_style
     ))
 

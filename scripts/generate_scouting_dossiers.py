@@ -13,7 +13,9 @@ import pandas as pd
 def generate_scouting_dossiers():
     bat_df = pd.read_csv("outputs/rankings/top10_batters.csv")
     bowl_df = pd.read_csv("outputs/rankings/top10_bowlers.csv")
-    
+    with open("outputs/rankings/frozen_top10_fingerprint.json", encoding="utf-8") as f:
+        freeze_sha = json.load(f)["freeze_sha256"]
+
     # Rich Scouting Profiles for Batters
     batter_scouting = {
         126: {  # Rohit Sharma
@@ -409,22 +411,113 @@ def generate_scouting_dossiers():
         }
     }
     
-    # Merge with original CSV metrics
+    # Minimal profiles for Auction Official players not yet in the hand-written bank
+    batter_scouting.setdefault(3647, {  # Shreyas Iyer
+        "archetype": "Middle-Order Stabilizer & Chase Architect",
+        "rr_slot": "No. 4 / No. 5 (chase control)",
+        "auction_tier": "Premium Indian Core",
+        "target_price_inr": "INR 10.0 Cr – 14.0 Cr",
+        "max_bid_ceiling_inr": "INR 14.0 Cr",
+        "fallback_targets": ["Riyan Parag", "Nitish Rana"],
+        "strengths": [
+            "High-floor pressure SR with strong chase conversion",
+            "Experienced captaincy/leadership in high-leverage chases",
+            "Balances boundary intent with low panic under RRR pressure",
+        ],
+        "vulnerabilities": ["Can go quiet if early swing traps him on a length"],
+        "venue_fit": "Jaipur's true bounce suits his punch-through-cover game.",
+        "scouting_summary": "Auction Official middle-order insurance who keeps RR's chase architecture calm when RRR climbs.",
+    })
+    batter_scouting.setdefault(2639, {  # Marcus Stoinis
+        "archetype": "Power All-Round Finisher",
+        "rr_slot": "No. 6 / Impact batting overs 15–20",
+        "auction_tier": "Overseas Match-Winner",
+        "target_price_inr": "INR 8.0 Cr – 12.0 Cr",
+        "max_bid_ceiling_inr": "INR 12.0 Cr",
+        "fallback_targets": ["Shimron Hetmyer", "Tim David"],
+        "strengths": [
+            "Elite death-pressure strike rate and boundary frequency",
+            "Secondary seam overs give XI flexibility",
+            "Proven finisher under steep RRR",
+        ],
+        "vulnerabilities": ["Sample can thin if used only as a pure impact bat"],
+        "venue_fit": "Large square boundaries reward his straight hitting at SMS.",
+        "scouting_summary": "Overseas finishing muscle that clears Auction Official IPL floors while covering #6 fragility.",
+    })
+    bowler_scouting.setdefault(2636, {  # Adam Zampa
+        "archetype": "Leg-Spin Restrictor & Middle-Over Choke",
+        "rr_slot": "Primary spinner (overs 7–15 + death overs)",
+        "auction_tier": "Overseas Specialist",
+        "target_price_inr": "INR 6.0 Cr – 9.0 Cr",
+        "max_bid_ceiling_inr": "INR 9.0 Cr",
+        "fallback_targets": ["Wanindu Hasaranga", "Noor Ahmad"],
+        "strengths": [
+            "Strong weighted pressure economy with IPL sample depth",
+            "Wicket threat vs right-hand middle orders",
+            "Comfortable bowling with men back in the circle",
+        ],
+        "vulnerabilities": ["Left-hand power hitters can target the shorter side"],
+        "venue_fit": "Jaipur grip amplifies his wrong'un and top-spinner.",
+        "scouting_summary": "IPL-proven leg-spin choke option on the Auction Official board.",
+    })
+    bowler_scouting.setdefault(4900, {  # Wanindu Hasaranga
+        "archetype": "Attacking Leg-Spinner / All-Phase Wicket Threat",
+        "rr_slot": "Frontline spinner + lower-order bat",
+        "auction_tier": "Overseas Match-Winner",
+        "target_price_inr": "INR 8.0 Cr – 12.0 Cr",
+        "max_bid_ceiling_inr": "INR 12.0 Cr",
+        "fallback_targets": ["Adam Zampa", "Noor Ahmad"],
+        "strengths": [
+            "High wicket rate under pressure with googly variation",
+            "Can bowl powerplay and death overs",
+            "Useful lower-order batting for RR balance",
+        ],
+        "vulnerabilities": ["Economy can spike if googly is read early"],
+        "venue_fit": "SMS turn and bounce suit his attacking length.",
+        "scouting_summary": "Attacking overseas spinner who clears IPL floors and adds batting depth.",
+    })
+    bowler_scouting.setdefault(8661, {  # Matheesha Pathirana
+        "archetype": "Sling-Arm Death Seamer",
+        "rr_slot": "Overs 16–20 death overs specialist",
+        "auction_tier": "Overseas Specialist",
+        "target_price_inr": "INR 5.0 Cr – 8.0 Cr",
+        "max_bid_ceiling_inr": "INR 8.0 Cr",
+        "fallback_targets": ["Rasikh Salam", "Lockie Ferguson"],
+        "strengths": [
+            "Unique release angle creates late swing into the blockhole",
+            "Strong death-pressure wicket threat",
+            "Complements RR's Sandeep Sharma end",
+        ],
+        "vulnerabilities": ["Workload management and injury history need monitoring"],
+        "venue_fit": "Straight boundaries at SMS reward his yorker-length attack.",
+        "scouting_summary": "Death-overs pace option with enough IPL sample to sit on Auction Official.",
+    })
+
+    def _with_defaults(row, scout_info, kind):
+        item = row.to_dict()
+        item.update(scout_info)
+        item.setdefault("archetype", f"High-leverage {kind}")
+        item.setdefault("rr_slot", "TBD — Auction Official board")
+        item.setdefault("auction_tier", "Auction Official Pool")
+        item.setdefault("target_price_inr", "TBD")
+        item.setdefault("max_bid_ceiling_inr", "TBD")
+        item.setdefault("fallback_targets", [])
+        item.setdefault("strengths", ["Clears Auction Official IPL sample floors with strong pressure metrics"])
+        item.setdefault("vulnerabilities", ["Full narrative dossier pending deeper video scouting"])
+        item.setdefault("venue_fit", "Compatible with SMS Stadium pressure patterns pending venue deep-dive.")
+        item.setdefault(
+            "scouting_summary",
+            f"{item['player_name']} qualifies on the Auction Official board under pressure_v1.1.",
+        )
+        return item
+
     batters_output = []
     for _, r in bat_df.iterrows():
-        pid = int(r['player_id'])
-        scout_info = batter_scouting.get(pid, {})
-        item = r.to_dict()
-        item.update(scout_info)
-        batters_output.append(item)
-        
+        batters_output.append(_with_defaults(r, batter_scouting.get(int(r["player_id"]), {}), "batter"))
+
     bowlers_output = []
     for _, r in bowl_df.iterrows():
-        pid = int(r['player_id'])
-        scout_info = bowler_scouting.get(pid, {})
-        item = r.to_dict()
-        item.update(scout_info)
-        bowlers_output.append(item)
+        bowlers_output.append(_with_defaults(r, bowler_scouting.get(int(r["player_id"]), {}), "bowler"))
         
     dossier_data = {
         "metadata": {
@@ -432,7 +525,7 @@ def generate_scouting_dossiers():
             "prepared_for": "Kumar Sangakkara (Head Coach) & Giles Lindsay (Director of Strategy and Analytics)",
             "prepared_by": "PressurePulse Analytics Team",
             "dataset_basis": "200,999 Deliveries (IPL & T20I 2022–2026)",
-            "freeze_sha256": "5cdd7b7451b5a6672dbfadccc3c36a9777ec5bafaec589339e22ba307202d272"
+            "freeze_sha256": freeze_sha
         },
         "top10_batters_scouting": batters_output,
         "top10_bowlers_scouting": bowlers_output
@@ -444,14 +537,14 @@ def generate_scouting_dossiers():
     top10_bat_dash = Path("dashboard/public/data/top10_batters.json")
     top10_bowl_dash = Path("dashboard/public/data/top10_bowlers.json")
     
-    with open(out_json_pack, "w") as f:
-        json.dump(dossier_data, f, indent=2)
-    with open(out_json_dash, "w") as f:
-        json.dump(dossier_data, f, indent=2)
-    with open(top10_bat_dash, "w") as f:
-        json.dump(batters_output, f, indent=2)
-    with open(top10_bowl_dash, "w") as f:
-        json.dump(bowlers_output, f, indent=2)
+    with open(out_json_pack, "w", encoding="utf-8") as f:
+        json.dump(dossier_data, f, indent=2, default=str)
+    with open(out_json_dash, "w", encoding="utf-8") as f:
+        json.dump(dossier_data, f, indent=2, default=str)
+    with open(top10_bat_dash, "w", encoding="utf-8") as f:
+        json.dump(batters_output, f, indent=2, default=str)
+    with open(top10_bowl_dash, "w", encoding="utf-8") as f:
+        json.dump(bowlers_output, f, indent=2, default=str)
         
     print(f"Generated {out_json_pack}, {out_json_dash}, {top10_bat_dash}, and {top10_bowl_dash}")
     
@@ -461,7 +554,7 @@ def generate_scouting_dossiers():
         f.write("# RAJASTHAN ROYALS WAR ROOM SCOUTING DOSSIER (IPL 2027)\n")
         f.write("### Tactical Scouting Intelligence, Archetype Breakdown & Auction Acquisition Matrix\n")
         f.write("> **Prepared for:** Kumar Sangakkara (Head Coach) & Giles Lindsay (Director of Strategy & Analytics)  \n")
-        f.write("> **Evaluation Base:** 200,999 Ball-by-Ball Deliveries (IPL & T20I 2022–2026) | **Audit Fingerprint:** `5cdd7b7451b5a6672dbfadccc3c36a9777ec5bafaec589339e22ba307202d272`\n\n")
+        f.write(f"> **Evaluation Base:** 200,999 Ball-by-Ball Deliveries (IPL & T20I 2022–2026) | **Audit Fingerprint:** `{freeze_sha}`\n\n")
         
         f.write("---\n\n")
         f.write("## 1. Executive Scouting Charter & Tactical Gap Diagnosis\n\n")

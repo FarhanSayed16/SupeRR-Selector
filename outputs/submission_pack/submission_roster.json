@@ -1,65 +1,65 @@
 {
-  "freeze_sha256": "5cdd7b7451b5a6672dbfadccc3c36a9777ec5bafaec589339e22ba307202d272",
+  "freeze_sha256": "a819c0e65bf4ee045ef17c7b19824ccbec549c4b002402e9fbf47f477a04810c",
   "batters_1_to_10": [
     {
       "rank": 1,
       "player_id": 126,
       "player_name": "Rohit Sharma",
-      "pressure_score": 102.53
+      "pressure_score": 91.91
     },
     {
       "rank": 2,
       "player_id": 2756,
       "player_name": "Shashank Singh",
-      "pressure_score": 101.02
+      "pressure_score": 91.09
     },
     {
       "rank": 3,
       "player_id": 37052,
       "player_name": "Naman Dhir",
-      "pressure_score": 97.99
+      "pressure_score": 90.29
     },
     {
       "rank": 4,
-      "player_id": 8101,
-      "player_name": "Ashutosh Sharma",
-      "pressure_score": 96.65
+      "player_id": 143,
+      "player_name": "Dinesh Karthik",
+      "pressure_score": 89.96
     },
     {
       "rank": 5,
-      "player_id": 143,
-      "player_name": "Dinesh Karthik",
-      "pressure_score": 95.63
+      "player_id": 4703,
+      "player_name": "Rishabh Pant",
+      "pressure_score": 89.56
     },
     {
       "rank": 6,
-      "player_id": 4703,
-      "player_name": "Rishabh Pant",
-      "pressure_score": 95.63
+      "player_id": 8101,
+      "player_name": "Ashutosh Sharma",
+      "pressure_score": 89.48
     },
     {
       "rank": 7,
-      "player_id": 23450,
-      "player_name": "Sai Sudharsan",
-      "pressure_score": 93.83
+      "player_id": 3647,
+      "player_name": "Shreyas Iyer",
+      "pressure_score": 87.9
     },
     {
       "rank": 8,
-      "player_id": 2877,
-      "player_name": "Vijay Shankar",
-      "pressure_score": 92.93
+      "player_id": 4708,
+      "player_name": "Rinku Singh",
+      "pressure_score": 87.48
     },
     {
       "rank": 9,
-      "player_id": 1699,
-      "player_name": "Suryakumar Yadav",
-      "pressure_score": 92.86
+      "player_id": 2639,
+      "player_name": "Marcus Stoinis",
+      "pressure_score": 86.35
     },
     {
       "rank": 10,
-      "player_id": 4708,
-      "player_name": "Rinku Singh",
-      "pressure_score": 92.52
+      "player_id": 1699,
+      "player_name": "Suryakumar Yadav",
+      "pressure_score": 86.01
     }
   ],
   "bowlers_1_to_10": [
@@ -67,61 +67,61 @@
       "rank": 1,
       "player_id": 781,
       "player_name": "Sunil Narine",
-      "pressure_score": 93.93
+      "pressure_score": 79.57
     },
     {
       "rank": 2,
-      "player_id": 2490,
-      "player_name": "Mohammad Nawaz",
-      "pressure_score": 89.66
+      "player_id": 4101,
+      "player_name": "Mitchell Santner",
+      "pressure_score": 76.83
     },
     {
       "rank": 3,
-      "player_id": 34485,
-      "player_name": "Sufiyan Muqeem",
-      "pressure_score": 84.63
+      "player_id": 3644,
+      "player_name": "Kuldeep Yadav",
+      "pressure_score": 74.91
     },
     {
       "rank": 4,
-      "player_id": 5979,
-      "player_name": "Abrar Ahmed",
-      "pressure_score": 83.65
+      "player_id": 2933,
+      "player_name": "Jasprit Bumrah",
+      "pressure_score": 74.19
     },
     {
       "rank": 5,
-      "player_id": 3644,
-      "player_name": "Kuldeep Yadav",
-      "pressure_score": 83.61
+      "player_id": 2636,
+      "player_name": "Adam Zampa",
+      "pressure_score": 73.58
     },
     {
       "rank": 6,
-      "player_id": 2933,
-      "player_name": "Jasprit Bumrah",
-      "pressure_score": 81.76
+      "player_id": 4722,
+      "player_name": "Rashid Khan",
+      "pressure_score": 72.56
     },
     {
       "rank": 7,
-      "player_id": 7327,
-      "player_name": "Rasikh Salam",
-      "pressure_score": 80.63
+      "player_id": 4900,
+      "player_name": "Wanindu Hasaranga",
+      "pressure_score": 71.97
     },
     {
       "rank": 8,
-      "player_id": 4722,
-      "player_name": "Rashid Khan",
-      "pressure_score": 80.44
+      "player_id": 7327,
+      "player_name": "Rasikh Salam",
+      "pressure_score": 70.14
     },
     {
       "rank": 9,
-      "player_id": 4101,
-      "player_name": "Mitchell Santner",
-      "pressure_score": 79.76
+      "player_id": 6256,
+      "player_name": "Varun Chakravarthy",
+      "pressure_score": 69.89
     },
     {
       "rank": 10,
-      "player_id": 6256,
-      "player_name": "Varun Chakravarthy",
-      "pressure_score": 76.61
+      "player_id": 8661,
+      "player_name": "Matheesha Pathirana",
+      "pressure_score": 68.33
     }
   ]
 }
