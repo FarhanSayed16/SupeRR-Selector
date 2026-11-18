@@ -39,8 +39,11 @@ Select these exact players in rank order from the Unstop dropdowns:
 ---
 
 ## 3. Upload Your Report (Mandatory)
-- **File to upload:** `D:\SupeRR Selector\outputs\submission_pack\PressurePulse_Methodology.pdf`
-- **File Format:** PDF (2-page publication grade document with tables and brand styling)
+- **File to upload (either path — same PDF):**
+  - `D:\SupeRR Selector\PressurePulse_Round1_Submission.pdf` ← easiest
+  - `D:\SupeRR Selector\outputs\submission_pack\PressurePulse_Methodology.pdf`
+- **Do NOT upload:** `PRIME_Technical_Report_Presentation.pdf` (blank template with placeholders)
+- **Format:** PDF, 3 pages — Top 10 tables + method + RR squad fit
 
 ---
 
