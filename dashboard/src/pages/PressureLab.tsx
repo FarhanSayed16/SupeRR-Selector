@@ -53,10 +53,10 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
   let statusColor = "text-slate-700 bg-slate-100 border-slate-300";
   let statusText = "STANDARD CONTEXT (1.00x)";
   if (calculatedLeverage >= 2.1) {
-    statusColor = "text-emerald-950 bg-emerald-100 border-emerald-400";
+    statusColor = "text-rr-navy bg-rr-pink-soft border-rr-pink/50";
     statusText = "MAXIMUM CRUNCH LEVERAGE (2.20x+)";
   } else if (calculatedLeverage >= 1.6) {
-    statusColor = "text-emerald-900 bg-emerald-50 border-emerald-300";
+    statusColor = "text-rr-pink-deep bg-rr-pink-soft border-rr-pink-border";
     statusText = "HIGH-STAKES CLUTCH (1.60x–2.10x)";
   } else if (calculatedLeverage >= 1.25) {
     statusColor = "text-amber-900 bg-amber-50 border-amber-300";
@@ -67,35 +67,35 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
     {
       name: "Chase Tightness (Innings 2)",
       desc: "Triggered when Required Run Rate >= 9.5 in final 10 overs, or RRR >= 11.5 anytime, or <= 30 balls remaining needing <= 55 runs.",
-      count: summary.signal_activation_counts?.chase_tightness || 31200,
+      count: summary.signal_activation_counts?.chase_tightness ?? 0,
       badge: "Steep Chases",
-      color: "border-emerald-200 bg-emerald-50 text-emerald-800"
+      color: "border-rr-pink-border bg-rr-pink-soft text-rr-pink-deep"
     },
     {
       name: "Collapse & Survival (Innings 1 & 2)",
       desc: "Triggered during severe top-order collapse (>=3 wickets lost before Over 8) or tail exposure (<=3 wickets in hand with >=12 balls left).",
-      count: summary.signal_activation_counts?.collapse_defense || 14500,
+      count: summary.signal_activation_counts?.collapse_defense ?? 0,
       badge: "Crisis Defense",
       color: "border-amber-200 bg-amber-50 text-amber-900"
     },
     {
       name: "Death Overs Contest (Overs 16-20)",
       desc: "Target setting in Innings 1 or active contested chase in Innings 2 (where remaining runs required > 5).",
-      count: summary.signal_activation_counts?.death_contest || 44454,
+      count: summary.signal_activation_counts?.death_contest ?? 0,
       badge: "High Leverage",
       color: "border-slate-200 bg-slate-100 text-slate-800"
     },
     {
       name: "Knockout Playoff Leverage",
       desc: "Qualifiers, Eliminators, and Finals under active game state pressure, magnified by tournament context.",
-      count: summary.signal_activation_counts?.knockout_leverage || 4200,
+      count: summary.signal_activation_counts?.knockout_leverage ?? 0,
       badge: "Trophy Stakes",
-      color: "border-emerald-300 bg-emerald-100 text-emerald-900"
+      color: "border-rr-pink-border bg-rr-pink-soft text-rr-pink-deep"
     },
     {
       name: "Super Overs",
       desc: "100% maximum pressure clutch tie-breakers (Innings 3 and 4).",
-      count: summary.signal_activation_counts?.super_overs || 38,
+      count: summary.signal_activation_counts?.super_overs ?? 0,
       badge: "Ultra Clutch",
       color: "border-rose-200 bg-rose-50 text-rose-800"
     }
@@ -104,15 +104,15 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
   return (
     <div className="space-y-6 pb-12 font-sans">
       {/* Manifesto Header */}
-      <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-3">
+      <div className="glass-panel p-5 space-y-3">
         <div className="flex items-center space-x-2 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-          <Activity className="w-3.5 h-3.5 text-emerald-700" />
+          <Activity className="w-3.5 h-3.5 text-rr-pink" />
           <span>Empirical Validation Engine • {summary.pressure_version}</span>
         </div>
         <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
           How We Formulate, Quantify & Verify Match Pressure
         </h1>
-        <div className="p-3.5 rounded-lg bg-slate-50 border-l-4 border-emerald-600 text-slate-800 text-xs sm:text-sm leading-relaxed italic">
+        <div className="p-3.5 rounded-lg bg-slate-50 border-l-4 border-rr-pink text-slate-800 text-xs sm:text-sm leading-relaxed italic">
           "{summary.definition_sentence}"
         </div>
         <p className="text-xs text-slate-600 leading-relaxed max-w-4xl">
@@ -121,10 +121,10 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
       </div>
 
       {/* Interactive Scenario Simulator */}
-      <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-4">
+      <div className="glass-panel p-5 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-3 gap-2">
           <div className="flex items-center space-x-2">
-            <Sliders className="w-4 h-4 text-emerald-700" />
+            <Sliders className="w-4 h-4 text-rr-pink" />
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
               Live Game Situation Simulator (Interactive Engine)
             </h2>
@@ -144,7 +144,7 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
                 <button
                   onClick={() => setInnings(1)}
                   className={`flex-1 py-1 rounded font-semibold transition-all ${
-                    innings === 1 ? 'bg-emerald-800 text-white shadow-xs' : 'bg-white text-slate-700 border border-slate-200'
+                    innings === 1 ? 'bg-rr-pink-deep text-white ' : 'bg-white text-slate-700 border border-slate-200'
                   }`}
                 >
                   1st (Target Setting)
@@ -152,7 +152,7 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
                 <button
                   onClick={() => setInnings(2)}
                   className={`flex-1 py-1 rounded font-semibold transition-all ${
-                    innings === 2 ? 'bg-emerald-800 text-white shadow-xs' : 'bg-white text-slate-700 border border-slate-200'
+                    innings === 2 ? 'bg-rr-pink-deep text-white ' : 'bg-white text-slate-700 border border-slate-200'
                   }`}
                 >
                   2nd (Run Chase)
@@ -165,11 +165,11 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
               <button
                 onClick={() => setIsKnockout(!isKnockout)}
                 className={`w-full py-1.5 px-3 rounded text-xs font-semibold flex items-center justify-between transition-all ${
-                  isKnockout ? 'bg-emerald-50 text-emerald-900 border border-emerald-300' : 'bg-white text-slate-700 border border-slate-200'
+                  isKnockout ? 'bg-rr-pink-soft text-rr-pink-deep border border-rr-pink-border' : 'bg-white text-slate-700 border border-slate-200'
                 }`}
               >
                 <span className="flex items-center space-x-1.5">
-                  <Trophy className="w-3.5 h-3.5 text-emerald-700" />
+                  <Trophy className="w-3.5 h-3.5 text-rr-pink" />
                   <span>IPL Playoff / Knockout Final</span>
                 </span>
                 <span className="font-mono text-[10px] font-bold">{isKnockout ? '+0.30x LEV' : 'LEAGUE'}</span>
@@ -190,7 +190,7 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
                 max="20" 
                 value={over} 
                 onChange={(e) => setOver(Number(e.target.value))}
-                className="w-full accent-emerald-700 cursor-pointer"
+                className="w-full accent-rr-pink cursor-pointer"
               />
             </div>
 
@@ -205,7 +205,7 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
                 max="9" 
                 value={wicketsLost} 
                 onChange={(e) => setWicketsLost(Number(e.target.value))}
-                className="w-full accent-emerald-700 cursor-pointer"
+                className="w-full accent-rr-pink cursor-pointer"
               />
             </div>
           </div>
@@ -223,14 +223,14 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
                 max="240" 
                 value={target} 
                 onChange={(e) => setTarget(Number(e.target.value))}
-                className="w-full accent-emerald-700 cursor-pointer"
+                className="w-full accent-rr-pink cursor-pointer"
               />
             </div>
 
             <div>
               <div className="flex justify-between text-xs mb-1">
                 <span className="text-[10px] uppercase font-bold text-slate-600">Current Score: {currentScore}/{wicketsLost}</span>
-                <span className="font-mono text-emerald-800 font-bold text-[10px]">Need {runsNeeded}</span>
+                <span className="font-mono text-rr-pink-deep font-bold text-[10px]">Need {runsNeeded}</span>
               </div>
               <input 
                 type="range" 
@@ -238,7 +238,7 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
                 max={target} 
                 value={currentScore} 
                 onChange={(e) => setCurrentScore(Number(e.target.value))}
-                className="w-full accent-emerald-700 cursor-pointer"
+                className="w-full accent-rr-pink cursor-pointer"
               />
             </div>
           </div>
@@ -256,10 +256,10 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
 
           <div>
             <span className="text-[10px] text-slate-500 uppercase font-semibold block">Ball Leverage Multiplier</span>
-            <span className="text-lg font-black font-mono text-emerald-800">
+            <span className="text-lg font-black font-mono text-rr-pink-deep">
               {calculatedLeverage.toFixed(2)}x
             </span>
-            <span className="text-[10px] text-emerald-700 font-medium block">Domain scale 1.00x–2.50x</span>
+            <span className="text-[10px] text-rr-pink font-medium block">Domain scale 1.00x–2.50x</span>
           </div>
 
           <div>
@@ -277,7 +277,7 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
 
           <div>
             <span className="text-[10px] text-slate-500 uppercase font-semibold block">RR Target Specialist</span>
-            <span className="text-xs font-bold text-emerald-800 block mt-1">
+            <span className="text-xs font-bold text-rr-pink-deep block mt-1">
               {isDeath ? 'Shashank Singh / Sunil Narine' : 'Rohit Sharma / Rasikh Salam'}
             </span>
             <span className="text-[10px] text-slate-500 block">Optimal tactical match</span>
@@ -287,17 +287,17 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
 
       {/* Core Diagnostic Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div className="bg-white border border-slate-200/90 rounded-xl p-4 shadow-xs">
+        <div className="glass-panel p-4 ">
           <span className="text-[10px] text-slate-500 uppercase font-bold block">Total Pressure Balls</span>
           <div className="text-2xl font-black text-slate-900 mt-0.5 font-mono">
             {summary.pressure_deliveries?.toLocaleString()}
           </div>
-          <p className="text-[11px] text-emerald-700 font-semibold mt-0.5">
+          <p className="text-[11px] text-rr-pink font-semibold mt-0.5">
             {summary.pressure_percentage}% of audited deliveries
           </p>
         </div>
 
-        <div className="bg-white border border-slate-200/90 rounded-xl p-4 shadow-xs">
+        <div className="glass-panel p-4 ">
           <span className="text-[10px] text-slate-500 uppercase font-bold block">Baseline Comparator Pool</span>
           <div className="text-2xl font-black text-slate-900 mt-0.5 font-mono">
             {summary.baseline_deliveries?.toLocaleString()}
@@ -307,20 +307,20 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
           </p>
         </div>
 
-        <div className="bg-white border border-slate-200/90 rounded-xl p-4 shadow-xs">
+        <div className="glass-panel p-4 ">
           <span className="text-[10px] text-slate-500 uppercase font-bold block">Tournament Sensitivity Stability</span>
           <div className="text-2xl font-black text-slate-900 mt-0.5 font-mono">90.0%</div>
-          <p className="text-[11px] text-emerald-700 font-semibold mt-0.5">
+          <p className="text-[11px] text-rr-pink font-semibold mt-0.5">
             Top 10 stability under ±0.5 RRR shifts
           </p>
         </div>
       </div>
 
       {/* Proof that Pressure is NOT just Death Overs */}
-      <div className="bg-white border border-slate-200/90 rounded-xl p-5 space-y-4 shadow-xs">
+      <div className="glass-panel p-5 space-y-4 ">
         <div className="flex items-center space-x-2.5">
-          <div className="p-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200">
-            <ShieldCheck className="w-4 h-4 text-emerald-700" />
+          <div className="p-1.5 rounded-lg bg-rr-pink-soft text-rr-pink-deep border border-rr-pink-border">
+            <ShieldCheck className="w-4 h-4 text-rr-pink" />
           </div>
           <div>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
@@ -337,10 +337,10 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
           <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-1.5">
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-800 font-bold uppercase text-[10px]">Powerplay (Overs 1–6)</span>
-              <span className="text-emerald-800 font-bold font-mono">10.2%</span>
+              <span className="text-rr-pink-deep font-bold font-mono">10.2%</span>
             </div>
             <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-              <div className="bg-emerald-600 h-full rounded-full" style={{ width: '10.2%' }} />
+              <div className="bg-rr-pink h-full rounded-full" style={{ width: '10.2%' }} />
             </div>
             <p className="text-[10px] text-slate-500">
               8,050 balls • Triggered by aggressive target defenses & top-order collapse recovery.
@@ -350,10 +350,10 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
           <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-1.5">
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-800 font-bold uppercase text-[10px]">Middle Overs (Overs 7–15)</span>
-              <span className="text-emerald-800 font-bold font-mono">33.5%</span>
+              <span className="text-rr-pink-deep font-bold font-mono">33.5%</span>
             </div>
             <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-              <div className="bg-emerald-700 h-full rounded-full" style={{ width: '33.5%' }} />
+              <div className="bg-rr-pink h-full rounded-full" style={{ width: '33.5%' }} />
             </div>
             <p className="text-[10px] text-slate-500">
               26,402 balls • Triggered by steep required run rates (RRR &gt;= 9.5) and sudden clusters of wickets.
@@ -363,10 +363,10 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
           <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-1.5">
             <div className="flex justify-between items-center text-xs">
               <span className="text-slate-800 font-bold uppercase text-[10px]">Death Overs (Overs 16–20)</span>
-              <span className="text-emerald-800 font-bold font-mono">56.3%</span>
+              <span className="text-rr-pink-deep font-bold font-mono">56.3%</span>
             </div>
             <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-              <div className="bg-emerald-900 h-full rounded-full" style={{ width: '56.3%' }} />
+              <div className="bg-gradient-to-r from-rr-pink to-rr-purple h-full rounded-full" style={{ width: '56.3%' }} />
             </div>
             <p className="text-[10px] text-slate-500">
               44,454 balls • Extreme execution phase where matches are closed out or lost.
@@ -374,7 +374,7 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
           </div>
         </div>
 
-        <div className="p-3 bg-emerald-50/70 border border-emerald-200 rounded-lg text-xs text-emerald-900 font-medium">
+        <div className="p-3 bg-rr-pink-soft/70 border border-rr-pink-border rounded-lg text-xs text-rr-pink-deep font-medium">
           <strong>Key Analytical Takeaway:</strong> A full <strong>43.7%</strong> of all high-pressure deliveries occur <em>outside</em> the death overs. This guarantees that our model identifies genuine all-phase resilience rather than simply rewarding traditional death-over specialists.
         </div>
       </div>
@@ -382,12 +382,12 @@ export const PressureLab: React.FC<PressureLabProps> = ({ summary }) => {
       {/* Signal Architecture */}
       <div className="space-y-3">
         <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide flex items-center space-x-2">
-          <Layers className="w-4 h-4 text-emerald-700" />
+          <Layers className="w-4 h-4 text-rr-pink" />
           <span>The 5 Pressure Signals (Composite Formula)</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {signals.map((s, idx) => (
-            <div key={idx} className="bg-white border border-slate-200/90 rounded-lg p-4 space-y-1.5 shadow-xs">
+            <div key={idx} className="glass-subcard p-4 space-y-1.5 ">
               <div className="flex justify-between items-start">
                 <span className={`text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded border ${s.color}`}>
                   {s.badge}

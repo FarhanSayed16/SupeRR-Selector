@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { PageId, BatterRecord, BowlerRecord, MetaPackage } from '../types';
 import { Medal } from '../components/Medal';
+import { PlayerAvatar } from '../components/PlayerAvatar';
+import { getBrandLogoSrc } from '../lib/images';
 import { 
   Target, 
   Shield, 
@@ -69,152 +71,159 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
   return (
     <div className="space-y-6 pb-12 font-sans">
       {/* Executive Workstation Context Bar */}
-      <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-3">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+      <div className="glass-panel p-5 space-y-3 overflow-hidden relative">
+        <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-36 sm:w-44 h-36 sm:h-44 opacity-[0.08] pointer-events-none hidden sm:block">
+          <img src={getBrandLogoSrc()} alt="" className="w-full h-full object-contain" />
+        </div>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-100 pb-3 relative z-10">
           <div>
             <div className="flex items-center space-x-2 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+              <img src={getBrandLogoSrc()} alt="RR" className="h-6 w-6 object-contain" />
               <span>Rajasthan Royals Analytics & Strategy</span>
               <span>•</span>
-              <span className="text-emerald-800">SupeRR Selector Season 2</span>
+              <span className="text-rr-pink-deep">SupeRR Selector Season 2</span>
               <span>•</span>
               <span className="font-mono text-slate-400">Round 1</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mt-0.5">
+            <h1 className="text-xl sm:text-2xl font-black text-rr-navy tracking-tight mt-0.5">
               IPL 2027 Auction War Room Intelligence Console
             </h1>
           </div>
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => onNavigate('auction_room')}
-              className="px-3.5 py-1.5 rounded-md bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-bold tracking-tight shadow-xs transition-colors cursor-pointer flex items-center space-x-1.5"
-            >
+            <button onClick={() => onNavigate('auction_room')} className="btn-primary">
               <span>RR 2027 Playing XI</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
-            <button
-              onClick={() => onNavigate('methodology')}
-              className="px-3.5 py-1.5 rounded-md bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 text-xs font-semibold tracking-tight transition-colors cursor-pointer"
-            >
+            <button onClick={() => onNavigate('methodology')} className="btn-ghost">
               Methodology
             </button>
           </div>
         </div>
 
         <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-4xl">
-          Deterministic evaluation across <strong>200,999 ball-by-ball deliveries</strong> from IPL and T20 Internationals (2022–2026). Engineered for Head Coach Kumar Sangakkara and Director of Strategy Giles Lindsay to solve Rajasthan Royals' lower-order death finishing deficit and death overs run leakage.
+          Deterministic evaluation across{' '}
+          <strong>{(meta?.total_deliveries ?? 200999).toLocaleString()} ball-by-ball deliveries</strong>{' '}
+          from IPL and T20 Internationals (2022–2026). Auction Official board uses IPL sample floors
+          and IPL/T20I-weighted legal-ball rates ({meta?.version ?? 'pressure_v1.1'}).
         </p>
 
         {/* 4 Metric Chips Strip */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
-          <div className="bg-slate-50/80 border border-slate-200/80 rounded-lg p-3">
+          <div className="glass-kpi p-3">
             <span className="text-[10px] uppercase font-bold text-slate-500 block">Deliveries Audited</span>
-            <span className="text-lg font-black text-slate-900 font-mono">200,999</span>
+            <span className="text-lg font-black text-slate-900 font-mono">
+              {(meta?.total_deliveries ?? 200999).toLocaleString()}
+            </span>
             <span className="text-[10px] text-slate-500 block">883 matches (5 seasons)</span>
           </div>
-          <div className="bg-slate-50/80 border border-emerald-200 rounded-lg p-3">
-            <span className="text-[10px] uppercase font-bold text-emerald-800 block">Pressure Deliveries</span>
-            <span className="text-lg font-black text-slate-900 font-mono">78,906</span>
-            <span className="text-[10px] text-emerald-700 font-medium block">39.26% total universe</span>
+          <div className="glass-kpi p-3 border-rr-pink/30">
+            <span className="text-[10px] uppercase font-bold text-rr-pink-deep block">Pressure Deliveries</span>
+            <span className="text-lg font-black text-slate-900 font-mono">
+              {(meta?.pressure_deliveries ?? 78868).toLocaleString()}
+            </span>
+            <span className="text-[10px] text-rr-pink font-medium block">
+              {(meta?.pressure_percentage ?? 39.24).toFixed(2)}% total universe
+            </span>
           </div>
-          <div className="bg-slate-50/80 border border-slate-200/80 rounded-lg p-3">
-            <span className="text-[10px] uppercase font-bold text-slate-500 block">Outside Death Overs</span>
-            <span className="text-lg font-black text-slate-900 font-mono">43.7%</span>
-            <span className="text-[10px] text-slate-500 block">PP: 10.2% | Mid: 33.5%</span>
+          <div className="glass-kpi p-3">
+            <span className="text-[10px] uppercase font-bold text-slate-500 block">Official Board</span>
+            <span className="text-lg font-black text-slate-900 font-mono">Auction</span>
+            <span className="text-[10px] text-slate-500 block">
+              IPL floors bat≥{meta?.min_ipl_pressure_balls_batter ?? 40} / bowl≥
+              {meta?.min_ipl_pressure_balls_bowler ?? 60}
+            </span>
           </div>
-          <div className="bg-slate-50/80 border border-slate-200/80 rounded-lg p-3">
-            <span className="text-[10px] uppercase font-bold text-slate-500 block">Auction Domain Weight</span>
-            <span className="text-lg font-black text-slate-900 font-mono">1.30x</span>
-            <span className="text-[10px] text-slate-500 block">IPL vs 1.00x T20I</span>
+          <div className="glass-kpi p-3">
+            <span className="text-[10px] uppercase font-bold text-slate-500 block">IPL Rate Weight</span>
+            <span className="text-lg font-black text-slate-900 font-mono">
+              {(meta?.ipl_weight ?? 1.3).toFixed(2)}x
+            </span>
+            <span className="text-[10px] text-slate-500 block">
+              baked into rates · T20I {(meta?.t20i_weight ?? 1.0).toFixed(2)}x
+            </span>
           </div>
         </div>
       </div>
 
       {/* RR War Room Priority Targets Directive */}
-      <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-3">
+      <div className="glass-panel p-5 space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-2.5 gap-2">
           <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-600"></div>
+            <div className="w-2 h-2 rounded-full bg-rr-pink"></div>
             <h2 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
               Strategic Scouting Directives: Key Auction Recruits for Kumar Sangakkara
             </h2>
           </div>
-          <span className="text-[11px] font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 font-semibold">
+          <span className="text-[11px] font-mono text-rr-pink-deep bg-rr-pink-soft px-2 py-0.5 rounded border border-rr-pink-border font-semibold">
             Targeting RR Structural Deficits
           </span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <div 
-            onClick={() => onNavigate('player_profile', 2756)}
-            className="p-3 bg-slate-50/80 hover:bg-emerald-50/50 border border-slate-200/70 hover:border-emerald-300 rounded-lg transition-all cursor-pointer group"
-          >
-            <div className="flex justify-between items-start">
-              <span className="text-[9px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-1.5 py-0.5 rounded border border-emerald-200">
-                #6 Finisher Solution
-              </span>
-              <span className="text-xs font-mono font-bold text-emerald-800">+69.2 SR</span>
+          {[
+            {
+              id: 2756,
+              name: 'Shashank Singh',
+              tag: '#6 Finisher Solution',
+              tagClass: 'bg-rr-pink-soft text-rr-pink-deep border-rr-pink-border',
+              metric: '+69.2 SR',
+              detail: '171.8 Pressure SR · Est. INR 5.5–8.0 Cr',
+            },
+            {
+              id: 781,
+              name: 'Sunil Narine',
+              tag: 'Death Choke Anchor',
+              tagClass: 'bg-rr-pink-soft text-rr-pink-deep border-rr-pink-border',
+              metric: '6.06 Econ',
+              detail: 'All-Phase Restrictor · Est. INR 10.0–13.0 Cr',
+            },
+            {
+              id: 7327,
+              name: 'Rasikh Salam',
+              tag: 'Death Seam Wickets',
+              tagClass: 'bg-slate-100 text-slate-800 border-slate-200',
+              metric: '10.6 BpW',
+              detail: 'Strike Bowler · Est. INR 1.5–3.0 Cr',
+            },
+            {
+              id: 8101,
+              name: 'Ashutosh Sharma',
+              tag: 'Impact Sub Clutch',
+              tagClass: 'bg-amber-100 text-amber-900 border-amber-200',
+              metric: '+79.1 SR',
+              detail: 'Crisis 360 Finisher · Est. INR 2.5–4.5 Cr',
+            },
+          ].map((card) => (
+            <div
+              key={card.id}
+              onClick={() => onNavigate('player_profile', card.id)}
+              className="p-3.5 bg-white/70 hover:bg-rr-pink-soft/70 border border-slate-200/70 hover:border-rr-pink-border rounded-xl transition-all cursor-pointer group shadow-sm"
+            >
+              <div className="flex items-start gap-3">
+                <PlayerAvatar playerId={card.id} name={card.name} size="md" />
+                <div className="min-w-0 flex-1 space-y-1">
+                  <div className="flex justify-between items-start gap-2">
+                    <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border ${card.tagClass}`}>
+                      {card.tag}
+                    </span>
+                    <span className="text-xs font-mono font-bold text-rr-pink-deep shrink-0">{card.metric}</span>
+                  </div>
+                  <h4 className="font-bold text-sm text-slate-900 group-hover:text-rr-pink-deep transition-colors truncate">
+                    {card.name}
+                  </h4>
+                  <p className="text-[11px] text-slate-600 leading-snug">{card.detail}</p>
+                </div>
+              </div>
             </div>
-            <h4 className="font-bold text-xs text-slate-900 group-hover:text-emerald-900 transition-colors mt-1.5">
-              Shashank Singh
-            </h4>
-            <p className="text-[10px] text-slate-500">171.8 Pressure SR • Est. INR 5.5–8.0 Cr</p>
-          </div>
-
-          <div 
-            onClick={() => onNavigate('player_profile', 781)}
-            className="p-3 bg-slate-50/80 hover:bg-emerald-50/50 border border-slate-200/70 hover:border-emerald-300 rounded-lg transition-all cursor-pointer group"
-          >
-            <div className="flex justify-between items-start">
-              <span className="text-[9px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-1.5 py-0.5 rounded border border-emerald-200">
-                Death Choke Anchor
-              </span>
-              <span className="text-xs font-mono font-bold text-emerald-800">6.06 Econ</span>
-            </div>
-            <h4 className="font-bold text-xs text-slate-900 group-hover:text-emerald-900 transition-colors mt-1.5">
-              Sunil Narine
-            </h4>
-            <p className="text-[10px] text-slate-500">All-Phase Restrictor • Est. INR 10.0–13.0 Cr</p>
-          </div>
-
-          <div 
-            onClick={() => onNavigate('player_profile', 2753)}
-            className="p-3 bg-slate-50/80 hover:bg-emerald-50/50 border border-slate-200/70 hover:border-emerald-300 rounded-lg transition-all cursor-pointer group"
-          >
-            <div className="flex justify-between items-start">
-              <span className="text-[9px] font-bold uppercase tracking-wider bg-slate-100 text-slate-800 px-1.5 py-0.5 rounded border border-slate-200">
-                Death Seam Wickets
-              </span>
-              <span className="text-xs font-mono font-bold text-emerald-800">10.6 BpW</span>
-            </div>
-            <h4 className="font-bold text-xs text-slate-900 group-hover:text-emerald-900 transition-colors mt-1.5">
-              Rasikh Salam
-            </h4>
-            <p className="text-[10px] text-slate-500">Strike Bowler • Est. INR 1.5–3.0 Cr</p>
-          </div>
-
-          <div 
-            onClick={() => onNavigate('player_profile', 2768)}
-            className="p-3 bg-slate-50/80 hover:bg-emerald-50/50 border border-slate-200/70 hover:border-emerald-300 rounded-lg transition-all cursor-pointer group"
-          >
-            <div className="flex justify-between items-start">
-              <span className="text-[9px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded border border-amber-200">
-                Impact Sub Clutch
-              </span>
-              <span className="text-xs font-mono font-bold text-emerald-800">+79.1 SR</span>
-            </div>
-            <h4 className="font-bold text-xs text-slate-900 group-hover:text-emerald-900 transition-colors mt-1.5">
-              Ashutosh Sharma
-            </h4>
-            <p className="text-[10px] text-slate-500">Crisis 360 Finisher • Est. INR 2.5–4.5 Cr</p>
-          </div>
+          ))}
         </div>
       </div>
 
       {/* Interactive Visual Analytics Section with Recharts */}
-      <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-4">
+      <div className="glass-panel p-5 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
           <div className="flex items-center space-x-2">
-            <BarChart2 className="w-4 h-4 text-emerald-700" />
+            <BarChart2 className="w-4 h-4 text-rr-pink" />
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
               {chartMode === 'batters' 
                 ? 'Batting Strike Rate Surge: High Pressure vs Baseline Comparison' 
@@ -222,23 +231,23 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
             </h2>
           </div>
 
-          <div className="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200 text-xs font-semibold">
+          <div className="flex items-center bg-white/40 p-0.5 rounded-full border border-white/70 text-xs font-semibold">
             <button
               onClick={() => setChartMode('batters')}
-              className={`px-3 py-1 rounded-md transition-all cursor-pointer ${
-                chartMode === 'batters' 
-                  ? 'bg-white text-emerald-900 font-bold shadow-xs' 
-                  : 'text-slate-600 hover:text-slate-900'
+              className={`px-3 py-1 rounded-full transition-all cursor-pointer ${
+                chartMode === 'batters'
+                  ? 'bg-white text-rr-pink font-bold shadow-sm'
+                  : 'text-ink-500 hover:text-rr-navy'
               }`}
             >
               Batters (SR Uplift)
             </button>
             <button
               onClick={() => setChartMode('bowlers')}
-              className={`px-3 py-1 rounded-md transition-all cursor-pointer ${
-                chartMode === 'bowlers' 
-                  ? 'bg-white text-emerald-900 font-bold shadow-xs' 
-                  : 'text-slate-600 hover:text-slate-900'
+              className={`px-3 py-1 rounded-full transition-all cursor-pointer ${
+                chartMode === 'bowlers'
+                  ? 'bg-white text-rr-pink font-bold shadow-sm'
+                  : 'text-ink-500 hover:text-rr-navy'
               }`}
             >
               Bowlers (Economy)
@@ -247,7 +256,7 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
         </div>
 
         {/* Recharts Container */}
-        <div className="h-64 sm:h-72 w-full pt-2">
+        <div className="glass-subcard h-64 sm:h-72 w-full pt-2 px-2">
           {chartMode === 'batters' ? (
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={batterChartData} margin={{ top: 10, right: 10, left: -20, bottom: 20 }}>
@@ -263,11 +272,11 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
                     const item = batterChartData.find(d => d.name === name);
                     return item ? `${item.fullName} (+${item.uplift} SR Uplift)` : name;
                   }}
-                  contentStyle={{ backgroundColor: '#FFFFFF', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '12px' }}
+                  contentStyle={{ backgroundColor: 'rgba(255,255,255,0.92)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.8)', fontSize: '12px', backdropFilter: 'blur(8px)' }}
                 />
                 <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '8px' }} />
-                <Bar dataKey="pressureSR" name="Pressure Strike Rate" fill="#064E3B" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="baselineSR" name="Baseline Strike Rate" fill="#94A3B8" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="pressureSR" name="Pressure Strike Rate" fill="#EC008C" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="baselineSR" name="Baseline Strike Rate" fill="#0B1B3A" fillOpacity={0.35} radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           ) : (
@@ -285,12 +294,12 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
                     const item = bowlerChartData.find(d => d.name === name);
                     return item ? item.fullName : name;
                   }}
-                  contentStyle={{ backgroundColor: '#FFFFFF', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '12px' }}
+                  contentStyle={{ backgroundColor: 'rgba(255,255,255,0.92)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.8)', fontSize: '12px', backdropFilter: 'blur(8px)' }}
                 />
                 <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '8px' }} />
-                <Bar dataKey="deathEcon" name="Death Overs Economy (16-20)" fill="#064E3B" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="pressureEcon" name="Overall Pressure Economy" fill="#0D9488" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="baselineEcon" name="Baseline Economy" fill="#94A3B8" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="deathEcon" name="Death Overs Economy (16-20)" fill="#EC008C" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="pressureEcon" name="Overall Pressure Economy" fill="#0B1B3A" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="baselineEcon" name="Baseline Economy" fill="#94A3B8" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           )}
@@ -303,11 +312,11 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
       {/* Dual Priority Boards (Top 10 Batters & Top 10 Bowlers) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Batters Board */}
-        <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-3">
+        <div className="glass-panel p-5 space-y-3">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <div className="flex items-center space-x-2">
-              <div className="w-7 h-7 rounded bg-emerald-50 border border-emerald-200 flex items-center justify-center">
-                <Target className="w-4 h-4 text-emerald-800" />
+              <div className="w-7 h-7 rounded bg-rr-pink-soft border border-rr-pink-border flex items-center justify-center">
+                <Target className="w-4 h-4 text-rr-pink-deep" />
               </div>
               <div>
                 <h3 className="font-bold text-sm text-slate-900 uppercase tracking-tight">Top 10 Batters Under Pressure</h3>
@@ -316,7 +325,7 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
             </div>
             <button
               onClick={() => onNavigate('batters')}
-              className="text-xs font-semibold text-emerald-800 hover:text-emerald-950 flex items-center space-x-1 cursor-pointer"
+              className="text-xs font-semibold text-rr-pink-deep hover:text-rr-navy flex items-center space-x-1 cursor-pointer"
             >
               <span>Full Board</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -328,22 +337,23 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
               <div
                 key={b.player_id}
                 onClick={() => onNavigate('player_profile', b.player_id)}
-                className="flex items-center justify-between p-2.5 rounded-lg bg-slate-50/70 hover:bg-emerald-50/50 border border-slate-200/60 hover:border-emerald-300 transition-all cursor-pointer group"
+                className="flex items-center justify-between p-3 rounded-xl bg-white/65 hover:bg-rr-pink-soft/70 border border-slate-200/60 hover:border-rr-pink-border transition-all cursor-pointer group"
               >
-                <div className="flex items-center space-x-2.5">
+                <div className="flex items-center space-x-3 min-w-0">
                   <Medal rank={b.rank} />
-                  <div>
-                    <h4 className="font-bold text-xs text-slate-900 group-hover:text-emerald-900 transition-colors">
+                  <PlayerAvatar playerId={b.player_id} name={b.player_name} size="sm" />
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-sm text-slate-900 group-hover:text-rr-pink-deep transition-colors truncate">
                       {b.player_name}
                     </h4>
-                    <p className="text-[10px] text-slate-500">
-                      {b.archetype ? b.archetype.split('&')[0] : b.primary_role} • {b.pressure_balls} balls
+                    <p className="text-[11px] text-slate-600 truncate">
+                      {b.archetype ? b.archetype.split('&')[0] : b.primary_role} · {b.pressure_balls} balls
                     </p>
                   </div>
                 </div>
                 <div className="text-right">
                   <span className="text-xs font-black font-mono text-slate-900 block">{b.pressure_score.toFixed(1)}</span>
-                  <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">
+                  <span className="text-[10px] font-mono font-bold text-rr-pink-deep bg-rr-pink-soft px-1.5 py-0.2 rounded border border-rr-pink-border">
                     +{b.sr_uplift.toFixed(1)} SR
                   </span>
                 </div>
@@ -353,11 +363,11 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
         </div>
 
         {/* Bowlers Board */}
-        <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-3">
+        <div className="glass-panel p-5 space-y-3">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <div className="flex items-center space-x-2">
-              <div className="w-7 h-7 rounded bg-emerald-50 border border-emerald-200 flex items-center justify-center">
-                <Shield className="w-4 h-4 text-emerald-800" />
+              <div className="w-7 h-7 rounded bg-rr-pink-soft border border-rr-pink-border flex items-center justify-center">
+                <Shield className="w-4 h-4 text-rr-pink-deep" />
               </div>
               <div>
                 <h3 className="font-bold text-sm text-slate-900 uppercase tracking-tight">Top 10 Bowlers Under Pressure</h3>
@@ -366,7 +376,7 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
             </div>
             <button
               onClick={() => onNavigate('bowlers')}
-              className="text-xs font-semibold text-emerald-800 hover:text-emerald-950 flex items-center space-x-1 cursor-pointer"
+              className="text-xs font-semibold text-rr-pink-deep hover:text-rr-navy flex items-center space-x-1 cursor-pointer"
             >
               <span>Full Board</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -378,22 +388,23 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
               <div
                 key={bw.player_id}
                 onClick={() => onNavigate('player_profile', bw.player_id)}
-                className="flex items-center justify-between p-2.5 rounded-lg bg-slate-50/70 hover:bg-emerald-50/50 border border-slate-200/60 hover:border-emerald-300 transition-all cursor-pointer group"
+                className="flex items-center justify-between p-3 rounded-xl bg-white/65 hover:bg-rr-pink-soft/70 border border-slate-200/60 hover:border-rr-pink-border transition-all cursor-pointer group"
               >
-                <div className="flex items-center space-x-2.5">
+                <div className="flex items-center space-x-3 min-w-0">
                   <Medal rank={bw.rank} />
-                  <div>
-                    <h4 className="font-bold text-xs text-slate-900 group-hover:text-emerald-900 transition-colors">
+                  <PlayerAvatar playerId={bw.player_id} name={bw.player_name} size="sm" />
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-sm text-slate-900 group-hover:text-rr-pink-deep transition-colors truncate">
                       {bw.player_name}
                     </h4>
-                    <p className="text-[10px] text-slate-500">
-                      {bw.archetype ? bw.archetype.split('&')[0] : bw.primary_role} • {bw.pressure_wickets} wkts
+                    <p className="text-[11px] text-slate-600 truncate">
+                      {bw.archetype ? bw.archetype.split('&')[0] : bw.primary_role} · {bw.pressure_wickets} wkts
                     </p>
                   </div>
                 </div>
                 <div className="text-right">
                   <span className="text-xs font-black font-mono text-slate-900 block">{bw.pressure_score.toFixed(1)}</span>
-                  <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">
+                  <span className="text-[10px] font-mono font-bold text-rr-pink-deep bg-rr-pink-soft px-1.5 py-0.2 rounded border border-rr-pink-border">
                     {bw.death_pressure_economy.toFixed(2)} Dth Econ
                   </span>
                 </div>
@@ -404,15 +415,15 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
       </div>
 
       {/* Official Unstop Submission Desk */}
-      <div className="bg-white border border-slate-200/90 rounded-xl p-5 shadow-xs space-y-4">
+      <div className="glass-panel p-5 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
           <div className="flex items-center space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+            <CheckCircle2 className="w-4 h-4 text-rr-pink" />
             <h3 className="text-sm font-bold text-slate-900 uppercase tracking-tight">
               Official Unstop Submission Station (20 Selections Ready)
             </h3>
           </div>
-          <span className="text-[11px] font-mono text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200 font-semibold">
+          <span className="text-[11px] font-mono text-rr-pink-deep bg-rr-pink-soft px-2.5 py-0.5 rounded border border-rr-pink-border font-semibold">
             Zero Duplication • 100% Deterministic
           </span>
         </div>
@@ -424,9 +435,9 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
               <span className="font-bold text-slate-900 uppercase">Batsman 1 through 10</span>
               <button
                 onClick={() => handleCopy(batters.map(b => `${b.rank}. ${b.player_name}`).join('\n'), 'batters')}
-                className="text-[11px] text-slate-600 hover:text-emerald-800 flex items-center space-x-1 cursor-pointer"
+                className="text-[11px] text-slate-600 hover:text-rr-pink-deep flex items-center space-x-1 cursor-pointer"
               >
-                {copiedSection === 'batters' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                {copiedSection === 'batters' ? <Check className="w-3.5 h-3.5 text-rr-pink" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedSection === 'batters' ? 'Copied' : 'Copy List'}</span>
               </button>
             </div>
@@ -446,9 +457,9 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
               <span className="font-bold text-slate-900 uppercase">Bowler 1 through 10</span>
               <button
                 onClick={() => handleCopy(bowlers.map(bw => `${bw.rank}. ${bw.player_name}`).join('\n'), 'bowlers')}
-                className="text-[11px] text-slate-600 hover:text-emerald-800 flex items-center space-x-1 cursor-pointer"
+                className="text-[11px] text-slate-600 hover:text-rr-pink-deep flex items-center space-x-1 cursor-pointer"
               >
-                {copiedSection === 'bowlers' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+                {copiedSection === 'bowlers' ? <Check className="w-3.5 h-3.5 text-rr-pink" /> : <Copy className="w-3.5 h-3.5" />}
                 <span>{copiedSection === 'bowlers' ? 'Copied' : 'Copy List'}</span>
               </button>
             </div>
@@ -471,9 +482,9 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
             </span>
             <button
               onClick={() => handleCopy(unstopRemarksText, 'remarks')}
-              className="text-xs text-emerald-800 font-semibold hover:underline flex items-center space-x-1 cursor-pointer"
+              className="text-xs text-rr-pink-deep font-semibold hover:underline flex items-center space-x-1 cursor-pointer"
             >
-              {copiedSection === 'remarks' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
+              {copiedSection === 'remarks' ? <Check className="w-3.5 h-3.5 text-rr-pink" /> : <Copy className="w-3.5 h-3.5" />}
               <span>{copiedSection === 'remarks' ? 'Copied to Clipboard' : 'Copy Remarks'}</span>
             </button>
           </div>

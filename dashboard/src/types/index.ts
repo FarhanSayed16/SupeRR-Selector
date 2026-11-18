@@ -12,6 +12,7 @@ export interface MetaPackage {
   product_name: string;
   subtitle: string;
   version: string;
+  board?: string;
   build_timestamp: string;
   freeze_sha256: string;
   seasons_covered: string[];
@@ -19,7 +20,22 @@ export interface MetaPackage {
   pressure_deliveries: number;
   pressure_percentage: number;
   ipl_weight: number;
+  t20i_weight?: number;
+  min_ipl_pressure_balls_batter?: number;
+  min_ipl_pressure_balls_bowler?: number;
   disclaimer: string;
+}
+
+export type BoardMode = 'auction' | 'global';
+
+export interface ExcludedPlayer {
+  player_id: number;
+  player_name: string;
+  category: string;
+  exclusion_reason: string;
+  rank?: number;
+  pressure_score?: number;
+  ipl_pressure_balls?: number;
 }
 
 export interface BatterRecord {
@@ -49,6 +65,10 @@ export interface BatterRecord {
   death_pressure_sr: number;
   chase_pressure_sr: number;
   sample_confidence: 'High' | 'Medium' | 'Low';
+  ipl_pressure_balls?: number;
+  ipl_pressure_share?: number;
+  weighted_pressure_sr?: number;
+  board?: string;
   squad_role?: string;
   rr_tactical_fit?: string;
   synergy_score?: number;
@@ -94,6 +114,11 @@ export interface BowlerRecord {
   chase_pressure_economy: number;
   chase_pressure_wickets: number;
   sample_confidence: 'High' | 'Medium' | 'Low';
+  ipl_pressure_balls?: number;
+  ipl_pressure_share?: number;
+  weighted_pressure_economy?: number;
+  death_pressure_economy_capped?: number;
+  board?: string;
   squad_role?: string;
   rr_tactical_fit?: string;
   synergy_score?: number;
@@ -137,6 +162,7 @@ export interface PressureSummary {
 
 export interface MethodologyPackage {
   pressure_version: string;
+  official_board?: string;
   definition_sentence: string;
   chase_high_rrr: number;
   chase_critical_rrr: number;
@@ -144,6 +170,14 @@ export interface MethodologyPackage {
   collapse_wickets: number;
   min_batter_pressure_balls: number;
   min_bowler_pressure_balls: number;
+  min_baseline_balls_batter?: number;
+  min_baseline_balls_bowler?: number;
+  min_ipl_pressure_balls_batter?: number;
+  min_ipl_pressure_balls_bowler?: number;
+  ipl_weight?: number;
+  t20i_weight?: number;
+  include_super_overs?: boolean;
+  board_policy?: string;
   scoring_weights_batter: Record<string, any>;
   scoring_weights_bowler: Record<string, any>;
 }

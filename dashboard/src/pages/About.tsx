@@ -5,13 +5,13 @@ import { MetaPackage } from '../types';
 export const About: React.FC<{ meta: MetaPackage | null }> = ({ meta }) => {
   return (
     <div className="space-y-8 pb-12 max-w-4xl mx-auto">
-      <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 space-y-4 shadow-xs">
-        <div className="inline-flex items-center space-x-2 text-emerald-800 text-xs font-bold uppercase tracking-wider">
-          <Info className="w-4 h-4 text-emerald-700" />
+      <div className="glass-panel p-6 sm:p-8 space-y-4 ">
+        <div className="inline-flex items-center space-x-2 text-rr-pink-deep text-xs font-bold uppercase tracking-wider">
+          <Info className="w-4 h-4 text-rr-pink" />
           <span>Competition Information & Compliance</span>
         </div>
         <h1 className="text-2xl sm:text-4xl font-black text-slate-900 uppercase tracking-tight">
-          About <span className="text-emerald-700">PressurePulse</span>
+          About <span className="text-rr-pink">PressurePulse</span>
         </h1>
         <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
           Developed for <strong>SupeRR Selector Season 2: Help Shape Rajasthan Royals' IPL 2027 Auction Strategy</strong>, hosted on Unstop by Rajasthan Royals.
@@ -37,9 +37,9 @@ export const About: React.FC<{ meta: MetaPackage | null }> = ({ meta }) => {
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200/90 rounded-2xl p-6 space-y-3 shadow-xs">
+      <div className="glass-panel p-6 space-y-3 ">
         <h2 className="text-base font-bold text-slate-900 uppercase tracking-wide flex items-center space-x-2">
-          <Shield className="w-5 h-5 text-emerald-700" />
+          <Shield className="w-5 h-5 text-rr-pink" />
           <span>Proprietary Data Usage & Security</span>
         </h2>
         <p className="text-xs text-slate-600 leading-relaxed">
