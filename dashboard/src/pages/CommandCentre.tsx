@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PageId, BatterRecord, BowlerRecord, MetaPackage } from '../types';
+import { PageId, BatterRecord, BowlerRecord, MetaPackage, ScoutBoard } from '../types';
 import { Medal } from '../components/Medal';
 import { PlayerAvatar } from '../components/PlayerAvatar';
 import { getBrandLogoSrc } from '../lib/images';
@@ -31,13 +31,22 @@ interface CommandCentreProps {
   meta: MetaPackage | null;
   batters: BatterRecord[];
   bowlers: BowlerRecord[];
+  scoutBoard?: ScoutBoard | null;
   onNavigate: (page: PageId, playerId?: number) => void;
+}
+
+function boardLabel(board: string | null | undefined): string {
+  if (board === 'auction_official') return 'Official';
+  if (board === 'global_only') return 'Global only';
+  if (board === 'unmatched') return 'Unmatched';
+  return board || '—';
 }
 
 export const CommandCentre: React.FC<CommandCentreProps> = ({
   meta,
   batters,
   bowlers,
+  scoutBoard,
   onNavigate
 }) => {
   const [chartMode, setChartMode] = useState<'batters' | 'bowlers'>('batters');
@@ -151,12 +160,12 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
       <div className="glass-panel p-5 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-200/80 pb-3 gap-2">
           <div>
-            <p className="type-kicker mb-1.5">Auction Official · Priority shortlist</p>
-            <h2 className="type-dossier-title text-[1.2rem]">
+            <p className="type-kicker mb-1.5 text-rr-pink-deep">Auction Official · Priority shortlist</p>
+            <h2 className="type-dossier-title">
               Recruits for Sangakkara &amp; Lindsay
             </h2>
           </div>
-          <p className="text-[12px] text-slate-500 font-medium leading-snug sm:text-right">
+          <p className="text-[12px] text-slate-500 font-semibold leading-snug sm:text-right tracking-tight">
             Lower-order finish · death overs · impact cover
           </p>
         </div>
@@ -201,7 +210,7 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
               <div className="flex items-start gap-3">
                 <PlayerAvatar playerId={card.id} name={card.name} size="md" ring={false} />
                 <div className="min-w-0 flex-1">
-                  <h4 className="font-bold text-sm text-slate-900 group-hover:text-rr-pink-deep transition-colors truncate">
+                  <h4 className="font-extrabold text-sm tracking-tight text-slate-900 group-hover:text-rr-pink-deep transition-colors truncate">
                     {card.name}
                   </h4>
                   <p className="text-[11px] text-slate-500 mt-0.5 border-l-2 border-rr-pink/40 pl-2">
@@ -410,6 +419,69 @@ export const CommandCentre: React.FC<CommandCentreProps> = ({
           </div>
         </div>
       </div>
+
+      {scoutBoard && (
+        <div className="glass-panel p-5 space-y-4">
+          <div className="border-b border-slate-100 pb-3 space-y-1">
+            <h3 className="text-sm font-bold text-slate-900 uppercase tracking-tight">
+              {scoutBoard.label} vs Auction Official
+            </h3>
+            <p className="text-[11px] text-slate-600 leading-relaxed max-w-3xl">{scoutBoard.policy}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            {(
+              [
+                ['Batters', scoutBoard.batters],
+                ['Bowlers', scoutBoard.bowlers],
+              ] as const
+            ).map(([title, rows]) => (
+              <div key={title} className="bg-slate-50 p-3.5 rounded-lg border border-slate-200">
+                <div className="font-bold text-slate-900 uppercase text-[11px] tracking-wide mb-2 pb-1.5 border-b border-slate-200">
+                  Scout {title}
+                </div>
+                <div className="space-y-1.5">
+                  {rows.map((r) => (
+                    <div key={`${title}-${r.scout_rank}`} className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <span className="text-slate-500 font-mono mr-1.5">S{r.scout_rank}</span>
+                        <span className="font-semibold text-slate-900">{r.player_name}</span>
+                        {r.note && (
+                          <p className="text-[10px] text-amber-800 mt-0.5 leading-snug">{r.note}</p>
+                        )}
+                      </div>
+                      <div className="text-right shrink-0">
+                        <span className="font-mono font-bold text-slate-800">
+                          {r.official_rank != null ? `#${r.official_rank}` : '—'}
+                        </span>
+                        <div className="text-[10px] text-slate-500">{boardLabel(r.board)}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-[11px] text-slate-500">
+            Open{' '}
+            <button
+              type="button"
+              className="text-rr-pink-deep font-semibold hover:underline cursor-pointer"
+              onClick={() => onNavigate('batters')}
+            >
+              full batter
+            </button>{' '}
+            /{' '}
+            <button
+              type="button"
+              className="text-rr-pink-deep font-semibold hover:underline cursor-pointer"
+              onClick={() => onNavigate('bowlers')}
+            >
+              bowler
+            </button>{' '}
+            boards for ranks 11+, or use navbar search for any player (e.g. Kohli, Dhoni).
+          </p>
+        </div>
+      )}
 
       {/* Official Unstop Submission Desk */}
       <div className="glass-panel p-5 space-y-4">

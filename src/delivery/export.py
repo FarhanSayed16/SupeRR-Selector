@@ -192,7 +192,8 @@ def export_delivery_packages() -> Dict[str, Path]:
             "is_batter": True,
             "is_bowler": False,
             "rank": int(r["rank"]),
-            "pressure_score": float(r["pressure_score"])
+            "pressure_score": float(r["pressure_score"]),
+            "board": "auction_official",
         })
     for _, r in full_bowl.iterrows():
         # Check if already present as all-rounder
@@ -209,24 +210,123 @@ def export_delivery_packages() -> Dict[str, Path]:
                 "is_batter": False,
                 "is_bowler": True,
                 "rank": int(r["rank"]),
-                "pressure_score": float(r["pressure_score"])
+                "pressure_score": float(r["pressure_score"]),
+                "board": "auction_official",
             })
 
-    # 5. Detailed Player Profiles (Top 20 from both sides)
+    # 5. Detailed Player Profiles — full Auction boards (search / dossier)
     profiles = {}
-    for rec in top10_bat_records + full_bat.iloc[10:20].to_dict(orient="records"):
-        pid = str(rec["player_id"])
-        if pid not in profiles:
-            profiles[pid] = {"batting": rec}
-        else:
-            profiles[pid]["batting"] = rec
-
-    for rec in top10_bowl_records + full_bowl.iloc[10:20].to_dict(orient="records"):
+    for rec in full_bat.to_dict(orient="records"):
+        profiles[str(rec["player_id"])] = {"batting": rec}
+    for rec in full_bowl.to_dict(orient="records"):
         pid = str(rec["player_id"])
         if pid not in profiles:
             profiles[pid] = {"bowling": rec}
         else:
             profiles[pid]["bowling"] = rec
+
+    # Global-only players (e.g. zero IPL sample) — searchable, not Official
+    full_bat_global = pd.read_csv(RANKINGS_DIR / "full_batter_rankings_global.csv")
+    full_bowl_global = pd.read_csv(RANKINGS_DIR / "full_bowler_rankings_global.csv")
+    for _, r in full_bat_global.iterrows():
+        pid = int(r["player_id"])
+        if any(p["player_id"] == pid for p in players_index):
+            continue
+        players_index.append({
+            "player_id": pid,
+            "player_name": r["player_name"],
+            "primary_role": r["primary_role"],
+            "is_batter": True,
+            "is_bowler": False,
+            "rank": int(r["rank"]),
+            "pressure_score": float(r["pressure_score"]),
+            "board": "global",
+        })
+        profiles[str(pid)] = {"batting": r.to_dict()}
+    for _, r in full_bowl_global.iterrows():
+        pid = int(r["player_id"])
+        existing = next((p for p in players_index if p["player_id"] == pid), None)
+        if existing:
+            if not existing.get("is_bowler"):
+                existing["is_bowler"] = True
+                existing["bowler_rank"] = int(r["rank"])
+                existing["bowler_pressure_score"] = float(r["pressure_score"])
+            if "bowling" not in profiles.get(str(pid), {}):
+                profiles.setdefault(str(pid), {})["bowling"] = r.to_dict()
+            continue
+        players_index.append({
+            "player_id": pid,
+            "player_name": r["player_name"],
+            "primary_role": r["primary_role"],
+            "is_batter": False,
+            "is_bowler": True,
+            "rank": int(r["rank"]),
+            "pressure_score": float(r["pressure_score"]),
+            "board": "global",
+        })
+        profiles[str(pid)] = {"bowling": r.to_dict()}
+
+    # Human scout board — opinion overlay; never mutates Official freeze
+    def _official_rank(df: pd.DataFrame, name: str):
+        hit = df[df["player_name"].str.fullmatch(name, case=False, na=False)]
+        if len(hit):
+            return int(hit.iloc[0]["rank"]), float(hit.iloc[0]["pressure_score"]), "auction_official"
+        return None, None, None
+
+    scout_batters = [
+        "Shashank Singh", "Ashutosh Sharma", "Rinku Singh", "Shreyas Iyer",
+        "Suryakumar Yadav", "Rohit Sharma", "Marcus Stoinis", "Naman Dhir",
+        "Rishabh Pant", "Riza",
+    ]
+    scout_bowlers = [
+        "Sunil Narine", "Jasprit Bumrah", "Rashid Khan", "Mitchell Santner",
+        "Kuldeep Yadav", "Varun Chakravarthy", "Matheesha Pathirana", "Rasikh Salam",
+        "Mohammad Nawaz", "Matthew Humphreys",
+    ]
+    scout_bat_rows = []
+    for i, name in enumerate(scout_batters, 1):
+        of_rank, of_score, board = _official_rank(full_bat, name)
+        note = None
+        if name == "Riza":
+            note = "Name unmatched on Auction Official; not Mohammad Rizwan in eligible set."
+            board = "unmatched"
+        elif of_rank is None:
+            g = full_bat_global[full_bat_global["player_name"].str.fullmatch(name, case=False, na=False)]
+            if len(g):
+                of_rank, of_score, board = int(g.iloc[0]["rank"]), float(g.iloc[0]["pressure_score"]), "global_only"
+                note = "Below Auction Official IPL sample floor — Global board only."
+            else:
+                board = "unmatched"
+                note = "Not found in ranked boards."
+        scout_bat_rows.append({
+            "scout_rank": i, "player_name": name,
+            "official_rank": of_rank, "official_pressure_score": of_score, "board": board, "note": note,
+        })
+    scout_bowl_rows = []
+    for i, name in enumerate(scout_bowlers, 1):
+        of_rank, of_score, board = _official_rank(full_bowl, name)
+        note = None
+        if of_rank is None:
+            g = full_bowl_global[full_bowl_global["player_name"].str.fullmatch(name, case=False, na=False)]
+            if len(g):
+                of_rank, of_score, board = int(g.iloc[0]["rank"]), float(g.iloc[0]["pressure_score"]), "global_only"
+                note = "Below Auction Official IPL sample floor — Global board only."
+            else:
+                board = "unmatched"
+                note = "Not found in ranked boards."
+        scout_bowl_rows.append({
+            "scout_rank": i, "player_name": name,
+            "official_rank": of_rank, "official_pressure_score": of_score, "board": board, "note": note,
+        })
+    scout_board = {
+        "label": "Scout Board (human opinion)",
+        "policy": (
+            "Auction Official Top 10 stays frozen. This board is a side-by-side scout opinion "
+            "for war-room debate — it does not rewrite PressureScore or the freeze SHA."
+        ),
+        "batters": scout_bat_rows,
+        "bowlers": scout_bowl_rows,
+    }
 
     # 6. Methodology JSON Package
     methodology_pkg = {
@@ -291,9 +391,14 @@ def export_delivery_packages() -> Dict[str, Path]:
         "top10_bowlers.json": top10_bowl_records,
         "top10_batters_global.json": global_bat_records,
         "top10_bowlers_global.json": global_bowl_records,
+        "full_batter_rankings.json": full_bat.to_dict(orient="records"),
+        "full_bowler_rankings.json": full_bowl.to_dict(orient="records"),
+        "full_batter_rankings_global.json": full_bat_global.to_dict(orient="records"),
+        "full_bowler_rankings_global.json": full_bowl_global.to_dict(orient="records"),
         "excluded_low_ipl_sample.json": excluded_records,
         "players_index.json": players_index,
         "players_detail.json": profiles,
+        "scout_board.json": scout_board,
         "pressure_summary.json": pressure_summary,
         "methodology.json": methodology_pkg
     }

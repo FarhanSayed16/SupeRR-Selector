@@ -60,12 +60,12 @@ export const BatterIntelligence: React.FC<BatterIntelligenceProps> = ({
               <span>Rajasthan Royals Batting Recruitment Board</span>
             </div>
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
-              Top 10 Batters Under Pressure
+              Full Batter Pressure Board
             </h1>
             <p className="text-slate-600 text-xs sm:text-sm mt-0.5">
               {board === 'auction'
-                ? 'Auction Official — IPL sample floors + IPL/T20I weighted legal-ball rates.'
-                : 'Global Combined — no IPL floor (methodology context board).'}
+                ? `Auction Official — all ${source.length} eligible batters (Top 10 frozen).`
+                : `Global Combined — all ${source.length} batters (no IPL floor).`}
             </p>
           </div>
 
@@ -119,11 +119,11 @@ export const BatterIntelligence: React.FC<BatterIntelligenceProps> = ({
             <span className="font-bold text-slate-900">{board === 'auction' ? 'Auction Official' : 'Global'}</span>
           </div>
           <div className="glass-kpi p-2.5">
-            <span className="text-[10px] text-slate-500 uppercase font-semibold block">Top 10 Avg Weighted SR</span>
+            <span className="text-[10px] text-slate-500 uppercase font-semibold block">Board Avg Weighted SR</span>
             <span className="font-bold text-rr-pink-deep font-mono">{avgSr.toFixed(1)}</span>
           </div>
           <div className="glass-kpi p-2.5">
-            <span className="text-[10px] text-slate-500 uppercase font-semibold block">Top 10 Avg Uplift</span>
+            <span className="text-[10px] text-slate-500 uppercase font-semibold block">Board Avg Uplift</span>
             <span className="font-bold text-rr-pink-deep font-mono">+{avgUplift.toFixed(1)}</span>
           </div>
           <div className="glass-kpi p-2.5">
@@ -155,7 +155,9 @@ export const BatterIntelligence: React.FC<BatterIntelligenceProps> = ({
               {filtered.map((b) => (
                 <tr
                   key={`${board}-${b.player_id}`}
-                  className="hover:bg-rr-pink-soft/40 transition-colors cursor-pointer group"
+                  className={`hover:bg-rr-pink-soft/40 transition-colors cursor-pointer group ${
+                    b.rank <= 10 ? 'bg-rr-pink-soft/15' : ''
+                  }`}
                   onClick={() => onNavigate('player_profile', b.player_id)}
                 >
                   <td className="py-3 px-3 text-center">

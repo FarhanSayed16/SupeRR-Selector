@@ -180,7 +180,29 @@ export interface PlayerIndexItem {
   pressure_score?: number;
   bowler_rank?: number;
   bowler_pressure_score?: number;
+  board?: string;
 }
+
+export interface ScoutBoardEntry {
+  scout_rank: number;
+  player_name: string;
+  official_rank: number | null;
+  official_pressure_score: number | null;
+  board: string | null;
+  note?: string | null;
+}
+
+export interface ScoutBoard {
+  label: string;
+  policy: string;
+  batters: ScoutBoardEntry[];
+  bowlers: ScoutBoardEntry[];
+}
+
+export type PlayerDetailMap = Record<
+  string,
+  { batting?: BatterRecord; bowling?: BowlerRecord }
+>;
 
 export interface PressureSummary {
   pressure_version: string;
