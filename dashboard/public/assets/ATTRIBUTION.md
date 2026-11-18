@@ -10,7 +10,7 @@ Assets under `assets/players/` and `assets/brand/` are used for educational / co
 - `brand/rr-colours.svg` — Wikimedia Commons team colour icon.
 
 ## Players
-Primary headshots are sourced from the public IPL website player pages (`iplt20.com` team-assets API cutouts), converted to square JPEG portraits for the scouting UI. Supplemental images may come from Wikimedia Commons where IPL assets were unavailable.
+Primary headshots are sourced from public cricket media (Cricbuzz CDN portraits and Wikimedia Commons), converted to square JPEG portraits for the scouting UI. Supplemental images may come from Wikimedia Commons where IPL/Cricbuzz assets were unavailable.
 
 They remain the property of BCCI / IPL / respective rights holders; use is limited to this competition dashboard and must not be redistributed as a commercial pack.
 
