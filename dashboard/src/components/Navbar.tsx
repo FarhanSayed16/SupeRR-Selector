@@ -1,17 +1,18 @@
 import React from 'react';
 import { PageId } from '../types';
-import { 
-  BarChart3, 
-  Target, 
-  Shield, 
-  Activity, 
-  Users, 
-  BookOpen, 
-  CheckSquare,
-  Info,
+import {
+  LayoutDashboard,
+  Crosshair,
+  Shield,
+  Radar,
+  Shirt,
+  ScrollText,
+  BadgeCheck,
   Menu,
-  X
+  X,
 } from 'lucide-react';
+import { StatusChip } from './StatusChip';
+import { getBrandLogoSrc } from '../lib/images';
 
 interface NavbarProps {
   currentPage: PageId;
@@ -19,58 +20,104 @@ interface NavbarProps {
   freezeSha?: string;
 }
 
+const iconProps = { className: 'w-4 h-4', strokeWidth: 2.25 as const };
+
 export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, freezeSha }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
-  const navItems: { id: PageId; label: string; icon: React.ReactNode }[] = [
-    { id: 'command_centre', label: 'Overview', icon: <BarChart3 className="w-3.5 h-3.5" /> },
-    { id: 'batters', label: 'Batters', icon: <Target className="w-3.5 h-3.5" /> },
-    { id: 'bowlers', label: 'Bowlers', icon: <Shield className="w-3.5 h-3.5" /> },
-    { id: 'auction_room', label: 'RR 2027 Squad & XI', icon: <Users className="w-3.5 h-3.5" /> },
-    { id: 'pressure_lab', label: 'Pressure Engine', icon: <Activity className="w-3.5 h-3.5" /> },
-    { id: 'methodology', label: 'Methodology', icon: <BookOpen className="w-3.5 h-3.5" /> },
-    { id: 'about', label: 'Audit & Compliance', icon: <Info className="w-3.5 h-3.5" /> },
+  const navItems: { id: PageId; label: string; short?: string; icon: React.ReactNode }[] = [
+    { id: 'command_centre', label: 'Overview', icon: <LayoutDashboard {...iconProps} /> },
+    { id: 'batters', label: 'Batters', icon: <Crosshair {...iconProps} /> },
+    { id: 'bowlers', label: 'Bowlers', icon: <Shield {...iconProps} /> },
+    { id: 'auction_room', label: 'RR 2027 Squad', short: 'Squad', icon: <Shirt {...iconProps} /> },
+    { id: 'pressure_lab', label: 'Pressure Lab', icon: <Radar {...iconProps} /> },
+    { id: 'methodology', label: 'Methodology', icon: <ScrollText {...iconProps} /> },
+    { id: 'about', label: 'Audit', icon: <BadgeCheck {...iconProps} /> },
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 text-slate-800 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14">
-          {/* Brand Wordmark */}
-          <div 
-            className="flex items-center space-x-3 cursor-pointer group"
+    <header className="sticky top-0 z-50 px-3 sm:px-4 pt-3 pb-2">
+      <div className="glass-nav max-w-7xl mx-auto rounded-2xl px-3 sm:px-5">
+        <div className="flex items-center justify-between h-14 gap-3">
+          <div
+            className="flex items-center space-x-3 cursor-pointer group shrink-0"
             onClick={() => onNavigate('command_centre')}
           >
-            <div className="w-8 h-8 rounded bg-[#064E3B] flex items-center justify-center shadow-xs border border-emerald-900">
-              <span className="font-extrabold text-xs tracking-wider text-white">RR</span>
+            <div className="w-11 h-11 rounded-xl bg-white flex items-center justify-center shadow-sm border border-slate-200/80 overflow-hidden p-1.5">
+              <img
+                src={getBrandLogoSrc()}
+                alt="Rajasthan Royals"
+                className="w-full h-full object-contain"
+              />
             </div>
-            <div>
+            <div className="hidden sm:block">
               <div className="flex items-center space-x-1.5">
-                <span className="font-extrabold text-sm tracking-tight text-slate-900">
-                  Pressure<span className="text-emerald-700">Pulse</span>
+                <span className="font-extrabold text-sm tracking-tight text-rr-navy">
+                  Pressure<span className="text-rr-pink">Pulse</span>
                 </span>
-                <span className="text-[9px] uppercase font-bold tracking-wider bg-emerald-50 text-emerald-800 px-1.5 py-0.2 rounded border border-emerald-200">
-                  v1.2 Audited
+                <span className="text-[9px] uppercase font-bold tracking-wider bg-rr-pink-soft text-rr-pink-deep px-1.5 py-0.5 rounded-full border border-rr-pink-border">
+                  v1.2
                 </span>
               </div>
-              <p className="text-[10px] text-slate-500 font-medium tracking-tight">
-                Rajasthan Royals • IPL 2027 War Room
+              <p className="text-[10px] text-ink-500 font-medium tracking-tight">
+                Rajasthan Royals · IPL 2027
               </p>
             </div>
           </div>
 
-          {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center space-x-1 bg-slate-100/80 p-0.5 rounded-lg border border-slate-200/80">
+          <nav className="hidden lg:flex items-center gap-0.5 bg-white/45 p-1 rounded-full border border-white/70">
             {navItems.map((item) => {
               const active = currentPage === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-md text-xs font-semibold tracking-tight transition-all cursor-pointer ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs tracking-tight transition-all cursor-pointer ${
                     active
-                      ? 'bg-white text-emerald-900 shadow-xs border border-slate-200 font-bold'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/50 border border-transparent'
+                      ? 'bg-rr-pink text-white shadow-md font-bold'
+                      : 'text-ink-500 hover:text-rr-navy hover:bg-white/70 font-semibold'
+                  }`}
+                >
+                  <span className={active ? 'opacity-100' : 'opacity-80'}>{item.icon}</span>
+                  <span>{item.short || item.label}</span>
+                </button>
+              );
+            })}
+          </nav>
+
+          <div className="hidden md:flex items-center gap-2 shrink-0">
+            <StatusChip label="Ranks Frozen" />
+            <span className="text-[10px] font-mono text-ink-500 hidden xl:inline">
+              SHA {freezeSha ? freezeSha.slice(0, 8) : '5cdd7b74'}
+            </span>
+          </div>
+
+          <div className="flex lg:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-xl text-rr-navy hover:bg-white/50 cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" strokeWidth={2.25} /> : <Menu className="w-5 h-5" strokeWidth={2.25} />}
+            </button>
+          </div>
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="lg:hidden border-t border-white/50 pt-2 pb-3 space-y-1">
+            {navItems.map((item) => {
+              const active = currentPage === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    onNavigate(item.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs cursor-pointer ${
+                    active
+                      ? 'bg-rr-pink text-white font-bold shadow-sm'
+                      : 'text-ink-500 hover:bg-white/40 font-semibold'
                   }`}
                 >
                   {item.icon}
@@ -78,59 +125,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate, freezeS
                 </button>
               );
             })}
-          </nav>
-
-          {/* Right Status / Freeze Chip */}
-          <div className="hidden lg:flex items-center space-x-2.5">
-            <div className="flex items-center space-x-1.5 text-xs text-slate-500 font-medium">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="text-[11px] font-mono text-slate-700 font-semibold">
-                SHA: {freezeSha ? freezeSha.slice(0, 8) : '5cdd7b74'}
-              </span>
+            <div className="pt-2 px-1">
+              <StatusChip label="Ranks Frozen" />
             </div>
-            <span className="text-slate-300">|</span>
-            <span className="text-[11px] text-slate-500 font-medium">
-              200,999 Balls
-            </span>
           </div>
-
-          {/* Mobile hamburger */}
-          <div className="flex md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100 cursor-pointer"
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
+        )}
       </div>
-
-      {/* Mobile dropdown */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white px-4 pt-2 pb-3 space-y-1 shadow-lg">
-          {navItems.map((item) => {
-            const active = currentPage === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => {
-                  onNavigate(item.id);
-                  setMobileMenuOpen(false);
-                }}
-                className={`w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-xs font-semibold cursor-pointer ${
-                  active
-                    ? 'bg-emerald-50 text-emerald-900 font-bold border border-emerald-200'
-                    : 'text-slate-600 hover:bg-slate-50'
-                }`}
-              >
-                {item.icon}
-                <span>{item.label}</span>
-              </button>
-            );
-          })}
-        </div>
-      )}
     </header>
   );
 };

@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { PageId, MetaPackage, BatterRecord, BowlerRecord, PressureSummary } from './types';
-import { 
-  fetchMeta, 
-  fetchTop10Batters, 
-  fetchTop10Bowlers, 
-  fetchPressureSummary 
+import {
+  PageId,
+  MetaPackage,
+  BatterRecord,
+  BowlerRecord,
+  PressureSummary,
+  ExcludedPlayer,
+} from './types';
+import {
+  fetchMeta,
+  fetchTop10Batters,
+  fetchTop10Bowlers,
+  fetchGlobalBatters,
+  fetchGlobalBowlers,
+  fetchExcludedLowIpl,
+  fetchPressureSummary,
 } from './lib/data';
 import { Navbar } from './components/Navbar';
 import { CommandCentre } from './pages/CommandCentre';
@@ -24,6 +34,9 @@ export function App() {
   const [meta, setMeta] = useState<MetaPackage | null>(null);
   const [batters, setBatters] = useState<BatterRecord[]>([]);
   const [bowlers, setBowlers] = useState<BowlerRecord[]>([]);
+  const [globalBatters, setGlobalBatters] = useState<BatterRecord[]>([]);
+  const [globalBowlers, setGlobalBowlers] = useState<BowlerRecord[]>([]);
+  const [excluded, setExcluded] = useState<ExcludedPlayer[]>([]);
   const [pressureSummary, setPressureSummary] = useState<PressureSummary | null>(null);
 
   const [loading, setLoading] = useState<boolean>(true);
@@ -33,19 +46,35 @@ export function App() {
     async function loadData() {
       try {
         setLoading(true);
-        const [metaData, battersData, bowlersData, summaryData] = await Promise.all([
+        const [
+          metaData,
+          battersData,
+          bowlersData,
+          globalBattersData,
+          globalBowlersData,
+          excludedData,
+          summaryData,
+        ] = await Promise.all([
           fetchMeta(),
           fetchTop10Batters(),
           fetchTop10Bowlers(),
-          fetchPressureSummary()
+          fetchGlobalBatters(),
+          fetchGlobalBowlers(),
+          fetchExcludedLowIpl(),
+          fetchPressureSummary(),
         ]);
         setMeta(metaData);
         setBatters(battersData);
         setBowlers(bowlersData);
+        setGlobalBatters(globalBattersData);
+        setGlobalBowlers(globalBowlersData);
+        setExcluded(excludedData);
         setPressureSummary(summaryData);
       } catch (err) {
         console.error('Failed to load dashboard data:', err);
-        setError('Failed to load analytics data packages. Ensure run_pipeline.py has generated public/data JSON files.');
+        setError(
+          'Failed to load analytics data packages. Ensure run_pipeline.py has generated public/data JSON files.'
+        );
       } finally {
         setLoading(false);
       }
@@ -62,28 +91,28 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-emerald-600 selection:text-white">
-      {/* Navbar Header */}
+    <div className="min-h-screen text-rr-navy flex flex-col font-sans">
       <Navbar
         currentPage={currentPage}
         onNavigate={handleNavigate}
         freezeSha={meta?.freeze_sha256}
       />
 
-      {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 pt-4 pb-4">
         {loading ? (
-          <div className="flex flex-col items-center justify-center py-32 space-y-4">
-            <Loader2 className="w-10 h-10 text-emerald-700 animate-spin" />
-            <p className="text-sm font-semibold text-slate-600">Initializing Royals War Room Intelligence...</p>
+          <div className="glass-panel flex flex-col items-center justify-center py-32 space-y-4 page-enter">
+            <Loader2 className="w-10 h-10 text-rr-pink animate-spin" />
+            <p className="text-sm font-semibold text-ink-500">
+              Initializing Royals Pressure Intelligence…
+            </p>
           </div>
         ) : error ? (
-          <div className="p-6 bg-rose-50 border border-rose-200 rounded-xl flex items-center space-x-3 text-rose-800 my-12">
+          <div className="glass-panel p-6 flex items-center space-x-3 text-rose-800 my-8 page-enter">
             <AlertCircle className="w-6 h-6 flex-shrink-0 text-rose-600" />
             <p className="text-sm">{error}</p>
           </div>
         ) : (
-          <>
+          <div key={currentPage} className="page-enter">
             {currentPage === 'command_centre' && (
               <CommandCentre
                 meta={meta}
@@ -95,56 +124,57 @@ export function App() {
             {currentPage === 'batters' && (
               <BatterIntelligence
                 batters={batters}
+                globalBatters={globalBatters}
+                excluded={excluded}
                 onNavigate={handleNavigate}
               />
             )}
             {currentPage === 'bowlers' && (
               <BowlerIntelligence
                 bowlers={bowlers}
+                globalBowlers={globalBowlers}
+                excluded={excluded}
                 onNavigate={handleNavigate}
               />
             )}
-            {currentPage === 'pressure_lab' && (
-              <PressureLab summary={pressureSummary} />
-            )}
+            {currentPage === 'pressure_lab' && <PressureLab summary={pressureSummary} />}
             {currentPage === 'player_profile' && (
               <PlayerProfile
                 playerId={selectedPlayerId}
-                batters={batters}
-                bowlers={bowlers}
+                batters={[...batters, ...globalBatters]}
+                bowlers={[...bowlers, ...globalBowlers]}
                 onNavigate={handleNavigate}
               />
             )}
             {currentPage === 'auction_room' && (
-              <AuctionRoom
-                batters={batters}
-                bowlers={bowlers}
-                onNavigate={handleNavigate}
-              />
+              <AuctionRoom batters={batters} bowlers={bowlers} onNavigate={handleNavigate} />
             )}
-            {currentPage === 'methodology' && <Methodology />}
+            {currentPage === 'methodology' && <Methodology meta={meta} />}
             {currentPage === 'about' && <About meta={meta} />}
-          </>
+          </div>
         )}
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white py-8 text-xs text-slate-500 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center space-x-2">
-            <div className="w-6 h-6 rounded bg-emerald-900 flex items-center justify-center font-black text-xs text-white">
-              RR
+      <footer className="px-3 sm:px-4 pb-6">
+        <div className="glass-nav max-w-7xl mx-auto rounded-2xl py-5 px-4 sm:px-6 text-xs text-ink-500">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center space-x-2.5">
+              <img
+                src="/assets/brand/rr-mark-pink.svg"
+                alt="Rajasthan Royals"
+                className="h-8 w-8 object-contain"
+              />
+              <span className="font-bold text-rr-navy tracking-wide uppercase">
+                PressurePulse · SupeRR Selector Season 2
+              </span>
             </div>
-            <span className="font-bold text-slate-800 tracking-wide uppercase">
-              PressurePulse • SupeRR Selector Season 2
-            </span>
-          </div>
-          <div className="flex items-center space-x-4">
-            <span className="text-slate-600 font-medium">Rajasthan Royals × Unstop Challenge</span>
-            <span>•</span>
-            <span className="font-mono text-[11px] text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-              SHA256: {meta?.freeze_sha256 ? meta.freeze_sha256.slice(0, 12) : '5cdd7b74'}...
-            </span>
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+              <span className="font-medium">Rajasthan Royals × Unstop</span>
+              <span className="text-ink-400">·</span>
+              <span className="font-mono text-[11px] text-ink-500 bg-white/60 px-2 py-0.5 rounded-full border border-white/80">
+                SHA256: {meta?.freeze_sha256 ? meta.freeze_sha256.slice(0, 12) : '5cdd7b74'}…
+              </span>
+            </div>
           </div>
         </div>
       </footer>
