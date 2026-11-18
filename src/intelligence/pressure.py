@@ -64,8 +64,8 @@ def compute_pressure_signals(df: pd.DataFrame) -> pd.DataFrame:
     )
     data["signal_knockout_leverage"] = s4_ko
 
-    # Signal 5: Super Overs
-    data["signal_super_over"] = data["is_super_over"]
+    # Signal 5: Super Overs (gated by INCLUDE_SUPER_OVERS)
+    data["signal_super_over"] = data["is_super_over"] & CONFIG.INCLUDE_SUPER_OVERS
 
     # Composite Pressure Boolean
     data["is_pressure"] = (
@@ -119,6 +119,19 @@ def generate_pressure_diagnostics(df: pd.DataFrame) -> Dict:
         "super_overs": int(df["signal_super_over"].sum())
     }
 
+    # Intensity bands among pressure deliveries via pressure_index (0–1)
+    press_idx = df.loc[df["is_pressure"], "pressure_index"]
+    low_max, med_max = 0.40, 0.70
+    band_counts = {
+        "low": int((press_idx < low_max).sum()),
+        "medium": int(((press_idx >= low_max) & (press_idx < med_max)).sum()),
+        "high": int((press_idx >= med_max).sum()),
+    }
+    band_pct = {
+        k: round(100.0 * v / pressure_balls, 1) if pressure_balls else 0.0
+        for k, v in band_counts.items()
+    }
+
     diagnostics = {
         "pressure_version": CONFIG.PRESSURE_VERSION,
         "definition_sentence": PRESSURE_DEFINITION_SENTENCE,
@@ -130,7 +143,14 @@ def generate_pressure_diagnostics(df: pd.DataFrame) -> Dict:
         "t20i_pressure_percentage": round(t20i_pressure_pct, 2),
         "phase_distribution_count": phase_dist,
         "phase_distribution_percentage": phase_pct,
-        "signal_activation_counts": signal_counts
+        "signal_activation_counts": signal_counts,
+        "pressure_band_counts": band_counts,
+        "pressure_band_percentage": band_pct,
+        "pressure_band_thresholds": {
+            "low_max": low_max,
+            "medium_max": med_max,
+            "note": "Bands split pressure_index on pressure deliveries only; display evidence, not a re-rank.",
+        },
     }
 
     return diagnostics

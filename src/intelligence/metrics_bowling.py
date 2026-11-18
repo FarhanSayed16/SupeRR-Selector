@@ -88,15 +88,31 @@ def compute_bowling_metrics(
     df_ipl_pressure = df[df["is_pressure"] & df["is_ipl"]]
     df_t20i_pressure = df[df["is_pressure"] & df["is_t20i"]]
 
-    bowl_ipl = aggregate_bowling(df_ipl_pressure, "ipl_pressure")[["player_id", "ipl_pressure_balls", "ipl_pressure_economy", "ipl_pressure_wickets"]]
-    bowl_t20i = aggregate_bowling(df_t20i_pressure, "t20i_pressure")[["player_id", "t20i_pressure_balls", "t20i_pressure_economy", "t20i_pressure_wickets"]]
+    bowl_ipl = aggregate_bowling(df_ipl_pressure, "ipl_pressure")[
+        ["player_id", "ipl_pressure_balls", "ipl_pressure_economy", "ipl_pressure_wickets", "ipl_pressure_runs"]
+    ]
+    bowl_t20i = aggregate_bowling(df_t20i_pressure, "t20i_pressure")[
+        ["player_id", "t20i_pressure_balls", "t20i_pressure_economy", "t20i_pressure_wickets", "t20i_pressure_runs"]
+    ]
 
-    # 3. Situational Slices in Pressure: Death & Defending (Chase)
+    # 3. Situational Slices in Pressure: phase + chase
+    df_pp = df[df["is_pressure"] & (df["match_phase"] == "powerplay")]
+    df_mid = df[df["is_pressure"] & (df["match_phase"] == "middle")]
     df_death = df[df["is_pressure"] & (df["match_phase"] == "death")]
     df_chase = df[df["is_pressure"] & (df["innings"] == 2)]
 
-    bowl_death = aggregate_bowling(df_death, "death_pressure")[["player_id", "death_pressure_balls", "death_pressure_economy", "death_pressure_wickets"]]
-    bowl_chase = aggregate_bowling(df_chase, "chase_pressure")[["player_id", "chase_pressure_balls", "chase_pressure_economy", "chase_pressure_wickets"]]
+    bowl_pp = aggregate_bowling(df_pp, "pp_pressure")[
+        ["player_id", "pp_pressure_balls", "pp_pressure_economy", "pp_pressure_dot_pct", "pp_pressure_wickets"]
+    ]
+    bowl_mid = aggregate_bowling(df_mid, "mid_pressure")[
+        ["player_id", "mid_pressure_balls", "mid_pressure_economy", "mid_pressure_dot_pct", "mid_pressure_wickets"]
+    ]
+    bowl_death = aggregate_bowling(df_death, "death_pressure")[
+        ["player_id", "death_pressure_balls", "death_pressure_economy", "death_pressure_wickets", "death_pressure_dot_pct"]
+    ]
+    bowl_chase = aggregate_bowling(df_chase, "chase_pressure")[
+        ["player_id", "chase_pressure_balls", "chase_pressure_economy", "chase_pressure_wickets"]
+    ]
 
     # 4. Consistency Across Matches under Pressure
     match_pressure = df_pressure.groupby(["bowler_id", "match_id"]).agg(
@@ -127,28 +143,52 @@ def compute_bowling_metrics(
     m = m.merge(bowl_baseline, on="player_id", how="left")
     m = m.merge(bowl_ipl, on="player_id", how="left")
     m = m.merge(bowl_t20i, on="player_id", how="left")
+    m = m.merge(bowl_pp, on="player_id", how="left")
+    m = m.merge(bowl_mid, on="player_id", how="left")
     m = m.merge(bowl_death, on="player_id", how="left")
     m = m.merge(bowl_chase, on="player_id", how="left")
     m = m.merge(consistency_cols, on="player_id", how="left")
 
     # Fill nulls
     fill_zeros = [
-        "ipl_pressure_balls", "ipl_pressure_economy", "ipl_pressure_wickets",
-        "t20i_pressure_balls", "t20i_pressure_economy", "t20i_pressure_wickets",
-        "death_pressure_balls", "death_pressure_economy", "death_pressure_wickets",
+        "ipl_pressure_balls", "ipl_pressure_economy", "ipl_pressure_wickets", "ipl_pressure_runs",
+        "t20i_pressure_balls", "t20i_pressure_economy", "t20i_pressure_wickets", "t20i_pressure_runs",
+        "pp_pressure_balls", "pp_pressure_economy", "pp_pressure_dot_pct", "pp_pressure_wickets",
+        "mid_pressure_balls", "mid_pressure_economy", "mid_pressure_dot_pct", "mid_pressure_wickets",
+        "death_pressure_balls", "death_pressure_economy", "death_pressure_wickets", "death_pressure_dot_pct",
         "chase_pressure_balls", "chase_pressure_economy", "chase_pressure_wickets",
         "baseline_balls", "baseline_overs", "baseline_runs", "baseline_wickets",
-        "baseline_dots", "baseline_economy", "baseline_dot_pct", "baseline_bowling_avg", "baseline_balls_per_wicket"
+        "baseline_dots", "baseline_economy", "baseline_dot_pct", "baseline_bowling_avg", "baseline_balls_per_wicket",
+        "pressure_balls", "pressure_runs", "pressure_wickets", "pressure_economy", "pressure_dot_pct",
+        "pressure_balls_per_wicket", "pressure_matches"
     ]
     for col in fill_zeros:
-        m[col] = m[col].fillna(0.0)
+        if col in m.columns:
+            m[col] = m[col].fillna(0.0)
 
     m["consistency_score"] = m["consistency_score"].fillna(0.50)
 
+    # IPL/T20I weighted pressure economy (runs per over)
+    w_ipl, w_t20 = CONFIG.IPL_WEIGHT, CONFIG.T20I_WEIGHT
+    w_runs = m["ipl_pressure_runs"] * w_ipl + m["t20i_pressure_runs"] * w_t20
+    w_balls = m["ipl_pressure_balls"] * w_ipl + m["t20i_pressure_balls"] * w_t20
+    m["weighted_pressure_economy"] = np.where(w_balls > 0, (w_runs / w_balls) * 6.0, m["pressure_economy"])
+    m["ipl_pressure_share"] = np.where(
+        m["pressure_balls"] > 0, m["ipl_pressure_balls"] / m["pressure_balls"], 0.0
+    )
+
+    # Soft-cap death economy toward overall when death sample is thin
+    death_w = np.clip(
+        m["death_pressure_balls"] / float(CONFIG.MIN_DEATH_BALLS_FOR_FULL_WEIGHT), 0.0, 1.0
+    )
+    m["death_pressure_economy_capped"] = np.where(
+        m["death_pressure_balls"] > 0,
+        death_w * m["death_pressure_economy"] + (1.0 - death_w) * m["weighted_pressure_economy"],
+        m["weighted_pressure_economy"]
+    )
+
     # 6. Uplift Metrics
-    # Economy uplift: baseline economy minus pressure economy
-    # Note: Pressure economy is naturally higher in death overs; positive uplift is exceptional
-    m["economy_uplift"] = m["baseline_economy"] - m["pressure_economy"]
+    m["economy_uplift"] = m["baseline_economy"] - m["weighted_pressure_economy"]
     m["dot_uplift"] = m["pressure_dot_pct"] - m["baseline_dot_pct"]
     m["wicket_rate_uplift"] = m["baseline_balls_per_wicket"] - m["pressure_balls_per_wicket"]
 
@@ -159,6 +199,9 @@ def compute_bowling_metrics(
     ]
     choices = ["High", "Medium"]
     m["sample_confidence"] = np.select(conditions, choices, default="Low")
+
+    k = float(CONFIG.RELIABILITY_K_BOWLER)
+    m["reliability"] = np.round(m["pressure_balls"] / (m["pressure_balls"] + k), 3)
 
     logger.info(f"Bowling metrics computed for {len(m)} eligible bowlers.")
 
